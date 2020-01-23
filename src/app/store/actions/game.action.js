@@ -1,9 +1,8 @@
 export const increaseCounter = counter => {
-	const newGame = {
+	return {
 		type: "INCREASE",
 		game: {
 			counter: counter + 1
 		}
 	};
-	return newGame;
 };
