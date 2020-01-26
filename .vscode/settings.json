@@ -10,6 +10,7 @@
 	"html.format.wrapLineLength": 140,
 	"javascript.implicitProjectConfig.experimentalDecorators": true,
 	"javascript.preferences.quoteStyle": "double",
+	"javascript.validate.enable": false,
 	"liveServer.settings.donotShowInfoMsg": true,
 	"prettier.jsxSingleQuote": false,
 	"prettier.printWidth": 140,
