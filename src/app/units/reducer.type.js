@@ -1,3 +1,3 @@
 export const GAME = {
-	INCREASE: "INCREASE"
+	CLICK_CLONE: "CLICK_CLONE"
 };

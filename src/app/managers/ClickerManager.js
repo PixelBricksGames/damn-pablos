@@ -5,7 +5,7 @@ import { increaseCounter } from "../store/actions/game.action";
 const mapStateToProps = state => state.get("game");
 
 const mapDispatchToProps = dispatch => ({
-	onClicker: (counter) => dispatch(increaseCounter(counter))
+	onClickClone: (counter, increase) => dispatch(increaseCounter(counter, increase))
 });
 
 export default connect(
