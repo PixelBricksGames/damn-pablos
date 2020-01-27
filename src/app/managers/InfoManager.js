@@ -1,8 +1,8 @@
 import { connect } from "react-redux";
-import Counter from "../components/counter/Counter";
+import Info from "./../components/info/Info";
 
 const mapStateToProps = state => state.get("game");
 
 export default connect(
 	mapStateToProps
-)(Counter);
+)(Info);

@@ -1,13 +1,15 @@
 import React from "react";
 import "./Root.scss";
 
-import CounterManager from "./../../managers/CounterManager"
-import ClickerManager from "./../../managers/ClickerManager"
+import InfoManager from "./../../managers/InfoManager";
+import LaboratoryManager from "./../../managers/LaboratoryManager";
+import MenuManager from "./../../managers/MenuManager";
 
 const Root = () => (
     <main className="app">
-		<CounterManager></CounterManager>
-		<ClickerManager></ClickerManager>
+		<InfoManager></InfoManager>
+		<LaboratoryManager></LaboratoryManager>
+		<MenuManager></MenuManager>
 	</main>
 );
 
