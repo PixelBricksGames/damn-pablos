@@ -7,5 +7,8 @@ export const createAgedClone = (agedCloneName) => ({
 
 export const getAgedClone = (agedClones, agedCloneName) => ({
 	...agedClones,
-	[agedCloneName]: agedClones[agedCloneName] + 1
+	[agedCloneName]: {
+		...[agedCloneName],
+		units: agedClones[agedCloneName].units + 1
+	}
 });

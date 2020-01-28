@@ -6,11 +6,11 @@ import "./Info.scss";
 const Info = ({ clones, agedClones }) => (
 	<div className="info">
 		<div>Clones: { clones }</div>
-		<div>Child Clones: { agedClones.child }</div>
-		<div>Teen Clones: { agedClones.teen }</div>
-		<div>Adult Clones: { agedClones.adult }</div>
-		<div>Senior Clones: { agedClones.senior }</div>
-		<div>Ancient Clones: { agedClones.ancient }</div>
+		<div>Child Clones: { agedClones.child.units }</div>
+		<div>Teen Clones: { agedClones.teen.units }</div>
+		<div>Adult Clones: { agedClones.adult.units }</div>
+		<div>Senior Clones: { agedClones.senior.units }</div>
+		<div>Ancient Clones: { agedClones.ancient.units }</div>
 	</div>
 );
 

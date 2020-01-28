@@ -5,7 +5,7 @@ import "./Laboratory.scss";
 
 const Laboratory = ({ onClickClone }) => (
 	<div className="laboratory">
-		<button onClick={() => { onClickClone() }}>CLICK!</button>
+		<button onClick={onClickClone}>CLICK!</button>
 	</div>
 );
 
