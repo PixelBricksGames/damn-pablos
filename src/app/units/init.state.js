@@ -1,4 +1,5 @@
 export const game = {
+	language: 'eng',
 	clones: 0,
 	clonesPerSecond: 0,
 	clonesPerClick: 1,
