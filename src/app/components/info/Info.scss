@@ -1,9 +1,10 @@
-@import "./../../../assets/fonts/pressstart2p/stylesheet.css";
+@import "./../../../assets/fonts/retro-gaming/stylesheet.css";
 
 .info {
 	background-color: red;
 	display: block;
 	padding: 10px 0;
 	width: 100%;
-	font-family: "press_start_2p";
+	font-family: "retro_gaming";
+	-webkit-font-smoothing: antialiased; // subpixel-antialiased;
 }
