@@ -6,19 +6,21 @@ import { translations } from "./../../units/translations";
 
 import "./Info.scss";
 
-const Info = ({ game, agedClones, config }) => (
+const Info = ({ game, tools, agedClones, config }) => (
 	<div className="info">
-		<div>{translations[config.language].game.clones}: { game.clones }</div>
-		<div>{translations[config.language].aged_clones.child_clones}: {agedClones.child.units}</div>
-		<div>{translations[config.language].aged_clones.teen_clones}: {agedClones.teen.units}</div>
-		<div>{translations[config.language].aged_clones.adult_clones}: {agedClones.adult.units}</div>
-		<div>{translations[config.language].aged_clones.senior_clones}: {agedClones.senior.units}</div>
-		<div>{translations[config.language].aged_clones.ancient_clones}: {agedClones.ancient.units}</div>
+		<div>{translations[config.language].GAME.CLONES}: { game.clones }</div>
+		<div>{translations[config.language].TOOLS.CRONJOB}: { tools.cronjob.units }</div>
+		<div>{translations[config.language].AGED_CLONES.CHILD}: {agedClones.child.units}</div>
+		<div>{translations[config.language].AGED_CLONES.TEEN}: {agedClones.teen.units}</div>
+		<div>{translations[config.language].AGED_CLONES.ADULT}: {agedClones.adult.units}</div>
+		<div>{translations[config.language].AGED_CLONES.SENIOR}: {agedClones.senior.units}</div>
+		<div>{translations[config.language].AGED_CLONES.ANCIENT}: {agedClones.ancient.units}</div>
 	</div>
 );
 
 Info.propTypes = {
 	// game: PropTypes.shape({}).isRequired
+	// tools: PropTypes.shape({}).isRequired
 	agedClones: PropTypes.shape({
 		child: PropTypes.shape(IAgedClone).isRequired,
 		teen: PropTypes.shape(IAgedClone).isRequired,

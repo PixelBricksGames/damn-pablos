@@ -2,6 +2,10 @@ export const CONST = {
 	VALUE: "value"
 };
 
+export const TOOLS = {
+	CRONJOB: "cronjob"
+};
+
 export const AGED_CLONES = {
 	CHILD: "child",
 	TEEN: "teen",

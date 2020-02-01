@@ -1,8 +1,9 @@
 export const tools = {
 	cronjob: {
 		active: false,
-		unlock: 10,
-		price: 25,
-		units: 0
+		unlock: 25,
+		price: 0.5,
+		units: 0,
+		increment: 0.1
 	}
 };

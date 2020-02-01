@@ -3,8 +3,9 @@ import Info from "./../components/info/Info";
 
 const mapStateToProps = state => ({
 	game: state.get("game"),
+	tools: state.get("tools"),
 	agedClones: state.get("agedClones"),
-	config: state.get("configuration"),
+	config: state.get("configuration")
 });
 
 export default connect(

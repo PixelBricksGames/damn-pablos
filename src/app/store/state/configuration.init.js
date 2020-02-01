@@ -1,3 +1,3 @@
 export const configuration = {
-	language: 'eng'
+	language: 'ENG'
 };
