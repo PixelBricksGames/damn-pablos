@@ -11,16 +11,16 @@ export const agedClones = {
 		price: 200,
 		units: 0
 	},
-	senior: {
-		active: false,
-		unlock: 250,
-		price: 300,
-		units: 0
-	},
 	adult: {
 		active: false,
 		unlock: 350,
 		price: 400,
+		units: 0
+	},
+	senior: {
+		active: false,
+		unlock: 250,
+		price: 300,
 		units: 0
 	},
 	ancient: {

@@ -4,6 +4,7 @@ import game from "./reducers/game.reducer";
 import tools from "./reducers/tools.reducer";
 import agedClones from "./reducers/aged-clones.reducer";
 import specialClones from "./reducers/special-clones.reducer";
+import stats from "./reducers/stats.reducer";
 import configuration from "./reducers/configuration.reducer";
 
 const rootReducer = combineReducers({
@@ -11,6 +12,7 @@ const rootReducer = combineReducers({
 	tools,
 	agedClones,
 	specialClones,
+	stats,
 	configuration
 });
 
