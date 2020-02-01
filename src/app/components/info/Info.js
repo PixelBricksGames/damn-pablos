@@ -1,6 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 
+import { IAgedClone } from "../../interfaces/aged-clones.interface";
 import { translations } from "./../../units/translations";
 
 import "./Info.scss";
@@ -16,4 +17,15 @@ const Info = ({ game, agedClones, config }) => (
 	</div>
 );
 
+Info.propTypes = {
+	// game: PropTypes.shape({}).isRequired
+	agedClones: PropTypes.shape({
+		child: PropTypes.shape(IAgedClone).isRequired,
+		teen: PropTypes.shape(IAgedClone).isRequired,
+		adult: PropTypes.shape(IAgedClone).isRequired,
+		senior: PropTypes.shape(IAgedClone).isRequired,
+		ancient: PropTypes.shape(IAgedClone).isRequired
+	}).isRequired,
+	// config: PropTypes.shape({}).isRequired
+};
 export default Info;

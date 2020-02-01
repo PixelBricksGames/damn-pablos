@@ -40,5 +40,6 @@ export default agedClones;
 const getAgedCloneState = (state, agedClone) => {
 	const newAgedClone = state[agedClone];
 	newAgedClone.units = state[agedClone].units + 1;
+	newAgedClone.price = state[agedClone].units + state[agedClone].price
 	return newAgedClone;
 }

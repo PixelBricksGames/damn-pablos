@@ -9,17 +9,29 @@ import { createAncientClone } from "../store/actions/aged-clones.action";
 
 import { deleteClones } from "../store/actions/game.action";
 
-const mapStateToProps = state => state.get("game");
+const mapStateToProps = state => state.get("agedClones");
 
 const mapDispatchToProps = dispatch => ({
-	onClickChildClone: () => {
+	onClickChildClone: (price) => {
 		dispatch(createChildClone());
-		dispatch(deleteClones(1));
+		dispatch(deleteClones(price));
 	},
-	onClickTeenClone: () => dispatch(createTeenClone()),
-	onClickAdultClone: () => dispatch(createAdultClone()),
-	onClickSeniorClone: () => dispatch(createSeniorClone()),
-	onClickAncientClone: () => dispatch(createAncientClone()),
+	onClickTeenClone: (price) => {
+		dispatch(createTeenClone());
+		dispatch(deleteClones(price));
+	},
+	onClickAdultClone: (price) => {
+		dispatch(createAdultClone());
+		dispatch(deleteClones(price));
+	},
+	onClickSeniorClone: (price) => {
+		dispatch(createSeniorClone());
+		dispatch(deleteClones(price));
+	},
+	onClickAncientClone: (price) => {
+		dispatch(createAncientClone());
+		dispatch(deleteClones(price));
+	},
 });
 
 export default connect(
