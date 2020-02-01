@@ -1,10 +1,12 @@
 export const game = {
-	language: 'eng',
-	clones: 0,
-	clonesPerSecond: 0,
-	clonesPerClick: 1,
-	clonesInTotal: 0,
-	agingSerum: 0,
+	info: {
+		language: 'eng',
+		clones: 0,
+		clonesPerSecond: 0,
+		clonesPerClick: 1,
+		clonesInTotal: 0,
+		agingSerum: 0,
+	},
 	tools: {
 		cronjob: {
 			active: false,

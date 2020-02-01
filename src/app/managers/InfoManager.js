@@ -1,7 +1,11 @@
 import { connect } from "react-redux";
 import Info from "./../components/info/Info";
 
-const mapStateToProps = state => state.get("game");
+const mapStateToProps = state => ({
+	game: state.get("game"),
+	agedClones: state.get("agedClones"),
+	config: state.get("configuration"),
+});
 
 export default connect(
 	mapStateToProps

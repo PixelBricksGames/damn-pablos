@@ -1,7 +1,7 @@
-import * as reducerType from "../../units/reducer.type";
+import * as actionType from "../../units/actions.type";
 
 export const createAgedClone = (agedCloneName) => ({
-	type: reducerType.GAME.CREATE_AGED_CLONE,
+	type: actionType.GAME.CREATE_AGED_CLONE,
 	agedCloneName
 });
 
