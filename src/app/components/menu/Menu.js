@@ -28,7 +28,7 @@ const Menu = ({
 			units={ tools.autoClone.units }
 			price={ tools.autoClone.price }
 			onClick={() => {
-				onClickAutoClone(tools.autoClone.price);
+				onClickAutoClone(tools.autoClone);
 			}}
 		/>
 		<MenuButton

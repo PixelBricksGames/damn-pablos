@@ -3,6 +3,8 @@ import { batchActions } from 'redux-batched-actions';
 
 import Menu from "./Menu";
 
+import { updateClonesPerSecond } from "../../store/actions/game.action";
+
 import { createAutoClone } from "../../store/actions/tools.action";
 import { createAutoSerum } from "../../store/actions/tools.action";
 
@@ -22,7 +24,11 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-	onClickAutoClone: (price) => dispatch(createAutoClone()),
+	onClickAutoClone: (autoClone) => dispatch(createAutoClone()),
+	// onClickAutoClone: (autoClone) => dispatch(batchActions([
+	// 	createAutoClone(),
+	// 	updateClonesPerSecond((autoClone.units + 1) * autoClone.perSecond)
+	// ])),
 	onClickAutoSerum: (price) => dispatch(createAutoSerum()),
 	onClickChildClone: (price) => dispatch(batchActions([
 		createChildClone(),
