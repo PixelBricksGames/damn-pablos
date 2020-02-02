@@ -1,16 +1,16 @@
 import { connect } from "react-redux";
-import Menu from "./../components/menu/Menu";
+import Menu from "./Menu";
 
-import { createCronjob } from "../store/actions/tools.action";
+import { createCronjob } from "../../store/actions/tools.action";
 
-import { createChildClone } from "../store/actions/aged-clones.action";
-import { createTeenClone } from "../store/actions/aged-clones.action";
-import { createAdultClone } from "../store/actions/aged-clones.action";
-import { createSeniorClone } from "../store/actions/aged-clones.action";
-import { createAncientClone } from "../store/actions/aged-clones.action";
+import { createChildClone } from "../../store/actions/aged-clones.action";
+import { createTeenClone } from "../../store/actions/aged-clones.action";
+import { createAdultClone } from "../../store/actions/aged-clones.action";
+import { createSeniorClone } from "../../store/actions/aged-clones.action";
+import { createAncientClone } from "../../store/actions/aged-clones.action";
 
-import { payMoney } from "../store/actions/game.action";
-import { deleteClones } from "../store/actions/game.action";
+import { payMoney } from "../../store/actions/game.action";
+import { deleteClones } from "../../store/actions/game.action";
 
 const mapStateToProps = state => ({
 	tools: state.get("tools"),

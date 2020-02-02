@@ -1,15 +1,15 @@
 import React from "react";
 import "./Root.scss";
 
-import InfoManager from "./../../managers/InfoManager";
-import LaboratoryManager from "./../../managers/LaboratoryManager";
-import MenuManager from "./../../managers/MenuManager";
+import InfoContainer from "../info/Info.container";
+import LaboratoryContainer from "../laboratory/Laboratory.container";
+import MenuContainer from "../menu/Menu.container";
 
 const Root = () => (
     <main className="app">
-		<InfoManager></InfoManager>
-		<LaboratoryManager></LaboratoryManager>
-		<MenuManager></MenuManager>
+		<InfoContainer></InfoContainer>
+		<LaboratoryContainer></LaboratoryContainer>
+		<MenuContainer></MenuContainer>
 	</main>
 );
 

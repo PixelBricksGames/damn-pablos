@@ -1,9 +1,9 @@
 import { connect } from "react-redux";
-import Laboratory from "./../components/laboratory/Laboratory";
+import Laboratory from "./Laboratory";
 
-import { createClones } from "./../store/actions/game.action";
+import { createClones } from "../../store/actions/game.action";
 
-import { createChildClone } from "../store/actions/aged-clones.action";
+import { createChildClone } from "../../store/actions/aged-clones.action";
 
 const mapStateToProps = state => state.get("game");
 
