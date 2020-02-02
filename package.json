@@ -17,7 +17,7 @@
     "@babel/preset-env": "^7.4.5",
     "@babel/preset-flow": "^7.8.3",
     "@babel/preset-react": "^7.0.0",
-    "@pabrick/roger": "^1.0.12",
+    "@pabrick/roger": "^1.0.13",
     "@types/immutable": "^3.8.7",
     "babel-loader": "^8.0.6",
     "copy-webpack-plugin": "^5.0.3",
@@ -42,6 +42,7 @@
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "react-redux": "^7.0.3",
-    "redux": "^4.0.4"
+    "redux": "^4.0.4",
+    "redux-batched-actions": "^0.4.1"
   }
 }
