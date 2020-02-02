@@ -3,7 +3,8 @@ export const CONST = {
 };
 
 export const TOOLS = {
-	CRONJOB: "cronjob"
+	AUTO_CLONE: "autoClone",
+	AUTO_SERUM: "autoSerum"
 };
 
 export const AGED_CLONES = {

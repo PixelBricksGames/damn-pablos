@@ -13,7 +13,8 @@ const Menu = ({
 		tools,
 		agedClones,
 		config,
-		onClickCronjob,
+		onClickAutoClone,
+		onClickAutoSerum,
 		onClickChildClone,
 		onClickTeenClone,
 		onClickAdultClone,
@@ -22,11 +23,20 @@ const Menu = ({
 	}) => (
 	<div className="menu">
 		<MenuButton
-			id={ CONSTANST.TOOLS.CRONJOB }
-			title={ translations[config.language].TOOLS.CRONJOB }
-			units={ tools.cronjob.units }
-			price={ tools.cronjob.price }
-			onClick={() => { onClickCronjob(agedClones.child.price) }}
+			id={ CONSTANST.TOOLS.AUTO_CLONE }
+			title={ translations[config.language].TOOLS.AUTO_CLONE }
+			units={ tools.autoClone.units }
+			price={ tools.autoClone.price }
+			onClick={() => {
+				onClickAutoClone(tools.autoClone.price);
+			}}
+		/>
+		<MenuButton
+			id={ CONSTANST.TOOLS.AUTO_SERUM }
+			title={ translations[config.language].TOOLS.AUTO_SERUM }
+			units={ tools.autoSerum.units }
+			price={ tools.autoSerum.price }
+			onClick={() => { onClickAutoSerum(tools.autoSerum.price) }}
 		/>
 		<MenuButton
 			id={ CONSTANST.AGED_CLONES.CHILD }
@@ -72,7 +82,8 @@ Menu.propTypes = {
 	// adult: PropTypes.shape(IAgedClone).isRequired,
 	// senior: PropTypes.shape(IAgedClone).isRequired,
 	// ancient: PropTypes.shape(IAgedClone).isRequired,
-	onClickCronjob: PropTypes.func.isRequired,
+	onClickAutoClone: PropTypes.func.isRequired,
+	onClickAutoSerum: PropTypes.func.isRequired,
 	onClickChildClone: PropTypes.func.isRequired,
 	onClickTeenClone: PropTypes.func.isRequired,
 	onClickAdultClone: PropTypes.func.isRequired,

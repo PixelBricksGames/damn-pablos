@@ -1,7 +1,10 @@
 import { connect } from "react-redux";
+import { batchActions } from 'redux-batched-actions';
+
 import Menu from "./Menu";
 
-import { createCronjob } from "../../store/actions/tools.action";
+import { createAutoClone } from "../../store/actions/tools.action";
+import { createAutoSerum } from "../../store/actions/tools.action";
 
 import { createChildClone } from "../../store/actions/aged-clones.action";
 import { createTeenClone } from "../../store/actions/aged-clones.action";
@@ -19,29 +22,28 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-	onClickCronjob: () => {
-		dispatch(createCronjob());
-	},
-	onClickChildClone: (price) => {
-		dispatch(createChildClone());
-		dispatch(deleteClones(price));
-	},
-	onClickTeenClone: (price) => {
-		dispatch(createTeenClone());
-		dispatch(deleteClones(price));
-	},
-	onClickAdultClone: (price) => {
-		dispatch(createAdultClone());
-		dispatch(deleteClones(price));
-	},
-	onClickSeniorClone: (price) => {
-		dispatch(createSeniorClone());
-		dispatch(deleteClones(price));
-	},
-	onClickAncientClone: (price) => {
-		dispatch(createAncientClone());
-		dispatch(deleteClones(price));
-	},
+	onClickAutoClone: (price) => dispatch(createAutoClone()),
+	onClickAutoSerum: (price) => dispatch(createAutoSerum()),
+	onClickChildClone: (price) => dispatch(batchActions([
+		createChildClone(),
+		deleteClones(price)
+	])),
+	onClickTeenClone: (price) => dispatch(batchActions([
+		createTeenClone(),
+		deleteClones(price)
+	])),
+	onClickAdultClone: (price) => dispatch(batchActions([
+		createAdultClone(),
+		deleteClones(price)
+	])),
+	onClickSeniorClone: (price) => dispatch(batchActions([
+		createSeniorClone(),
+		deleteClones(price)
+	])),
+	onClickAncientClone: (price) => dispatch(batchActions([
+		createAncientClone(),
+		deleteClones(price)
+	]))
 });
 
 export default connect(

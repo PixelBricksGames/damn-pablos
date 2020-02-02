@@ -9,7 +9,8 @@ import "./Info.scss";
 const Info = ({ game, tools, agedClones, config }) => (
 	<div className="info">
 		<div>{translations[config.language].GAME.CLONES}: { game.clones }</div>
-		<div>{translations[config.language].TOOLS.CRONJOB}: { tools.cronjob.units }</div>
+		<div>{translations[config.language].TOOLS.AUTO_CLONE}: { tools.autoClone.units }</div>
+		<div>{translations[config.language].TOOLS.AUTO_SERUM}: { tools.autoSerum.units }</div>
 		<div>{translations[config.language].AGED_CLONES.CHILD}: {agedClones.child.units}</div>
 		<div>{translations[config.language].AGED_CLONES.TEEN}: {agedClones.teen.units}</div>
 		<div>{translations[config.language].AGED_CLONES.ADULT}: {agedClones.adult.units}</div>

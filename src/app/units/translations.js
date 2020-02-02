@@ -5,7 +5,8 @@ export const translations = {
 			CLONES_PER_SECOND: 'per second'
 		},
 		TOOLS: {
-			CRONJOB: 'Cronjobs'
+			AUTO_CLONE: 'Auto-Clone',
+			AUTO_SERUM: 'Auto-Serum',
 		},
 		AGED_CLONES: {
 			CHILD: 'Child Clones',

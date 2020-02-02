@@ -5,10 +5,15 @@ import { TOOLS } from "./../../units/constants";
 
 const tools = (state = initState.tools, action) => {
 	switch (action.type) {
-		case actionType.TOOLS.CREATE_CRONJOB:
+		case actionType.TOOLS.CREATE_AUTO_CLONE:
 			return {
 				...state,
-				cronjob: getToolState(state, TOOLS.CRONJOB)
+				autoClone: getToolState(state, TOOLS.AUTO_CLONE)
+			};
+		case actionType.TOOLS.CREATE_AUTO_SERUM:
+			return {
+				...state,
+				autoSerum: getToolState(state, TOOLS.AUTO_SERUM)
 			};
 		default:
 			return state;
