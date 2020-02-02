@@ -6,11 +6,15 @@ const time = (state = initState.time, action) => {
 		case actionType.TIME.UPDATE:
 			return {
 				...state,
-				miliseconds: action.miliseconds
+				miliseconds: fixJSAddition(state.miliseconds, action.miliseconds)
 			};
 		default:
 			return state;
 	}
+};
+
+const fixJSAddition = (miliseconds1, miliseconds2) => {
+	return ((miliseconds1 * 1000) + (miliseconds2 * 1000)) / 1000;
 };
 
 export default time;

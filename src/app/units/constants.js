@@ -1,5 +1,5 @@
-export const CONST = {
-	VALUE: "value"
+export const TIME = {
+	DELTA: 0.1
 };
 
 export const TOOLS = {
