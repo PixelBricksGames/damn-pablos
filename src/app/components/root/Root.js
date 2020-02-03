@@ -1,7 +1,7 @@
 import React from "react";
 import "./Root.scss";
 
-import { timeService } from "./../../services/time.service";
+import { timeService } from "../../services/time.service";
 
 import InfoContainer from "../info/Info.container";
 import LaboratoryContainer from "../laboratory/Laboratory.container";

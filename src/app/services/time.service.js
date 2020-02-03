@@ -1,9 +1,9 @@
 import store from "../store";
 import { batchActions } from 'redux-batched-actions';
 
-import { TIME } from "../units/constants";
-import { updateTimer } from "../store/actions/time.action";
-import { updateGame } from "../store/actions/game.action";
+import * as Utils from "../utils/utils";
+import { updateTimer, updatePartialSeconds, clearPartialSeconds } from "../store/actions/time.action";
+import { updateClones, updateClonesPerSecond } from "../store/actions/game.action";
 
 // import Roger from "@pabrick/roger";
 
@@ -27,15 +27,35 @@ const timeService = {
 	clearTimeInterval: null,
 	start: () => {
 		timeService.clearTimeInterval = setInterval(() => {
-			const currentStore = store.getState();
-			const game = currentStore.get("game");
 
-			store.dispatch(batchActions([
-				updateTimer(0.1),
-				// updateGame(game)
-			]));
+			const state = store.getState();
+			const game = state.get("game");
+			const tools = state.get("tools");
+			const agedClones = state.get("agedClones");
+			const specialClones = state.get("specialClones");
+			const time = state.get("time");
 
-		}, 1000);
+			const autoClonesIncrement = Utils.fixJSMultiplier(tools.autoClone.units, tools.autoClone.perSecond);
+			const totalClonesPerSecond = autoClonesIncrement;
+
+			const clonesToAdd = parseInt(Utils.fixJSMultiplier(time.partialSeconds, totalClonesPerSecond), 10);
+
+			console.log("clonesToAdd", clonesToAdd);
+			if(clonesToAdd >= 1) {
+				store.dispatch(batchActions([
+					updateTimer(),
+					clearPartialSeconds(),
+					updateClones(clonesToAdd),
+					updateClonesPerSecond(totalClonesPerSecond)
+				]));
+			} else {
+				store.dispatch(batchActions([
+					updateTimer(),
+					updatePartialSeconds(),
+					updateClonesPerSecond(totalClonesPerSecond)
+				]));
+			}
+		}, 100);
 	}
 };
 

@@ -1,22 +1,28 @@
 import * as actionType from "../../units/actions.type";
 import * as initState from "../state/time.init";
+import * as Utils from "../../utils/utils";
+import { TIME } from "../../units/constants";
 
 const time = (state = initState.time, action) => {
 	switch (action.type) {
 		case actionType.TIME.UPDATE:
-			console.log("timeReducer: ", action);
-			console.log("timeReducer (state): ", state);
 			return {
 				...state,
-				seconds: fixJSAddition(state.seconds, action.seconds)
+				seconds: Utils.fixJSAddition(state.seconds, TIME.DELTA)
+			};
+		case actionType.TIME.UPDATE_PARTIAL_SECONDS:
+			return {
+				...state,
+				partialSeconds: Utils.fixJSAddition(state.partialSeconds, TIME.DELTA)
+			};
+		case actionType.TIME.CLEAR_PARTIAL_SECONDS:
+			return {
+				...state,
+				partialSeconds: 0
 			};
 		default:
 			return state;
 	}
-};
-
-const fixJSAddition = (seconds1, seconds2) => {
-	return Math.round((seconds1 + seconds2) * 1e12) / 1e12;
 };
 
 export default time;
