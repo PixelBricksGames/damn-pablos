@@ -2,8 +2,8 @@ import store from "../store";
 import { batchActions } from 'redux-batched-actions';
 
 import * as Utils from "../utils/utils";
-import { updateTimer, updatePartialSeconds, clearPartialSeconds } from "../store/actions/time.action";
-import { updateClones, updateClonesPerSecond } from "../store/actions/game.action";
+import { updateTimeTotal, updateTimeSec, updateTimeDec, clearTimeSec, clearTimeDec } from "../store/actions/time.action";
+import { createClones, updateClonesPerSecond } from "../store/actions/game.action";
 
 // import Roger from "@pabrick/roger";
 
@@ -35,26 +35,33 @@ const timeService = {
 			const specialClones = state.get("specialClones");
 			const time = state.get("time");
 
-			const autoClonesIncrement = Utils.fixJSMultiplier(tools.autoClone.units, tools.autoClone.perSecond);
-			const totalClonesPerSecond = autoClonesIncrement;
+			const autoClonesIncrement = Utils.fixMultiplier(tools.autoClone.units, tools.autoClone.perSecond);
+			const childClonesIncrement = 0;
+			const totalClonesPerSecond = autoClonesIncrement + childClonesIncrement;
+			const clonesToAddPerSecond = parseInt(totalClonesPerSecond, 10);
+			const restClonesToAdd = Utils.fixSubstraction(totalClonesPerSecond, clonesToAddPerSecond);
 
-			const clonesToAdd = parseInt(Utils.fixJSMultiplier(time.partialSeconds, totalClonesPerSecond), 10);
-
-			console.log("clonesToAdd", clonesToAdd);
-			if(clonesToAdd >= 1) {
+			if(time.dec >= 1) {
 				store.dispatch(batchActions([
-					updateTimer(),
-					clearPartialSeconds(),
-					updateClones(clonesToAdd),
-					updateClonesPerSecond(totalClonesPerSecond)
-				]));
-			} else {
-				store.dispatch(batchActions([
-					updateTimer(),
-					updatePartialSeconds(),
-					updateClonesPerSecond(totalClonesPerSecond)
+					clearTimeDec(),
+					createClones(clonesToAddPerSecond)
 				]));
 			}
+
+			if(time.sec >= (1 / restClonesToAdd)) {
+				store.dispatch(batchActions([
+					clearTimeSec(),
+					createClones(1),
+				]));
+			}
+
+			store.dispatch(batchActions([
+				updateTimeTotal(),
+				updateTimeSec(),
+				updateTimeDec(),
+				updateClonesPerSecond(totalClonesPerSecond)
+			]));
+
 		}, 100);
 	}
 };

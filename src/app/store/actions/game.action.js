@@ -2,8 +2,7 @@ import * as actionType from "../../units/actions.type";
 
 export const createClones = (clones, clonesPerClick) => ({
 	type: actionType.GAME.CREATE_CLONES,
-	clones,
-	clonesPerClick
+	clones
 });
 
 export const deleteClones = (clones) => ({

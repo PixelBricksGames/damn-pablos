@@ -6,7 +6,7 @@ import { createClones } from "../../store/actions/game.action";
 const mapStateToProps = state => state.get("game");
 
 const mapDispatchToProps = dispatch => ({
-	onClickClone: (clones, clonesPerClick) => dispatch(createClones(clones, clonesPerClick))
+	onClickClone: (clonesPerClick) => dispatch(createClones(clonesPerClick))
 });
 
 export default connect(

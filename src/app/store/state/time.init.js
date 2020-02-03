@@ -1,4 +1,5 @@
 export const time = {
-	seconds: 0,
-	partialSeconds: 0
+	total: 0,
+	sec: 0,
+	dec: 0
 };

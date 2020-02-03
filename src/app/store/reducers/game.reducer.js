@@ -16,7 +16,7 @@ const game = (state = initState.game, action) => {
 		case actionType.GAME.CREATE_CLONES:
 			return {
 				...state,
-				clones: action.clones + action.clonesPerClick
+				clones: state.clones + action.clones
 			};
 		case actionType.GAME.DELETE_CLONES:
 			return {

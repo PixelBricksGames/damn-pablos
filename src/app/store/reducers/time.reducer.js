@@ -5,20 +5,30 @@ import { TIME } from "../../units/constants";
 
 const time = (state = initState.time, action) => {
 	switch (action.type) {
-		case actionType.TIME.UPDATE:
+		case actionType.TIME.UPDATE_TOTAL:
 			return {
 				...state,
-				seconds: Utils.fixJSAddition(state.seconds, TIME.DELTA)
+				total: Utils.fixAddition(state.total, TIME.DELTA)
 			};
-		case actionType.TIME.UPDATE_PARTIAL_SECONDS:
+		case actionType.TIME.UPDATE_SEC:
 			return {
 				...state,
-				partialSeconds: Utils.fixJSAddition(state.partialSeconds, TIME.DELTA)
+				sec: Utils.fixAddition(state.sec, TIME.DELTA)
 			};
-		case actionType.TIME.CLEAR_PARTIAL_SECONDS:
+		case actionType.TIME.UPDATE_DEC:
 			return {
 				...state,
-				partialSeconds: 0
+				dec: Utils.fixAddition(state.dec, TIME.DELTA)
+			};
+		case actionType.TIME.CLEAR_SEC:
+			return {
+				...state,
+				sec: 0
+			};
+		case actionType.TIME.CLEAR_DEC:
+			return {
+				...state,
+				dec: 0
 			};
 		default:
 			return state;
