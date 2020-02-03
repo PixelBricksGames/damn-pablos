@@ -1,7 +1,9 @@
 import React, { Component, Fragment } from "react";
 import PropTypes from "prop-types";
-import { update } from "immutable";
+
 import { TIME } from "../../units/constants";
+import { updateTimer } from "../../store/actions/time.action";
+import { updateGame } from "../../store/actions/game.action";
 
 // import Roger from "@pabrick/roger";
 
@@ -21,8 +23,10 @@ import { TIME } from "../../units/constants";
 // 	rClock.stop();
 // }, 2000);
 
-const TimeShell = ({ game, tools, agedClones, specialClones, config, updateGame, children }) => {
+const TimeShell = ({ updateGame, children }) => {
+	console.log("Reload");
 	const stopTimeInterval = setInterval(() => {
+		updateTimer(),
 		updateGame(TIME.DELTA);
 	}, 1000);
 	return <Fragment>{ children }</Fragment>;

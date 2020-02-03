@@ -15,13 +15,13 @@ const mapStateToProps = state => {
 		specialClones: state.get("specialClones"),
 		config: state.get("configuration")
 	};
-	return state;
+	return {};
 };
 
 const mapDispatchToProps = dispatch => ({
 	updateGame: (delta) => dispatch(batchActions([
 		updateTimer(delta),
-		updateGame(delta)
+		updateGame(state)
 	])),
 });
 

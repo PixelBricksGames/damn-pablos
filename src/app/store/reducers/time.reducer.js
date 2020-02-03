@@ -4,6 +4,8 @@ import * as initState from "../state/time.init";
 const time = (state = initState.time, action) => {
 	switch (action.type) {
 		case actionType.TIME.UPDATE:
+			console.log("timeReducer: ", action);
+			console.log("timeReducer (state): ", state);
 			return {
 				...state,
 				miliseconds: fixJSAddition(state.miliseconds, action.miliseconds)

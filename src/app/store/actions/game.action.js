@@ -1,7 +1,7 @@
 import * as actionType from "../../units/actions.type";
 
 export const updateGame = (state) => {
-	console.log(state);
+	console.log("updateGame", state);
 	return {
 		type: actionType.GAME.UPDATE.CLONES_PER_SECOND,
 		game: {
