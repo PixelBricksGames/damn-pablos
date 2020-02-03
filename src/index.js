@@ -5,8 +5,6 @@ import { Provider } from "react-redux";
 import Root from "./app/components/root/Root";
 import store from "./app/store";
 
-import TimeShell from "./app/components/time-shell/TimeShell";
-
 render(
     <Provider store={store}>
         <Root />

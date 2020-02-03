@@ -1,3 +1,3 @@
 export const time = {
-	miliseconds: 0
+	seconds: 0
 };

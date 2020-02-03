@@ -8,15 +8,15 @@ const time = (state = initState.time, action) => {
 			console.log("timeReducer (state): ", state);
 			return {
 				...state,
-				miliseconds: fixJSAddition(state.miliseconds, action.miliseconds)
+				seconds: fixJSAddition(state.seconds, action.seconds)
 			};
 		default:
 			return state;
 	}
 };
 
-const fixJSAddition = (miliseconds1, miliseconds2) => {
-	return ((miliseconds1 * 1000) + (miliseconds2 * 1000)) / 1000;
+const fixJSAddition = (seconds1, seconds2) => {
+	return Math.round((seconds1 + seconds2) * 1e12) / 1e12;
 };
 
 export default time;

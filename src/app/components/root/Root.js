@@ -1,8 +1,8 @@
 import React from "react";
 import "./Root.scss";
 
-import { timeService } from "./../services/time.service";
-import TimeShellContainer from "../time-shell/TimeShell.container";
+import { timeService } from "./../../services/time.service";
+
 import InfoContainer from "../info/Info.container";
 import LaboratoryContainer from "../laboratory/Laboratory.container";
 import MenuContainer from "../menu/Menu.container";
