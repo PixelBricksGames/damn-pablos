@@ -1,12 +1,12 @@
 import { connect } from "react-redux";
 import Laboratory from "./Laboratory";
 
-import { createClones } from "../../store/actions/game.action";
+import { createFetusClone } from "./../../store/actions/clones/fetus.action";
 
 const mapStateToProps = state => state.get("game");
 
 const mapDispatchToProps = dispatch => ({
-	onClickClone: (clonesPerClick) => dispatch(createClones(clonesPerClick))
+	onClickClone: (clonesPerClick) => dispatch(createFetusClone(clonesPerClick))
 });
 
 export default connect(

@@ -8,48 +8,48 @@ import { updateClonesPerSecond } from "../../store/actions/game.action";
 import { createAutoClone } from "../../store/actions/tools.action";
 import { createAutoSerum } from "../../store/actions/tools.action";
 
-import { createChildClone } from "../../store/actions/aged-clones.action";
-import { createTeenClone } from "../../store/actions/aged-clones.action";
-import { createAdultClone } from "../../store/actions/aged-clones.action";
-import { createSeniorClone } from "../../store/actions/aged-clones.action";
-import { createAncientClone } from "../../store/actions/aged-clones.action";
+// import { createChildClone } from "../../store/actions/aged-clones.action";
+// import { createTeenClone } from "../../store/actions/aged-clones.action";
+// import { createAdultClone } from "../../store/actions/aged-clones.action";
+// import { createSeniorClone } from "../../store/actions/aged-clones.action";
+// import { createAncientClone } from "../../store/actions/aged-clones.action";
 
 import { payMoney } from "../../store/actions/game.action";
 import { deleteClones } from "../../store/actions/game.action";
 
 const mapStateToProps = state => ({
 	tools: state.get("tools"),
-	agedClones: state.get("agedClones"),
+	clones: state.get("clones"),
 	config: state.get("configuration")
 });
 
 const mapDispatchToProps = dispatch => ({
-	onClickAutoClone: (autoClone) => dispatch(createAutoClone()),
+	onClickAutoClone: () => dispatch(createAutoClone()),
 	// onClickAutoClone: (autoClone) => dispatch(batchActions([
 	// 	createAutoClone(),
-	// 	updateClonesPerSecond((autoClone.units + 1) * autoClone.perSecond)
+	// 	updateClonesPerSecond((autoClone.amount + 1) * autoClone.perSecond)
 	// ])),
-	onClickAutoSerum: (price) => dispatch(createAutoSerum()),
-	onClickChildClone: (price) => dispatch(batchActions([
-		createChildClone(),
-		deleteClones(price)
-	])),
-	onClickTeenClone: (price) => dispatch(batchActions([
-		createTeenClone(),
-		deleteClones(price)
-	])),
-	onClickAdultClone: (price) => dispatch(batchActions([
-		createAdultClone(),
-		deleteClones(price)
-	])),
-	onClickSeniorClone: (price) => dispatch(batchActions([
-		createSeniorClone(),
-		deleteClones(price)
-	])),
-	onClickAncientClone: (price) => dispatch(batchActions([
-		createAncientClone(),
-		deleteClones(price)
-	]))
+	// onClickAutoSerum: (cost) => dispatch(createAutoSerum()),
+	// onClickChildClone: (cost) => dispatch(batchActions([
+	// 	createChildClone(),
+	// 	deleteClones(cost)
+	// ])),
+	// onClickTeenClone: (cost) => dispatch(batchActions([
+	// 	createTeenClone(),
+	// 	deleteClones(cost)
+	// ])),
+	// onClickAdultClone: (cost) => dispatch(batchActions([
+	// 	createAdultClone(),
+	// 	deleteClones(cost)
+	// ])),
+	// onClickSeniorClone: (cost) => dispatch(batchActions([
+	// 	createSeniorClone(),
+	// 	deleteClones(cost)
+	// ])),
+	// onClickAncientClone: (cost) => dispatch(batchActions([
+	// 	createAncientClone(),
+	// 	deleteClones(cost)
+	// ]))
 });
 
 export default connect(
