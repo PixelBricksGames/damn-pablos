@@ -3,7 +3,8 @@ import { batchActions } from 'redux-batched-actions';
 
 import * as Utils from "../utils/utils";
 import { updateTimeTotal, updateTimeSec, updateTimeDec, clearTimeSec, clearTimeDec } from "../store/actions/time.action";
-import { createClones, updateClonesPerSecond } from "../store/actions/game.action";
+import { updateClonesPerSecond } from "../store/actions/game.action";
+import { createFetusClone } from "../store/actions/clones/fetus.action";
 
 // import Roger from "@pabrick/roger";
 
@@ -29,29 +30,32 @@ const timeService = {
 		timeService.clearTimeInterval = setInterval(() => {
 
 			const state = store.getState();
+
 			const game = state.get("game");
 			const tools = state.get("tools");
-			const agedClones = state.get("agedClones");
-			const specialClones = state.get("specialClones");
+			const clones = state.get("clones");
 			const time = state.get("time");
 
-			const autoClonesIncrement = Utils.fixMultiplier(tools.autoClone.units, tools.autoClone.perSecond);
-			const childClonesIncrement = 0;
-			const totalClonesPerSecond = autoClonesIncrement + childClonesIncrement;
+			const autoClonesIncrement = Utils.fixMultiplier(tools.autoClone.amount, tools.autoClone.perSecond);
+
+			// TODO const childClonesIncrement = 0;
+
+			const totalClonesPerSecond = autoClonesIncrement; // TODO + childClonesIncrement;
 			const clonesToAddPerSecond = parseInt(totalClonesPerSecond, 10);
 			const restClonesToAdd = Utils.fixSubstraction(totalClonesPerSecond, clonesToAddPerSecond);
 
 			if(time.dec >= 1) {
 				store.dispatch(batchActions([
 					clearTimeDec(),
-					createClones(clonesToAddPerSecond)
+					createFetusClone(clonesToAddPerSecond)
 				]));
 			}
 
 			if(time.sec >= (1 / restClonesToAdd)) {
+				console.log("time.sec", restClonesToAdd);
 				store.dispatch(batchActions([
 					clearTimeSec(),
-					createClones(1),
+					createFetusClone(1),
 				]));
 			}
 

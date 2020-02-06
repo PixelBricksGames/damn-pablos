@@ -2,21 +2,23 @@ export const clones = {
 	fetus: {
 		active: true,
 		unlock: 0,
-		units: 0,
-		price: {
+		amount: 0,
+		cost: {
+			clones: 0,
 			money: 0,
 			agingSerum: 0,
 			angerSerum: 0,
 			lustSerum: 0,
 		},
-		increment: {
-			price: 0,
-			clonesPerSecond: 0
-		},
-		serum: {
+		revenue: {
+			money: 0,
 			agingSerum: 0.1,
 			angerSerum: 0,
 			lustSerum: 0,
+		},
+		increment: {
+			cost: 0,
+			clonesPerSecond: 0
 		},
 		risk: {
 			rebellion: 0,
@@ -26,21 +28,23 @@ export const clones = {
 	child: {
 		active: false,
 		unlock: 50,
-		units: 0,
-		price: {
-			money: 100,
+		amount: 0,
+		cost: {
+			clones: 0,
+			money: 0,
 			agingSerum: 0,
 			angerSerum: 0,
 			lustSerum: 0,
 		},
-		increment: {
-			price: 0,
-			clonesPerSecond: 0
-		},
-		serum: {
+		revenue: {
+			money: 0,
 			agingSerum: 0.1,
 			angerSerum: 0,
 			lustSerum: 0,
+		},
+		increment: {
+			cost: 0,
+			clonesPerSecond: 0
 		},
 		risk: {
 			rebellion: 0,
@@ -50,21 +54,23 @@ export const clones = {
 	teen: {
 		active: false,
 		unlock: 150,
-		units: 0,
-		price: {
-			money: 200,
+		amount: 0,
+		cost: {
+			clones: 0,
+			money: 0,
 			agingSerum: 0,
 			angerSerum: 0,
 			lustSerum: 0,
 		},
-		increment: {
-			price: 0,
-			clonesPerSecond: 0
-		},
-		serum: {
+		revenue: {
+			money: 0,
 			agingSerum: 0.1,
 			angerSerum: 0,
 			lustSerum: 0,
+		},
+		increment: {
+			cost: 0,
+			clonesPerSecond: 0
 		},
 		risk: {
 			rebellion: 0,
@@ -74,21 +80,23 @@ export const clones = {
 	adult: {
 		active: false,
 		unlock: 350,
-		units: 0,
-		price: {
-			money: 400,
+		amount: 0,
+		cost: {
+			clones: 0,
+			money: 0,
 			agingSerum: 0,
 			angerSerum: 0,
 			lustSerum: 0,
 		},
-		increment: {
-			price: 0,
-			clonesPerSecond: 0
-		},
-		serum: {
+		revenue: {
+			money: 0,
 			agingSerum: 0.1,
 			angerSerum: 0,
 			lustSerum: 0,
+		},
+		increment: {
+			cost: 0,
+			clonesPerSecond: 0
 		},
 		risk: {
 			rebellion: 0,
@@ -98,21 +106,23 @@ export const clones = {
 	senior: {
 		active: true,
 		unlock: 450,
-		units: 0,
-		price: {
-			money: 500,
+		amount: 0,
+		cost: {
+			clones: 0,
+			money: 0,
 			agingSerum: 0,
 			angerSerum: 0,
 			lustSerum: 0,
 		},
-		increment: {
-			price: 0,
-			clonesPerSecond: 0
-		},
-		serum: {
+		revenue: {
+			money: 0,
 			agingSerum: 0.1,
 			angerSerum: 0,
 			lustSerum: 0,
+		},
+		increment: {
+			cost: 0,
+			clonesPerSecond: 0
 		},
 		risk: {
 			rebellion: 0,
@@ -122,21 +132,23 @@ export const clones = {
 	ancient: {
 		active: true,
 		unlock: 750,
-		units: 0,
-		price: {
-			money: 1000,
+		amount: 0,
+		cost: {
+			clones: 0,
+			money: 0,
 			agingSerum: 0,
 			angerSerum: 0,
 			lustSerum: 0,
 		},
-		increment: {
-			price: 0,
-			clonesPerSecond: 0
-		},
-		serum: {
+		revenue: {
+			money: 0,
 			agingSerum: 0.1,
 			angerSerum: 0,
 			lustSerum: 0,
+		},
+		increment: {
+			cost: 0,
+			clonesPerSecond: 0
 		},
 		risk: {
 			rebellion: 0,

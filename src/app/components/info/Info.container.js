@@ -4,7 +4,9 @@ import Info from "./Info";
 const mapStateToProps = state => ({
 	game: state.get("game"),
 	tools: state.get("tools"),
-	agedClones: state.get("agedClones"),
+	clones: {
+		fetus: state.get("clones").get("fetus")
+	},
 	config: state.get("configuration")
 });
 
