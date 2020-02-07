@@ -6,6 +6,7 @@ const mapStateToProps = state => ({
 	tools: state.get("tools"),
 	clones: {
 		fetus: state.get("clones").get("fetus")
+		// TODO
 	},
 	config: state.get("configuration")
 });

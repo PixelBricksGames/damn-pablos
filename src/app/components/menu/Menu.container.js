@@ -13,15 +13,12 @@ import { createAutoSerum } from "../../store/actions/tools.action";
 
 import { killFetusClone } from "../../store/actions/clones/fetus.action";
 
-// import { createChildClone } from "../../store/actions/aged-clones.action";
-// import { createTeenClone } from "../../store/actions/aged-clones.action";
-// import { createAdultClone } from "../../store/actions/aged-clones.action";
-// import { createSeniorClone } from "../../store/actions/aged-clones.action";
-// import { createAncientClone } from "../../store/actions/aged-clones.action";
-
 const mapStateToProps = state => ({
 	tools: state.get("tools"),
-	clones: state.get("clones"),
+	clones: {
+		fetus: state.get("clones").get("fetus")
+		// TODO
+	},
 	config: state.get("configuration")
 });
 
@@ -29,29 +26,7 @@ const mapDispatchToProps = dispatch => ({
 	onClickAutoClone: (autoClone) => dispatch(batchActions([
 		createAutoClone(),
 		killFetusClone(autoClone.cost.clones)
-		// updateClonesPerSecond((autoClone.amount + 1) * autoClone.perSecond)
-	])),
-	// onClickAutoSerum: (cost) => dispatch(createAutoSerum()),
-	// onClickChildClone: (cost) => dispatch(batchActions([
-	// 	createChildClone(),
-	// 	deleteClones(cost)
-	// ])),
-	// onClickTeenClone: (cost) => dispatch(batchActions([
-	// 	createTeenClone(),
-	// 	deleteClones(cost)
-	// ])),
-	// onClickAdultClone: (cost) => dispatch(batchActions([
-	// 	createAdultClone(),
-	// 	deleteClones(cost)
-	// ])),
-	// onClickSeniorClone: (cost) => dispatch(batchActions([
-	// 	createSeniorClone(),
-	// 	deleteClones(cost)
-	// ])),
-	// onClickAncientClone: (cost) => dispatch(batchActions([
-	// 	createAncientClone(),
-	// 	deleteClones(cost)
-	// ]))
+	]))
 });
 
 export default connect(
