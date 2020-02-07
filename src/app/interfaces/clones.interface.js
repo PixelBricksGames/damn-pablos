@@ -9,13 +9,13 @@ export const IClones = {
 			money: PropTypes.number,
 			agingSerum: PropTypes.number,
 			angerSerum: PropTypes.number,
-			lustSerum: PropTypes.number,
+			chaosSerum: PropTypes.number,
 		},
 		revenue: {
 			money: PropTypes.number,
 			agingSerum: PropTypes.number,
 			angerSerum: PropTypes.number,
-			lustSerum: PropTypes.number,
+			chaosSerum: PropTypes.number,
 		},
 		increment: {
 			cost: PropTypes.number,

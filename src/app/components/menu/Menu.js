@@ -26,9 +26,9 @@ const Menu = ({
 			id={ CONSTANST.TOOLS.AUTO_CLONE }
 			title={ translations[config.language].TOOLS.AUTO_CLONE }
 			amount={ tools.autoClone.amount }
-			cost={ tools.autoClone.cost }
+			cost={ tools.autoClone.cost.clones }
 			onClick={() => {
-				onClickAutoClone();
+				onClickAutoClone(tools.autoClone);
 			}}
 		/>
 		{/* <MenuButton

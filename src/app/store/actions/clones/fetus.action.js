@@ -13,6 +13,7 @@ export const sellFetusClone = () => ({
 	type: actionType.CLONES.SELL.FETUS
 });
 
-export const killFetusClone = () => ({
-	type: actionType.CLONES.KILL.FETUS
+export const killFetusClone = (clones) => ({
+	type: actionType.CLONES.KILL.FETUS,
+	clones
 });

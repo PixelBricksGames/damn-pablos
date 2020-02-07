@@ -1,6 +1,6 @@
-import * as actionType from "./../../units/actions.type";
 import * as initState from "../state/tools.init";
-
+import * as actionType from "./../../units/actions.type";
+import * as Utils from "./../../utils/utils";
 import { TOOLS } from "./../../units/constants";
 
 const tools = (state = initState.tools, action) => {
@@ -15,12 +15,18 @@ const tools = (state = initState.tools, action) => {
 	}
 };
 
-const getToolsState = (state, tool) => ({
-	...state,
-	[tool]: {
-		...state[tool],
-		amount: state[tool].amount + 1
+const getToolsState = (state, tool) => {
+	return {
+		...state,
+		[tool]: {
+			...state[tool],
+			amount: state[tool].amount + 1,
+			cost: {
+				...state[tool].cost,
+				clones: Utils.getIncrementalCost(state[tool], "clones")
+			}
+		}
 	}
-});
+};
 
 export default tools;

@@ -36,7 +36,7 @@ const timeService = {
 			const clones = state.get("clones");
 			const time = state.get("time");
 
-			const autoClonesIncrement = Utils.fixMultiplier(tools.autoClone.amount, tools.autoClone.perSecond);
+			const autoClonesIncrement = Utils.fixMultiplier(tools.autoClone.amount, tools.autoClone.increment.perSecond);
 
 			// TODO const childClonesIncrement = 0;
 
@@ -52,7 +52,6 @@ const timeService = {
 			}
 
 			if(time.sec >= (1 / restClonesToAdd)) {
-				console.log("time.sec", restClonesToAdd);
 				store.dispatch(batchActions([
 					clearTimeSec(),
 					createFetusClone(1),

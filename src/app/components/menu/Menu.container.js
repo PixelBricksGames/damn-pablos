@@ -5,17 +5,19 @@ import Menu from "./Menu";
 
 import { updateClonesPerSecond } from "../../store/actions/game.action";
 
+import { payMoney } from "../../store/actions/game.action";
+import { deleteClones } from "../../store/actions/game.action";
+
 import { createAutoClone } from "../../store/actions/tools.action";
 import { createAutoSerum } from "../../store/actions/tools.action";
+
+import { killFetusClone } from "../../store/actions/clones/fetus.action";
 
 // import { createChildClone } from "../../store/actions/aged-clones.action";
 // import { createTeenClone } from "../../store/actions/aged-clones.action";
 // import { createAdultClone } from "../../store/actions/aged-clones.action";
 // import { createSeniorClone } from "../../store/actions/aged-clones.action";
 // import { createAncientClone } from "../../store/actions/aged-clones.action";
-
-import { payMoney } from "../../store/actions/game.action";
-import { deleteClones } from "../../store/actions/game.action";
 
 const mapStateToProps = state => ({
 	tools: state.get("tools"),
@@ -24,11 +26,11 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-	onClickAutoClone: () => dispatch(createAutoClone()),
-	// onClickAutoClone: (autoClone) => dispatch(batchActions([
-	// 	createAutoClone(),
-	// 	updateClonesPerSecond((autoClone.amount + 1) * autoClone.perSecond)
-	// ])),
+	onClickAutoClone: (autoClone) => dispatch(batchActions([
+		createAutoClone(),
+		killFetusClone(autoClone.cost.clones)
+		// updateClonesPerSecond((autoClone.amount + 1) * autoClone.perSecond)
+	])),
 	// onClickAutoSerum: (cost) => dispatch(createAutoSerum()),
 	// onClickChildClone: (cost) => dispatch(batchActions([
 	// 	createChildClone(),

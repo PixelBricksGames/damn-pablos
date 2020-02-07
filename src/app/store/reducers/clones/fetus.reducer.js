@@ -1,5 +1,6 @@
-import * as actionType from "./../../../units/actions.type";
 import * as initState from "./../../state/clones.init";
+import * as actionType from "./../../../units/actions.type";
+import * as Utils from "./../../../utils/utils";
 
 const fetus = (state = initState.clones.fetus, action) => {
 	switch (action.type) {
@@ -15,9 +16,7 @@ const fetus = (state = initState.clones.fetus, action) => {
 				...state
 			};
 		case actionType.CLONES.KILL.FETUS:
-			return {
-				...state
-			};
+			return getKilledCloneState(state, action.clones);
 		default:
 			return state;
 	}
@@ -28,8 +27,13 @@ const getCreatedCloneState = (state, clonesToAdd = 1) => ({
 	amount: state.amount + clonesToAdd,
 	cost: {
 		...state.cost,
-		clones: state.amount * state.increment.cost
+		clones: Utils.getIncrementalCost(state, "clones")
 	}
+});
+
+const getKilledCloneState = (state, clonesToSub = 1) => ({
+	...state,
+	amount: state.amount - clonesToSub
 });
 
 export default fetus;
