@@ -7,6 +7,9 @@ const fetus = (state = initState.clones.fetus, action) => {
 		case actionType.CLONES.CREATE.FETUS:
 			return getCreatedCloneState(state, action.clones);
 
+		case actionType.CLONES.KILL.FETUS:
+			return getKilledCloneState(state, action.clones);
+
 		case actionType.CLONES.SERUM.FETUS:
 			return {
 				...state
@@ -15,8 +18,7 @@ const fetus = (state = initState.clones.fetus, action) => {
 			return {
 				...state
 			};
-		case actionType.CLONES.KILL.FETUS:
-			return getKilledCloneState(state, action.clones);
+
 		default:
 			return state;
 	}

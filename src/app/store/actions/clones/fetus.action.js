@@ -5,15 +5,15 @@ export const createFetusClone = (clones) => ({
 	clones
 });
 
+export const killFetusClone = (clones) => ({
+	type: actionType.CLONES.KILL.FETUS,
+	clones
+});
+
 export const serumFetusClone = () => ({
 	type: actionType.CLONES.SERUM.FETUS
 });
 
 export const sellFetusClone = () => ({
 	type: actionType.CLONES.SELL.FETUS
-});
-
-export const killFetusClone = (clones) => ({
-	type: actionType.CLONES.KILL.FETUS,
-	clones
 });
