@@ -5,6 +5,7 @@ import * as Utils from "../utils/utils";
 import { updateTimeTotal, updateTimeSec, updateTimeDec, clearTimeSec, clearTimeDec } from "../store/actions/time.action";
 import { updateClonesPerSecond } from "../store/actions/game.action";
 import { createFetusClone } from "../store/actions/clones/fetus.action";
+import { unlockAutoClone } from "../store/actions/tools.action";
 
 // import Roger from "@pabrick/roger";
 
@@ -64,6 +65,12 @@ const timeService = {
 				updateTimeDec(),
 				updateClonesPerSecond(totalClonesPerSecond)
 			]));
+
+			if( !tools.autoClone.unlocked
+			&& (game.currency.money >= parseInt((tools.autoClone.cost.money / 2), 10))
+			) {
+				unlockAutoClone();
+			}
 
 		}, 100);
 	}

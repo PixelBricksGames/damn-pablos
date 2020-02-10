@@ -1,7 +1,6 @@
 export const clones = {
 	fetus: {
-		enable: true,
-		unlock: 0,
+		unlocked: true,
 		amount: 0,
 		cost: {
 			clones: 0,
@@ -26,8 +25,7 @@ export const clones = {
 		}
 	},
 	child: {
-		enable: false,
-		unlock: 50,
+		unlocked: false,
 		amount: 0,
 		cost: {
 			clones: 0,
@@ -52,8 +50,7 @@ export const clones = {
 		}
 	},
 	teen: {
-		enable: false,
-		unlock: 150,
+		unlocked: false,
 		amount: 0,
 		cost: {
 			clones: 0,
@@ -78,8 +75,7 @@ export const clones = {
 		}
 	},
 	adult: {
-		enable: false,
-		unlock: 350,
+		unlocked: false,
 		amount: 0,
 		cost: {
 			clones: 0,
@@ -104,8 +100,7 @@ export const clones = {
 		}
 	},
 	senior: {
-		enable: true,
-		unlock: 450,
+		unlocked: true,
 		amount: 0,
 		cost: {
 			clones: 0,
@@ -130,8 +125,7 @@ export const clones = {
 		}
 	},
 	ancient: {
-		enable: true,
-		unlock: 750,
+		unlocked: true,
 		amount: 0,
 		cost: {
 			clones: 0,

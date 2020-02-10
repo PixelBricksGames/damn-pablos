@@ -5,11 +5,29 @@ import { TOOLS } from "./../../units/constants";
 
 const tools = (state = initState.tools, action) => {
 	switch (action.type) {
-		case actionType.TOOLS.CREATE.AUTO_CLONE:
-			return getToolsState(state, TOOLS.AUTO_CLONE);
+		case actionType.TOOLS.UNLOCK.AUTO_CLONE:
+			return {
+				...state,
+				autoClone: {
+					...state.autoClone,
+					unlock: true
+				}
+			};
 
-		case actionType.TOOLS.CREATE.AUTO_SERUM:
-			return  getToolsState(state, TOOLS.AUTO_SERUM);
+		case actionType.TOOLS.CREATE.AUTO_CLONE:
+			// return getToolsState(state, TOOLS.AUTO_CLONE);
+			return {
+				...state,
+				autoClone: {
+					...state.autoClone,
+					amount,
+					cost: {
+						...state.autoClone.cost,
+						money: Utils.getIncrementalCost(state.autoClone, "money")
+					}
+				}
+			};
+
 		default:
 			return state;
 	}

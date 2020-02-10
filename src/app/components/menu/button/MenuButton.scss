@@ -6,4 +6,12 @@
 	.cost {
 		color: red;
 	}
+
+	&.locked {
+		background-color: black;
+	}
+
+	&.disabled {
+		opacity: .5;
+	}
 }

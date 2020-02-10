@@ -6,8 +6,8 @@ import "./MenuButton.scss";
 const MenuButton = ({ id, title, amount, cost, unlocked, enabled, onClick }) => {
     return (
         <button
-            className={`menu-btn btn-${id}`}
-            onClick={ onClickButton(enabled, onClick) }
+            className={ `btn-${id} menu-btn ${!unlocked ? 'locked' : ''}  ${!enabled ? 'disabled' : ''}` }
+            onClick={ (enabled && unlocked) ? onClick : undefined }
         >
 			<div className={`title btn-${id}__title`}>
 				{ title }: { amount }
@@ -17,12 +17,6 @@ const MenuButton = ({ id, title, amount, cost, unlocked, enabled, onClick }) => 
 			</div>
         </button>
     );
-}
-
-const onClickButton = (enabled, callback) => {
-	if(enabled) {
-		return callback;
-	}
 }
 
 export default MenuButton;

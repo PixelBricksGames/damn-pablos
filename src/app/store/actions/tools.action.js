@@ -1,5 +1,13 @@
 import * as actionType from "../../units/actions.type";
 
+export const unlockAutoClone = () => ({
+	type: actionType.TOOLS.UNLOCK.AUTO_CLONE
+});
+
+export const unlockAutoSerum = () => ({
+	type: actionType.TOOLS.UNLOCK.AUTO_CLONE
+});
+
 export const createAutoClone = () => ({
 	type: actionType.TOOLS.CREATE.AUTO_CLONE
 });

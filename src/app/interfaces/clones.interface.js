@@ -1,8 +1,7 @@
 import PropTypes from "prop-types";
 
 export const IClones = {
-	enable: PropTypes.bool,
-	unlock: PropTypes.number,
+	unlocked: PropTypes.bool,
 	amount: PropTypes.number,
 	cost: {
 		clones: PropTypes.number,

@@ -1,7 +1,6 @@
 export const tools = {
 	autoClone: {
-		enable: true,
-		unlock: 25,
+		unlocked: false,
 		amount: 0,
 		cost: {
 			clones: 25,
@@ -16,8 +15,7 @@ export const tools = {
 		}
 	},
 	autoSerum: {
-		enable: false,
-		unlock: 50,
+		unlocked: false,
 		amount: 0,
 		cost: {
 			clones: 25,

@@ -2,8 +2,8 @@ export const stats = {
 	clones: {
 		byClick: 0,
 		inTotal: 0,
-		murdered: 0,
-		sacrified: 0
+		killed: 0,
+		selled: 0
 	},
 	serum: {
 		inTotal: 0,
