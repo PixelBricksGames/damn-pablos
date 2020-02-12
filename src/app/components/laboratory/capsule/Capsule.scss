@@ -1,3 +1,15 @@
 .capsule {
-	
+	.button {
+		&__clone {
+			margin: 0 10px;
+		}
+
+		&__sell {
+			margin: 0 10px;
+		}
+
+		&__serum {
+			margin: 0 10px;
+		}
+	}
 }
