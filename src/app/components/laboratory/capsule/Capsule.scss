@@ -1,4 +1,13 @@
 .capsule {
+	background-color: blue;
+	display: block;
+	padding: 10px 0;
+	text-align: center;
+	width: 100%;
+	border-top: 2px solid black;
+	border-bottom: 2px solid black;
+	box-sizing: border-box;
+
 	.button {
 		&__clone {
 			margin: 0 10px;
