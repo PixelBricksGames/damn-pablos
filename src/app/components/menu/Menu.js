@@ -20,9 +20,9 @@ const Menu = ({
 			id={ CONSTANST.TOOLS.AUTO_CLONE }
 			title={ translations[config.language].TOOLS.AUTO_CLONE }
 			amount={ tools.autoClone.amount }
-			cost={ tools.autoClone.cost.clones }
+			cost={ tools.autoClone.cost }
 			unlocked={ tools.autoClone.unlocked }
-			enabled={ clones.fetus.amount >= tools.autoClone.cost.clones }
+			enabled={ clones.fetus.amount >= tools.autoClone.cost }
 			onClick={() => { onClickAutoClone(tools.autoClone) }}
 		/>
 	</div>

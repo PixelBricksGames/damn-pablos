@@ -1,21 +1,21 @@
 import * as actionType from "../../units/actions.type";
 
 export const updateTimeTotal = () => ({
-	type: actionType.TIME.UPDATE.TOTAL
+	type: actionType.TIME.TOTAL.UPDATE
 });
 
 export const updateTimeSec = () => ({
-	type: actionType.TIME.UPDATE.SEC,
+	type: actionType.TIME.SEC.UPDATE,
 });
 
 export const clearTimeSec = () => ({
-	type: actionType.TIME.CLEAR.SEC
+	type: actionType.TIME.SEC.CLEAR
 });
 
 export const updateTimeDec = () => ({
-	type: actionType.TIME.UPDATE.DEC,
+	type: actionType.TIME.DEC.UPDATE,
 });
 
 export const clearTimeDec = () => ({
-	type: actionType.TIME.CLEAR.DEC
+	type: actionType.TIME.DEC.CLEAR
 });

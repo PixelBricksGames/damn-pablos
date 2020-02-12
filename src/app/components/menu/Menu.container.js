@@ -19,13 +19,14 @@ const mapStateToProps = state => ({
 		fetus: state.get("clones").get("fetus")
 		// TODO
 	},
-	config: state.get("configuration")
+	config: state.get("config")
 });
 
 const mapDispatchToProps = dispatch => ({
 	onClickAutoClone: (autoClone) => dispatch(batchActions([
-		createAutoClone(),
-		killFetusClone(autoClone.cost.clones)
+		createAutoClone()
+		// payMoney() TODO
+		// killFetusClone(autoClone.cost.clones)
 	]))
 });
 

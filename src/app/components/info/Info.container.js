@@ -8,7 +8,7 @@ const mapStateToProps = state => ({
 		fetus: state.get("clones").get("fetus")
 		// TODO
 	},
-	config: state.get("configuration")
+	config: state.get("config")
 });
 
 export default connect(

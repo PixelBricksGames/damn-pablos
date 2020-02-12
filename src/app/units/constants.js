@@ -1,22 +1,21 @@
 export const TIME = {
-	DELTA: 0.1
+	DELTA: 0.1,
 };
 
 export const TOOLS = {
 	AUTO_CLONE: "autoClone",
-	AUTO_SERUM: "autoSerum"
+	AUTO_SELL: "autoSell",
+	AUTO_SERUM: "autoSerum",
 };
 
-export const AGED_CLONES = {
+export const CLONES = {
+	FETUS: "fetus",
 	CHILD: "child",
 	TEEN: "teen",
 	ADULT: "adult",
 	SENIOR: "senior",
-	ANCIENT: "ancient"
-};
-
-export const SPECIAL_CLONES = {
+	ANCIENT: "ancient",
 	MUTANT: "mutant",
 	MONSTER: "monster",
-	PURE: "pure"
+	PURE: "pure",
 };

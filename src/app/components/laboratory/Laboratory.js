@@ -5,10 +5,12 @@ import * as GameState from "./../../store/state/game.init";
 
 import "./Laboratory.scss";
 import Capsule from "./capsule/Capsule";
+import { CLONES } from "../../units/constants";
 
 const Laboratory = ({ clonesPerClick, onClickClone }) => (
 	<div className="laboratory">
 		<Capsule
+			id={ CLONES.FETUS }
 			clonesPerClick={ clonesPerClick }
 			serumPerClick={ clonesPerClick }
 			sellPerClick={ clonesPerClick }

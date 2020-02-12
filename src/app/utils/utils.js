@@ -10,6 +10,6 @@ export const fixMultiplier = (number1, number2) => {
 	return Math.round((number1 * number2) * 1e12) / 1e12;
 };
 
-export const getIncrementalCost = (item, currency) => {
-	return parseInt(item.cost[currency] + ((item.amount + 1) * item.increment.cost), 10)
+export const getIncrementalCost = (cost, amount, increment) => {
+	return parseInt((cost + amount * increment), 10)
 }

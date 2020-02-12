@@ -1,32 +1,29 @@
 export const tools = {
 	autoClone: {
-		unlocked: false,
 		amount: 0,
-		cost: {
-			clones: 25,
-			money: 0,
-			agingSerum: 0,
-			angerSerum: 0,
-			chaosSerum: 0,
-		},
+		unlocked: false,
+		cost: 100,
 		increment: {
 			cost: 1.01,
 			perSecond: 0.1
-		}
+		},
+	},
+	autoSell: {
+		amount: 0,
+		unlocked: false,
+		cost: 500,
+		increment: {
+			cost: 1.01,
+			perSecond: 0.1
+		},
 	},
 	autoSerum: {
-		unlocked: false,
 		amount: 0,
-		cost: {
-			clones: 25,
-			money: 0,
-			agingSerum: 0,
-			angerSerum: 0,
-			chaosSerum: 0,
-		},
+		unlocked: false,
+		cost: 1000,
 		increment: {
 			cost: 1.01,
 			perSecond: 0.1
 		},
-	}
+	},
 };
