@@ -9,12 +9,7 @@ import "./Menu.scss";
 
 import MenuButton from "./button/MenuButton";
 
-const Menu = ({
-		tools,
-		clones,
-		config,
-		onClickAutoClone
-	}) => (
+const Menu = ({ tools, clones, config, onClickAutoClone }) => (
 	<div className="menu">
 		<MenuButton
 			id={ CONSTANST.TOOLS.AUTO_CLONE }

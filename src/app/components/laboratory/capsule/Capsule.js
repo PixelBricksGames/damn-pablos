@@ -1,14 +1,40 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-import "./Capsule.scss";
+import { translations } from "./../../../units/translations";
 
-const Capsule = ({ id, clonesPerClick, serumPerClick, sellPerClick, onClickClone, onClickSerum, onClickSell }) => {
+import "./Capsule.scss";
+import CapsuleButton from "./button/CapsuleButton";
+
+const Capsule = ({ language, id, clonesPerClick, serumPerClick, sellPerClick, onClickClone, onClickSerum, onClickSell }) => {
     return (
 		<div id={id} className="capsule">
-			<button className="button__clone" onClick={() => { onClickClone(clonesPerClick) }}>CLONE!</button>
-			<button className="button__sell" onClick={() => { onClickSell(sellPerClick) }}>SELL!</button>
-			<button className="button__serum" onClick={() => { onClickSerum(serumPerClick) }}>SERUM!</button>
+			<div className="button__clone">
+				<CapsuleButton
+					text={ translations[language].GAME.CLONE }
+					unlocked={ true }
+					enabled={ true }
+					onClick={() => { onClickClone(clonesPerClick) }}
+				></CapsuleButton>
+			</div>
+
+			<div className="button__sell">
+				<CapsuleButton
+					text={ translations[language].GAME.SELL }
+					unlocked={ true }
+					enabled={ true }
+					onClick={() => { onClickSell(sellPerClick) }}
+				></CapsuleButton>
+			</div>
+
+			<div className="button__serum">
+				<CapsuleButton
+					text={ translations[language].GAME.SERUM }
+					unlocked={ true }
+					enabled={ true }
+					onClick={() => { onClickSerum(serumPerClick) }}
+				></CapsuleButton>
+			</div>
 		</div>
     );
 }

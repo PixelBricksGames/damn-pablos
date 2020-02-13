@@ -3,7 +3,10 @@ import Laboratory from "./Laboratory";
 
 import { createFetusClone } from "./../../store/actions/clones/fetus.action";
 
-const mapStateToProps = state => state.get("game");
+const mapStateToProps = state => ({
+	game: state.get("game"),
+	config: state.get("config")
+});
 
 const mapDispatchToProps = dispatch => ({
 	onClickClone: (clonesPerClick) => dispatch(createFetusClone(clonesPerClick))

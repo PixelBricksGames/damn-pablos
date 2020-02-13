@@ -11,6 +11,7 @@ const Info = ({ game, tools, clones, config }) => {
 		<div className="info">
 			<div>{translations[config.language].GAME.CLONES}: { clones.fetus.amount }</div>
 			<div>{translations[config.language].GAME.CLONES_PER_SECOND}: { game.clonesPerSecond }</div>
+			<div>{translations[config.language].GAME.MONEY}: { game.currency.money }</div>
 			<div>{translations[config.language].TOOLS.AUTO_CLONE}: { tools.autoClone.amount }</div>
 		</div>
 	);

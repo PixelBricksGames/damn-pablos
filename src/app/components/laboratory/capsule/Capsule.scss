@@ -10,14 +10,17 @@
 
 	.button {
 		&__clone {
+			display: inline-block;
 			margin: 0 10px;
 		}
 
 		&__sell {
+			display: inline-block;
 			margin: 0 10px;
 		}
 
 		&__serum {
+			display: inline-block;
 			margin: 0 10px;
 		}
 	}

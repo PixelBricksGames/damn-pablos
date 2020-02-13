@@ -7,23 +7,19 @@ import "./Laboratory.scss";
 import Capsule from "./capsule/Capsule";
 import { CLONES } from "../../units/constants";
 
-const Laboratory = ({ clonesPerClick, onClickClone }) => (
+const Laboratory = ({ game, config, onClickClone }) => (
 	<div className="laboratory">
 		<Capsule
+			language={ config.language }
 			id={ CLONES.FETUS }
-			clonesPerClick={ clonesPerClick }
-			serumPerClick={ clonesPerClick }
-			sellPerClick={ clonesPerClick }
-			onClickClone= { () => { onClickClone(clonesPerClick) } }
-			onClickSell= { () => { onClickClone(clonesPerClick) } }
-			onClickSerum= { () => { onClickClone(clonesPerClick) } }
+			clonesPerClick={ game.clonesPerClick }
+			serumPerClick={ game.clonesPerClick }
+			sellPerClick={ game.clonesPerClick }
+			onClickClone= { () => { onClickClone(game.clonesPerClick) } }
+			onClickSell= { () => { onClickClone(game.clonesPerClick) } }
+			onClickSerum= { () => { onClickClone(game.clonesPerClick) } }
 		></Capsule>
 	</div>
 );
-
-Laboratory.propTypes = {
-	clonesPerClick: PropTypes.number.isRequired,
-	onClickClone: PropTypes.func.isRequired
-};
 
 export default Laboratory;

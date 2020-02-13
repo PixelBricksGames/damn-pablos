@@ -35,9 +35,11 @@ const timeService = {
 			const state = store.getState();
 
 			const game = state.get("game");
-			const tools = state.get("tools");
-			const clones = state.get("clones");
 			const time = state.get("time");
+			const tools = state.get("tools");
+			const clones = {
+				fetus: state.get("clones").get("fetus")
+			};
 
 			const autoClonesIncrement = Utils.fixMultiplier(tools.autoClone.amount, tools.autoClone.increment.perSecond);
 
@@ -69,7 +71,7 @@ const timeService = {
 			]));
 
 			if(!tools.autoClone.unlocked
-			&& (game.currency.money >= parseInt((tools.autoClone.cost.money / 2), 10))) {
+			&& (game.currency.money >= parseInt((tools.autoClone.cost / 2), 10))) {
 				unlockAutoClone();
 			}
 

@@ -1,17 +1,25 @@
 .menu-btn {
 	.title {
-		color: blue;
+		color: black;
 	}
 
 	.cost {
-		color: red;
+		color: grey;
+	}
+
+	&.unlocked {
+		border: 2px solid black;
 	}
 
 	&.locked {
-		background-color: black;
+		border: 2px solid red;
+	}
+
+	&.enabled {
+		opacity: 1;
 	}
 
 	&.disabled {
-		opacity: .5;
+		opacity: .75;
 	}
 }
