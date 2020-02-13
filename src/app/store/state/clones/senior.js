@@ -1,4 +1,5 @@
 export const senior = {
+	id: "senior",
 	amount: 0,
 	unlocked: {
 		clone: false,

@@ -1,6 +1,4 @@
 export const game = {
-	clonesPerSecond: 0,
-	clonesPerClick: 1,
 	outbreak: false,
 	clones: {
 		perClick: 1,

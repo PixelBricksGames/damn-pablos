@@ -6,33 +6,33 @@ import { translations } from "./../../../units/translations";
 import "./Capsule.scss";
 import CapsuleButton from "./button/CapsuleButton";
 
-const Capsule = ({ language, id, clonesPerClick, serumPerClick, sellPerClick, onClickClone, onClickSerum, onClickSell }) => {
+const Capsule = ({ language, clone, currency, onClickClone, onClickSerum, onClickSell }) => {
     return (
-		<div id={id} className="capsule">
+		<div id={clone.id} className="capsule">
 			<div className="button__clone">
 				<CapsuleButton
 					text={ translations[language].GAME.CLONE }
-					unlocked={ true }
+					unlocked={ clone.unlocked.clone }
 					enabled={ true }
-					onClick={() => { onClickClone(clonesPerClick) }}
+					onClick={ onClickClone }
 				></CapsuleButton>
 			</div>
 
 			<div className="button__sell">
 				<CapsuleButton
 					text={ translations[language].GAME.SELL }
-					unlocked={ true }
+					unlocked={ clone.unlocked.sell }
 					enabled={ true }
-					onClick={() => { onClickSell(sellPerClick) }}
+					onClick={ onClickSell }
 				></CapsuleButton>
 			</div>
 
 			<div className="button__serum">
 				<CapsuleButton
 					text={ translations[language].GAME.SERUM }
-					unlocked={ true }
+					unlocked={ clone.unlocked.serum }
 					enabled={ true }
-					onClick={() => { onClickSerum(serumPerClick) }}
+					onClick={ onClickSerum }
 				></CapsuleButton>
 			</div>
 		</div>

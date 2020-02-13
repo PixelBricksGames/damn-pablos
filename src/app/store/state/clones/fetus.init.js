@@ -1,4 +1,5 @@
 export const fetus = {
+	id: "fetus",
 	amount: 0,
 	unlocked: {
 		clone: true,

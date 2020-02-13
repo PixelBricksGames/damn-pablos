@@ -7,7 +7,7 @@ import { updateClonesPerSecond } from "../store/actions/game.action";
 
 import { unlockAutoClone, unlockAutoSell, unlockAutoSerum } from "../store/actions/tools.action";
 
-import { createFetusClone } from "../store/actions/clones/fetus.action";
+import { unlockCloneFetus, unlockSellFetus, unlockSerumFetus, createFetusClone, killFetusClone } from "../store/actions/clones/fetus.action";
 
 // import Roger from "@pabrick/roger";
 
@@ -66,8 +66,11 @@ const timeService = {
 			dispatchedActions.push(updateTimeDec());
 			dispatchedActions.push(updateClonesPerSecond(totalClonesPerSecond));
 
-			if(!tools.autoClone.unlocked
-			&& (game.currency.money >= parseInt((tools.autoClone.cost / 2), 10))) {
+			if(checkUnlockSellFetus(clones.fetus, game.currency.clones)) {
+				dispatchedActions.push(unlockSellFetus());
+			}
+
+			if(checkUnlockAutoClone(tools.autoClone, game.currency.money)) {
 				dispatchedActions.push(unlockAutoClone());
 			}
 
@@ -80,3 +83,11 @@ const timeService = {
 timeService.start();
 
 export default timeService;
+
+const checkUnlockSellFetus = (fetus, clones) => {
+	return !fetus.unlocked.sell && (fetus.amount >= parseInt((clones / 2), 10))
+}
+
+const checkUnlockAutoClone = (autoClone, money) => {
+	return !autoClone.unlocked && (money >= parseInt((autoClone.cost / 2), 10))
+}

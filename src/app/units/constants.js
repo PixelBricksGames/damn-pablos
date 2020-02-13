@@ -13,15 +13,3 @@ export const TOOLS = {
 	AUTO_SELL: "autoSell",
 	AUTO_SERUM: "autoSerum",
 };
-
-export const CLONES = {
-	FETUS: "fetus",
-	CHILD: "child",
-	TEEN: "teen",
-	ADULT: "adult",
-	SENIOR: "senior",
-	ANCIENT: "ancient",
-	MUTANT: "mutant",
-	MONSTER: "monster",
-	PURE: "pure",
-};

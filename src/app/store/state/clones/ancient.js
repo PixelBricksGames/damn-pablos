@@ -1,4 +1,5 @@
 export const ancient = {
+	id: "ancient",
 	amount: 0,
 	unlocked: {
 		clone: false,

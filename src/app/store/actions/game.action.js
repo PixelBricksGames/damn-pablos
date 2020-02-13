@@ -1,13 +1,18 @@
 import * as actionType from "../../units/actions.type";
 
-export const updateClones = (clones) => ({
-	type: actionType.GAME.CLONES.UPDATE,
-	clones
-});
-
 export const updateClonesPerSecond = (clonesPerSecond) => ({
 	type: actionType.GAME.UPDATE_CPS,
 	clonesPerSecond
+});
+
+export const earnClones = (clones) => ({
+	type: actionType.GAME.CLONES.EARN,
+	clones
+});
+
+export const spendClones = (clones) => ({
+	type: actionType.GAME.CLONES.SPEND,
+	clones
 });
 
 export const earnMoney = (money) => ({
@@ -18,4 +23,34 @@ export const earnMoney = (money) => ({
 export const spenMoney = (money) => ({
 	type: actionType.GAME.MONEY.SPEND,
 	money
+});
+
+export const earnAgingSerum = (serum) => ({
+	type: actionType.GAME.AGING_SERUM.EARN,
+	clones
+});
+
+export const spendAgingSerum = (serum) => ({
+	type: actionType.GAME.AGING_SERUM.SPEND,
+	clones
+});
+
+export const earnAngerSerum = (serum) => ({
+	type: actionType.GAME.ANGER_SERUM.EARN,
+	clones
+});
+
+export const spendAngerSerum = (serum) => ({
+	type: actionType.GAME.ANGER_SERUM.SPEND,
+	clones
+});
+
+export const earnChaosSerum = (serum) => ({
+	type: actionType.GAME.CHAOS_SERUM.EARN,
+	clones
+});
+
+export const spendChaosSerum = (serum) => ({
+	type: actionType.GAME.CHAOS_SERUM.SPEND,
+	clones
 });
