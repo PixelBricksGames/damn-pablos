@@ -19,14 +19,6 @@ const fetus = (state = initState.fetus, action) => {
 		case actionType.CLONES.FETUS.KILL:
 			return getKilledCloneState(state, action.clones);
 
-		case actionType.CLONES.FETUS.SELL:
-			return {
-				...state
-			};
-		case actionType.CLONES.FETUS.SERUM:
-			return {
-				...state
-			};
 		default:
 			return state;
 	}

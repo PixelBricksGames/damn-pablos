@@ -3,26 +3,38 @@ import * as initState from "../state/game.init";
 
 const game = (state = initState.game, action) => {
 	switch (action.type) {
-		case actionType.GAME.UPDATE_CLONES:
+		case actionType.GAME.CLONES.UPDATE:
 			return {
 				...state,
 				clones: state.clones + action.clones
 			};
+
 		case actionType.GAME.UPDATE_CPS:
 			return {
 				...state,
-				clonesPerSecond: action.clonesPerSecond
+				clones: {
+					...state.clones,
+					perSecond: action.clonesPerSecond
+				}
 			};
-		case actionType.GAME.CREATE_CLONES:
+
+		case actionType.GAME.MONEY.EARN:
 			return {
 				...state,
-				clones: state.clones + action.clones
+				currency: {
+					...state.currency,
+					money: state.currency.money + action.money
+				}
 			};
-		case actionType.GAME.DELETE_CLONES:
+		case actionType.GAME.MONEY.SPEND:
 			return {
 				...state,
-				clones: state.clones - action.clones
+				currency: {
+					...state.currency,
+					money: state.currency.money - action.money
+				}
 			};
+
 		default:
 			return state;
 	}

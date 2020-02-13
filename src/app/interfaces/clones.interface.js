@@ -1,8 +1,12 @@
 import PropTypes from "prop-types";
 
 export const IClones = {
-	unlocked: PropTypes.bool,
 	amount: PropTypes.number,
+	unlocked: {
+		clone: PropTypes.bool,
+		sell: PropTypes.bool,
+		serum: PropTypes.bool
+	},
 	cost: {
 		clones: PropTypes.number,
 		money: PropTypes.number,
@@ -10,7 +14,7 @@ export const IClones = {
 		angerSerum: PropTypes.number,
 		chaosSerum: PropTypes.number,
 	},
-	revenue: {
+	income: {
 		money: PropTypes.number,
 		agingSerum: PropTypes.number,
 		angerSerum: PropTypes.number,

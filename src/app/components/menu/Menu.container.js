@@ -25,8 +25,7 @@ const mapStateToProps = state => ({
 const mapDispatchToProps = dispatch => ({
 	onClickAutoClone: (autoClone) => dispatch(batchActions([
 		createAutoClone()
-		// payMoney() TODO
-		// killFetusClone(autoClone.cost.clones)
+		// spenMoney(autoClone.cost)
 	]))
 });
 

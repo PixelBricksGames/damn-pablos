@@ -12,8 +12,8 @@ export const fetus = {
 		angerSerum: 0,
 		chaosSerum: 0,
 	},
-	revenue: {
-		money: 0,
+	income: {
+		money: 10,
 		agingSerum: 0.1,
 		angerSerum: 0,
 		chaosSerum: 0,

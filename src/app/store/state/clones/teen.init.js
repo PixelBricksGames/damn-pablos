@@ -12,7 +12,7 @@ export const teen = {
 		angerSerum: 0,
 		chaosSerum: 0,
 	},
-	revenue: {
+	income: {
 		money: 0,
 		agingSerum: 0.1,
 		angerSerum: 0,

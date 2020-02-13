@@ -7,17 +7,17 @@ import "./Laboratory.scss";
 import Capsule from "./capsule/Capsule";
 import { CLONES } from "../../units/constants";
 
-const Laboratory = ({ game, config, onClickClone }) => (
+const Laboratory = ({ game, clones, config, onClickClone, onClickSell, onClickSerum }) => (
 	<div className="laboratory">
 		<Capsule
 			language={ config.language }
 			id={ CLONES.FETUS }
-			clonesPerClick={ game.clonesPerClick }
-			serumPerClick={ game.clonesPerClick }
-			sellPerClick={ game.clonesPerClick }
-			onClickClone= { () => { onClickClone(game.clonesPerClick) } }
-			onClickSell= { () => { onClickClone(game.clonesPerClick) } }
-			onClickSerum= { () => { onClickClone(game.clonesPerClick) } }
+			clonesPerClick={ game.clones.perClick }
+			serumPerClick={ game.clones.perClick }
+			sellPerClick={ game.clones.perClick }
+			onClickClone= { () => { onClickClone(game.clones.perClick) } }
+			onClickSell= { () => { onClickSell(1, clones.fetus.income.money) } }
+			onClickSerum= { () => { onClickSerum(1, clones.fetus.income.serum) } }
 		></Capsule>
 	</div>
 );
