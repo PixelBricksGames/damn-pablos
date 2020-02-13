@@ -1,6 +1,6 @@
 export const teen = {
 	amount: 0,
-	unlock: {
+	unlocked: {
 		clone: false,
 		sell: false,
 		serum: false,

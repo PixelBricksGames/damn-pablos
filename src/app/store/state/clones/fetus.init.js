@@ -1,6 +1,6 @@
 export const fetus = {
 	amount: 0,
-	unlock: {
+	unlocked: {
 		clone: true,
 		sell: false,
 		serum: false,

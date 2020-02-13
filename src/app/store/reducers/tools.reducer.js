@@ -1,43 +1,48 @@
 import * as initState from "../state/tools.init";
 import * as actionType from "./../../units/actions.type";
 import * as Utils from "./../../utils/utils";
+
 import { TOOLS } from "./../../units/constants";
 
 const tools = (state = initState.tools, action) => {
+	if(action.type === actionType.TOOLS.AUTO_CLONE.UNLOCK) {
+		console.log("OLI2", action);
+	}
+
 	switch (action.type) {
 		case actionType.TOOLS.AUTO_CLONE.UNLOCK:
-			return getUnlockToolState(state, TOOLS.AUTO_CLONE);
+			return getUnlockedToolState(state, TOOLS.AUTO_CLONE);
 
 		case actionType.TOOLS.AUTO_CLONE.CREATE:
-			return getCreateToolState(state, TOOLS.AUTO_CLONE);
+			return getCreatedToolState(state, TOOLS.AUTO_CLONE);
 
 		case actionType.TOOLS.AUTO_CLONE.DELETE:
-			return getDeleteToolState(state, TOOLS.AUTO_CLONE);
+			return getDeletedToolState(state, TOOLS.AUTO_CLONE);
 
 		case actionType.TOOLS.AUTO_SELL.UNLOCK:
-			return getUnlockToolState(state, TOOLS.AUTO_SELL);
+			return getUnlockedToolState(state, TOOLS.AUTO_SELL);
 
 		case actionType.TOOLS.AUTO_SELL.CREATE:
-			return getCreateToolState(state, TOOLS.AUTO_SELL);
+			return getCreatedToolState(state, TOOLS.AUTO_SELL);
 
 		case actionType.TOOLS.AUTO_SELL.DELETE:
-			return getDeleteToolState(state, TOOLS.AUTO_SELL);
+			return getDeletedToolState(state, TOOLS.AUTO_SELL);
 
 		case actionType.TOOLS.AUTO_SERUM.UNLOCK:
-			return getUnlockToolState(state, TOOLS.AUTO_SERUM);
+			return getUnlockedToolState(state, TOOLS.AUTO_SERUM);
 
 		case actionType.TOOLS.AUTO_SERUM.CREATE:
-			return getCreateToolState(state, TOOLS.AUTO_SERUM);
+			return getCreatedToolState(state, TOOLS.AUTO_SERUM);
 
 		case actionType.TOOLS.AUTO_SERUM.DELETE:
-			return getDeleteToolState(state, TOOLS.AUTO_SERUM);
+			return getDeletedToolState(state, TOOLS.AUTO_SERUM);
 
 		default:
 			return state;
 	}
 };
 
-const getUnlockToolState = (state, tool) => {
+const getUnlockedToolState = (state, tool) => {
 	return {
 		...state,
 		[tool]: {
@@ -47,7 +52,7 @@ const getUnlockToolState = (state, tool) => {
 	}
 };
 
-const getCreateToolState = (state, tool) => {
+const getCreatedToolState = (state, tool) => {
 	return {
 		...state,
 		[tool]: {
@@ -58,7 +63,7 @@ const getCreateToolState = (state, tool) => {
 	}
 };
 
-const getDeleteToolState = (state, tool) => {
+const getDeletedToolState = (state, tool) => {
 	return {
 		...state,
 		[tool]: {

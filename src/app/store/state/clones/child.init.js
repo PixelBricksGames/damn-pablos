@@ -1,6 +1,6 @@
 export const child = {
 	amount: 0,
-	unlock: {
+	unlocked: {
 		clone: false,
 		sell: false,
 		serum: false,

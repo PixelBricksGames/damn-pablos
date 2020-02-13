@@ -2,16 +2,18 @@ import * as initState from "./../../state/clones/fetus.init";
 import * as actionType from "./../../../units/actions.type";
 import * as Utils from "./../../../utils/utils";
 
+import { BUTTONS } from "./../../../units/constants";
+
 const fetus = (state = initState.fetus, action) => {
 	switch (action.type) {
 		case actionType.CLONES.FETUS.UNLOCK.CLONE:
-			return getUnlockedCloneState(state, "clone");
+			return getUnlockedCloneState(state, BUTTONS.CLONE);
 
 		case actionType.CLONES.FETUS.UNLOCK.SELL:
-			return getUnlockedCloneState(state, "sell");
+			return getUnlockedCloneState(state, BUTTONS.SELL);
 
 		case actionType.CLONES.FETUS.UNLOCK.SERUM:
-			return getUnlockedCloneState(state, "serum");
+			return getUnlockedCloneState(state, BUTTONS.SERUM);
 
 		case actionType.CLONES.FETUS.CREATE:
 			return getCreatedCloneState(state, action.clones);
@@ -26,8 +28,8 @@ const fetus = (state = initState.fetus, action) => {
 
 const getUnlockedCloneState = (state, action) => ({
 	...state,
-	unlock: {
-		...state.unlock,
+	unlocked: {
+		...state.unlocked,
 		[action]: true
 	}
 });
