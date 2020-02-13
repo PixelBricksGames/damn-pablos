@@ -49,31 +49,29 @@ const timeService = {
 			const clonesToAddPerSecond = parseInt(totalClonesPerSecond, 10);
 			const restClonesToAdd = Utils.fixSubstraction(totalClonesPerSecond, clonesToAddPerSecond);
 
+			const dispatchedActions = [];
+
 			if(time.dec >= 1) {
-				store.dispatch(batchActions([
-					clearTimeDec(),
-					createFetusClone(clonesToAddPerSecond)
-				]));
+				dispatchedActions.push(clearTimeDec());
+				dispatchedActions.push(createFetusClone(clonesToAddPerSecond));
 			}
 
 			if(time.sec >= (1 / restClonesToAdd)) {
-				store.dispatch(batchActions([
-					clearTimeSec(),
-					createFetusClone(1),
-				]));
+				dispatchedActions.push(clearTimeSec());
+				dispatchedActions.push(createFetusClone(1));
 			}
 
-			store.dispatch(batchActions([
-				updateTimeTotal(),
-				updateTimeSec(),
-				updateTimeDec(),
-				updateClonesPerSecond(totalClonesPerSecond)
-			]));
+			dispatchedActions.push(updateTimeTotal());
+			dispatchedActions.push(updateTimeSec());
+			dispatchedActions.push(updateTimeDec());
+			dispatchedActions.push(updateClonesPerSecond(totalClonesPerSecond));
 
 			if(!tools.autoClone.unlocked
 			&& (game.currency.money >= parseInt((tools.autoClone.cost / 2), 10))) {
-				store.dispatch(unlockAutoClone());
+				dispatchedActions.push(unlockAutoClone());
 			}
+
+			store.dispatch(batchActions(dispatchedActions));
 
 		}, 100);
 	}
