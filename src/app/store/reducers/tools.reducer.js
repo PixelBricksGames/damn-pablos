@@ -5,10 +5,6 @@ import * as Utils from "./../../utils/utils";
 import { TOOLS } from "./../../units/constants";
 
 const tools = (state = initState.tools, action) => {
-	if(action.type === actionType.TOOLS.AUTO_CLONE.UNLOCK) {
-		console.log("OLI2", action);
-	}
-
 	switch (action.type) {
 		case actionType.TOOLS.AUTO_CLONE.UNLOCK:
 			return getUnlockedToolState(state, TOOLS.AUTO_CLONE);
@@ -47,7 +43,7 @@ const getUnlockedToolState = (state, tool) => {
 		...state,
 		[tool]: {
 			...state[tool],
-			unlock: true
+			unlocked: true
 		}
 	}
 };

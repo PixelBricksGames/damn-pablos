@@ -72,7 +72,7 @@ const timeService = {
 
 			if(!tools.autoClone.unlocked
 			&& (game.currency.money >= parseInt((tools.autoClone.cost / 2), 10))) {
-				unlockAutoClone();
+				store.dispatch(unlockAutoClone());
 			}
 
 		}, 100);
