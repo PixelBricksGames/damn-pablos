@@ -1,8 +1,13 @@
 import * as actionType from "../../units/actions.type";
 
-export const updateClonesPerSecond = (clonesPerSecond) => ({
-	type: actionType.GAME.UPDATE_CPS,
-	clonesPerSecond
+export const updateClonesPerSecond = (perSecond) => ({
+	type: actionType.GAME.CLONES.UPDATE_CPS,
+	perSecond
+});
+
+export const updateCurrencyClones = (clones) => ({
+	type: actionType.GAME.CLONES.UPDATE,
+	clones
 });
 
 export const earnClones = (clones) => ({

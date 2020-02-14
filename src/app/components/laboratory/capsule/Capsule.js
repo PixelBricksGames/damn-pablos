@@ -22,7 +22,7 @@ const Capsule = ({ language, clone, currency, onClickClone, onClickSerum, onClic
 				<CapsuleButton
 					text={ translations[language].GAME.SELL }
 					unlocked={ clone.unlocked.sell }
-					enabled={ true }
+					enabled={ clone.amount > 0 }
 					onClick={ onClickSell }
 				></CapsuleButton>
 			</div>
@@ -31,7 +31,7 @@ const Capsule = ({ language, clone, currency, onClickClone, onClickSerum, onClic
 				<CapsuleButton
 					text={ translations[language].GAME.SERUM }
 					unlocked={ clone.unlocked.serum }
-					enabled={ true }
+					enabled={ clone.amount > 0 }
 					onClick={ onClickSerum }
 				></CapsuleButton>
 			</div>

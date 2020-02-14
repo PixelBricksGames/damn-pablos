@@ -4,7 +4,7 @@ import { batchActions } from 'redux-batched-actions';
 import Laboratory from "./Laboratory";
 
 import { createFetusClone, killFetusClone } from "./../../store/actions/clones/fetus.action";
-import { earnMoney } from "../../store/actions/game.action";
+import { earnMoney, earnAgingSerum } from "../../store/actions/game.action";
 
 const mapStateToProps = state => ({
 	game: state.get("game"),
@@ -18,15 +18,14 @@ const mapStateToProps = state => ({
 const mapDispatchToProps = dispatch => ({
 	onClickClone: (clones) => dispatch(batchActions([
 		createFetusClone(clones)
-		//
 	])),
 	onClickSell: (clones, money) => dispatch(batchActions([
 		killFetusClone(clones),
 		earnMoney(money)
 	])),
 	onClickSerum: (clones, serum) => dispatch(batchActions([
-		killFetusClone(clones)
-		// earnMoney(money)
+		killFetusClone(clones),
+		earnAgingSerum(serum)
 	])),
 });
 

@@ -1,5 +1,22 @@
 .capsule-button {
+
+	&.locked {
+		opacity: 0;
+	}
+
+	&.unlocked {
+		opacity: 1;
+	}
+
 	button {
 		text-transform: uppercase;
+
+		&.disabled {
+			border: 5px solid red;
+		}
+		
+		&.enabled {
+			border: 5px solid black;
+		}
 	}
 }

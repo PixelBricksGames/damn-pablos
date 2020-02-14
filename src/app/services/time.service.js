@@ -3,11 +3,12 @@ import { batchActions } from 'redux-batched-actions';
 
 import * as Utils from "../utils/utils";
 import { updateTimeTotal, updateTimeSec, updateTimeDec, clearTimeSec, clearTimeDec } from "../store/actions/time.action";
-import { updateClonesPerSecond } from "../store/actions/game.action";
+import { updateClonesPerSecond, updateCurrencyClones } from "../store/actions/game.action";
 
 import { unlockAutoClone, unlockAutoSell, unlockAutoSerum } from "../store/actions/tools.action";
 
 import { unlockCloneFetus, unlockSellFetus, unlockSerumFetus, createFetusClone, killFetusClone } from "../store/actions/clones/fetus.action";
+
 
 // import Roger from "@pabrick/roger";
 
@@ -74,6 +75,9 @@ const timeService = {
 				dispatchedActions.push(unlockAutoClone());
 			}
 
+			const totalClones = clones.fetus.amount; //+ clones.child.amount + clones.teen.amount + clones.adult.amount + clones.senior.amount + clones.ancient.amount;
+			dispatchedActions.push(updateCurrencyClones(totalClones));
+
 			store.dispatch(batchActions(dispatchedActions));
 
 		}, 100);
@@ -85,7 +89,7 @@ timeService.start();
 export default timeService;
 
 const checkUnlockSellFetus = (fetus, clones) => {
-	return !fetus.unlocked.sell && (fetus.amount >= parseInt((clones / 2), 10))
+	return !fetus.unlocked.sell && fetus.amount >= 25;
 }
 
 const checkUnlockAutoClone = (autoClone, money) => {
