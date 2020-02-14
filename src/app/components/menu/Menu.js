@@ -9,16 +9,14 @@ import "./Menu.scss";
 
 import MenuButton from "./button/MenuButton";
 
-const Menu = ({ tools, clones, config, onClickAutoClone }) => (
+const Menu = ({ game, tools, clones, config, onClickAutoClone }) => (
 	<div className="menu">
 		<MenuButton
-			id={ CONSTANST.TOOLS.AUTO_CLONE }
 			title={ translations[config.language].TOOLS.AUTO_CLONE }
 			amount={ tools.autoClone.amount }
 			cost={ tools.autoClone.cost }
-			unlocked={ tools.autoClone.unlocked }
-			enabled={ clones.fetus.amount >= tools.autoClone.cost }
-			onClick={() => { onClickAutoClone(tools.autoClone) }}
+			enabled={ game.currency.money >= tools.autoClone.cost }
+			onClick={() => { onClickAutoClone(tools.autoClone.cost) }}
 		/>
 	</div>
 );

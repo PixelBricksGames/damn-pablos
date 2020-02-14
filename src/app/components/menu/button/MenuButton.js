@@ -3,16 +3,16 @@ import PropTypes from "prop-types";
 
 import "./MenuButton.scss";
 
-const MenuButton = ({ id, title, amount, cost, unlocked, enabled, onClick }) => {
+const MenuButton = ({ title, amount, cost, enabled, onClick }) => {
     return (
         <button
-            className={ `btn-${id} menu-btn ${unlocked ? 'unlocked' : 'locked'}  ${enabled ? 'enabled' : 'disabled'}` }
-            onClick={ (enabled && unlocked) ? onClick : undefined }
+            className={ `menu-btn ${enabled ? 'enabled' : 'locdisabledked'}  ${enabled ? 'enabled' : 'disabled'}` }
+            onClick={ enabled ? onClick : undefined }
         >
-			<div className={`title btn-${id}__title`}>
+			<div className={`title`}>
 				{ title }: { amount }
 			</div>
-            <div className={`cost btn-${id}__cost`}>
+            <div className={`cost`}>
 				{ cost }
 			</div>
         </button>

@@ -25,7 +25,7 @@ export const earnMoney = (money) => ({
 	money
 });
 
-export const spenMoney = (money) => ({
+export const spendMoney = (money) => ({
 	type: actionType.GAME.MONEY.SPEND,
 	money
 });

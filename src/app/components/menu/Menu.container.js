@@ -5,7 +5,7 @@ import Menu from "./Menu";
 
 import { updateClonesPerSecond } from "../../store/actions/game.action";
 
-import { payMoney } from "../../store/actions/game.action";
+import { spendMoney } from "../../store/actions/game.action";
 import { deleteClones } from "../../store/actions/game.action";
 
 import { createAutoClone } from "../../store/actions/tools.action";
@@ -14,6 +14,7 @@ import { createAutoSerum } from "../../store/actions/tools.action";
 import { killFetusClone } from "../../store/actions/clones/fetus.action";
 
 const mapStateToProps = state => ({
+	game: state.get("game"),
 	tools: state.get("tools"),
 	clones: {
 		fetus: state.get("clones").get("fetus")
@@ -23,9 +24,9 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-	onClickAutoClone: (autoClone) => dispatch(batchActions([
-		createAutoClone()
-		// spenMoney(autoClone.cost)
+	onClickAutoClone: (cost) => dispatch(batchActions([
+		createAutoClone(),
+		spendMoney(cost)
 	]))
 });
 

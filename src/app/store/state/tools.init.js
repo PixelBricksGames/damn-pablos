@@ -1,5 +1,6 @@
 export const tools = {
 	autoClone: {
+		id: "autoClone",
 		amount: 0,
 		unlocked: false,
 		cost: 100,
@@ -9,6 +10,7 @@ export const tools = {
 		},
 	},
 	autoSell: {
+		id: "autoSell",
 		amount: 0,
 		unlocked: false,
 		cost: 500,
@@ -18,6 +20,7 @@ export const tools = {
 		},
 	},
 	autoSerum: {
+		id: "autoSerum",
 		amount: 0,
 		unlocked: false,
 		cost: 1000,
