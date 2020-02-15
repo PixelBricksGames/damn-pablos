@@ -3,14 +3,9 @@ import { batchActions } from 'redux-batched-actions';
 
 import Menu from "./Menu";
 
-import { updateClonesPerSecond } from "../../store/actions/game.action";
-
-import { spendMoney } from "../../store/actions/game.action";
-import { deleteClones } from "../../store/actions/game.action";
-
-import { createAutoClone } from "../../store/actions/tools.action";
-import { createAutoSerum } from "../../store/actions/tools.action";
-
+import { updateClonesPerSecond, spendMoney, deleteClones } from "../../store/actions/game.action";
+import { addMoneySpend } from "./../../store/actions/stats.action";
+import { createAutoClone, createAutoSerum } from "../../store/actions/tools.action";
 import { killFetusClone } from "../../store/actions/clones/fetus.action";
 
 const mapStateToProps = state => ({
@@ -24,9 +19,10 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-	onClickAutoClone: (cost) => dispatch(batchActions([
+	onClickAutoClone: (money) => dispatch(batchActions([
 		createAutoClone(),
-		spendMoney(cost)
+		spendMoney(money),
+		addMoneySpend(money)
 	]))
 });
 

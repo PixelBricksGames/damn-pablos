@@ -1,19 +1,30 @@
 export const stats = {
+	time: {
+		inTotal: 0
+	},
+	outbreaks: {
+		inTotal: 0
+	},
 	clones: {
 		byClick: 0,
 		inTotal: 0,
 		killed: 0,
-		selled: 0
-	},
-	serum: {
-		inTotal: 0,
-		spent: 0
+		sold: 0
 	},
 	money: {
 		inTotal: 0,
-		spent: 0
+		spend: 0
 	},
-	outbreaks: {
-		inTotal: 0
+	agingSerum: {
+		inTotal: 0,
+		spend: 0
+	},
+	angerSerum: {
+		inTotal: 0,
+		spend: 0
+	},
+	chaosSerum: {
+		inTotal: 0,
+		spend: 0
 	}
 };

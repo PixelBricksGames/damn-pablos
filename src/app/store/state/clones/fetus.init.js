@@ -6,6 +6,16 @@ export const fetus = {
 		sell: false,
 		serum: false,
 	},
+	perClick: {
+		clones: 1,
+		money: 1,
+		serum: 1,
+	},
+	perSecond: {
+		clones: 0,
+		money: 0,
+		serum: 0,
+	},
 	cost: {
 		clones: 0,
 		money: 0,

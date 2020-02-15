@@ -5,6 +5,7 @@ import Laboratory from "./Laboratory";
 
 import { createFetusClone, killFetusClone } from "./../../store/actions/clones/fetus.action";
 import { earnMoney, earnAgingSerum } from "../../store/actions/game.action";
+import { addClonesByClick, addClonesKilled, addClonesSold, addMoneyInTotal, addAgingSerumInTotal } from "./../../store/actions/stats.action";
 
 const mapStateToProps = state => ({
 	game: state.get("game"),
@@ -17,15 +18,20 @@ const mapStateToProps = state => ({
 
 const mapDispatchToProps = dispatch => ({
 	onClickClone: (clones) => dispatch(batchActions([
-		createFetusClone(clones)
+		createFetusClone(clones),
+		addClonesByClick(clones)
 	])),
 	onClickSell: (clones, money) => dispatch(batchActions([
 		killFetusClone(clones),
-		earnMoney(money)
+		earnMoney(money),
+		addClonesSold(clones),
+		addMoneyInTotal(money)
 	])),
 	onClickSerum: (clones, serum) => dispatch(batchActions([
 		killFetusClone(clones),
-		earnAgingSerum(serum)
+		earnAgingSerum(serum),
+		addClonesKilled(clones),
+		addAgingSerumInTotal(money)
 	])),
 });
 

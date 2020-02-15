@@ -1,12 +1,12 @@
 export const translations = {
 	ENG: {
 		GAME: {
-			CLONES: "Clones",
+			CLONES: "clones",
 			CLONES_PER_SECOND: "per second",
-			CLONE: "Clone",
-			SELL: "Sell",
-			SERUM: "Serum",
-			MONEY: "Money",
+			CLONE: "clone",
+			SELL: "sell",
+			SERUM: "serum",
+			MONEY: "money",
 		},
 		TOOLS: {
 			AUTO_CLONE: "Auto-Clone",
