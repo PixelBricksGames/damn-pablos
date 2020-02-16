@@ -1,4 +1,4 @@
-import * as initState from "../state/ui";
+import * as initState from "../state/ui.init";
 import * as actionType from "../../units/actions.type";
 
 const ui = (state = initState.ui, action) => {
@@ -12,6 +12,11 @@ const ui = (state = initState.ui, action) => {
 			return {
 				...state,
 				open: false
+			};
+		case actionType.UI.MENU.TOGGLE:
+			return {
+				...state,
+				open: !state.open
 			};
 		case actionType.UI.MENU.SET_NOTIFICATIONS:
 			return {

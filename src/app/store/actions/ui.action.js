@@ -8,6 +8,10 @@ export const closeMenu = () => ({
 	type: actionType.UI.MENU.CLOSE
 });
 
+export const toggleMenu = () => ({
+	type: actionType.UI.MENU.TOGGLE
+});
+
 export const setMenuNotifications = (notifications) => ({
 	type: actionType.UI.MENU.SET_NOTIFICATIONS,
 	notifications

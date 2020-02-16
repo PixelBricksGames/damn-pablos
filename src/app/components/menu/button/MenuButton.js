@@ -6,7 +6,7 @@ import "./MenuButton.scss";
 const MenuButton = ({ title, amount, cost, enabled, onClick }) => {
     return (
         <button
-            className={ `menu-btn ${enabled ? 'enabled' : 'locdisabledked'}  ${enabled ? 'enabled' : 'disabled'}` }
+            className={ `menu-btn ${enabled ? 'enabled' : 'disabled'}` }
             onClick={ enabled ? onClick : undefined }
         >
 			<div className={`title`}>

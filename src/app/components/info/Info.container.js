@@ -1,6 +1,8 @@
 import { connect } from "react-redux";
 import Info from "./Info";
 
+import { toggleMenu } from "../../store/actions/ui.action";
+
 const mapStateToProps = state => ({
 	game: state.get("game"),
 	tools: state.get("tools"),
@@ -11,6 +13,11 @@ const mapStateToProps = state => ({
 	config: state.get("config")
 });
 
+const mapDispatchToProps = dispatch => ({
+	onClickMenu: () => dispatch( toggleMenu() )
+});
+
 export default connect(
-	mapStateToProps
+	mapStateToProps,
+	mapDispatchToProps
 )(Info);

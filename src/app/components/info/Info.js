@@ -5,7 +5,7 @@ import { translations } from "./../../units/translations";
 
 import "./Info.scss";
 
-const Info = ({ game, tools, clones, config }) => {
+const Info = ({ game, tools, clones, config, onClickMenu }) => {
 	return (
 		<div className="info">
 			<section className="wrapper--clones">
@@ -29,7 +29,7 @@ const Info = ({ game, tools, clones, config }) => {
 				</div>
 				
 				<div className="info-menu">
-					<button className="info-menu__button"></button>
+					<button className="info-menu__button" onClick={ onClickMenu }></button>
 				</div>
 			</section>
 

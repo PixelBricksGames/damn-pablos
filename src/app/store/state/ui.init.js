@@ -3,7 +3,7 @@ export const ui = {
 	notifications: 0,
 	tabs: {
 		clones: {
-			open: false,
+			open: true,
 			notifications: 0
 		},
 		tools: {
