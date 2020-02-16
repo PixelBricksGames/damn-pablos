@@ -66,12 +66,19 @@
 				margin-top: 10px;
 
 				&__button {
-					background-color: red;
 					border: 0;
 					cursor: pointer;
 					margin: -6px 6px 0 0;
 					height: 60px;
 					width: 60px;
+
+					&.opened {
+						background-color: red;
+					}
+
+					&.closed {
+						background-color: green;
+					}
 				}
 			}
 		}

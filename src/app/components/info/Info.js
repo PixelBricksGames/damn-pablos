@@ -5,7 +5,7 @@ import { translations } from "./../../units/translations";
 
 import "./Info.scss";
 
-const Info = ({ game, tools, clones, config, onClickMenu }) => {
+const Info = ({ game, tools, clones, config, ui, onClickMenu }) => {
 	return (
 		<div className="info">
 			<section className="wrapper--clones">
@@ -29,7 +29,9 @@ const Info = ({ game, tools, clones, config, onClickMenu }) => {
 				</div>
 				
 				<div className="info-menu">
-					<button className="info-menu__button" onClick={ onClickMenu }></button>
+					<button
+						className={ `info-menu__button ${ui.open ? 'opened' : 'closed'}` }
+						onClick={ onClickMenu }></button>
 				</div>
 			</section>
 
