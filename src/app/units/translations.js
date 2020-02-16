@@ -1,16 +1,27 @@
 export const translations = {
 	ENG: {
 		GAME: {
-			CLONES: "clones",
 			CLONES_PER_SECOND: "per second",
-			CLONE: "clone",
-			SELL: "sell",
-			SERUM: "serum",
-			MONEY: "money",
+			ACTIONS: {
+				CLONE: "clone",
+				SELL: "sell",
+				SERUM: "serum",
+			},
+			CURRENCY: {
+				CLONES: "clones",
+				MONEY: "money",
+				AGING_SERUM: "aging serum",
+				ANGER_SERUM: "anger serum",
+				CHAOS_SERUM: "chaos serum",
+			},
+			RISK: {
+				MUTATION: "risk of mutation",
+				REBELLION: "risk of rebellion",
+			}
 		},
 		TOOLS: {
 			AUTO_CLONE: "Auto-Clone",
-			AUTO_SEL: "Auto-Sell",
+			AUTO_SELL: "Auto-Sell",
 			AUTO_SERUM: "Auto-Serum",
 		},
 		CLONES: {

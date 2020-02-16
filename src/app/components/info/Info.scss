@@ -1,10 +1,89 @@
 @import "./../../../assets/fonts/retro-gaming/stylesheet.css";
 
 .info {
-	background-color: red;
-	display: block;
-	padding: 10px 0;
 	width: 100%;
 	font-family: "retro_gaming";
 	-webkit-font-smoothing: antialiased; // subpixel-antialiased;
+
+	.wrapper {
+		&--clones {
+			background-color: #FFFFFF55;
+			box-sizing: border-box;
+			top: 10px;
+			position: fixed;
+			padding: 2px 0;
+			width: 100%;
+
+			.info-clones {
+				text-align: center;
+				box-sizing: border-box;
+				padding: 0 10px;
+
+				&__amount {
+					&--number {
+						display: inline-block;
+						font-size: 30px;
+						height: 25px;
+						line-height: 1;
+						max-width: calc(100% - 100px);
+						overflow: hidden;
+					}
+					&--label {
+						display: inline-block;
+						font-size: 20px;
+						margin-left: 10px;
+						text-align: right;
+					}
+				}
+				&__per-second {
+					font-size: 14px;
+					margin-top: -4px;
+					span {
+						font-size: 12px;
+						position: relative;
+						top: -1px;
+					}
+				}
+				&__mutation,
+				&__rebellion {
+					display: none; // TODO
+					font-size: 14px;
+					span {
+						font-size: 12px;
+						position: relative;
+						top: -1px;
+					}
+					&::first-letter {
+						text-transform: capitalize;
+					}
+				}
+			}
+		}
+
+		&--currencies {
+			background-color: red;
+			box-sizing: border-box;
+			bottom: 0;
+			position: fixed;
+			padding: 10px 0;
+			width: 100%;
+
+			.info-currencies {
+				box-sizing: border-box;
+				padding: 0 10px;
+				&__money {
+
+				}
+				&__aging-serum {
+
+				}
+				&__anger-serum {
+
+				}
+				&__chaos-serum {
+
+				}
+			}
+		}
+	}
 }

@@ -11,7 +11,7 @@ const Capsule = ({ language, clone, currency, onClickClone, onClickSerum, onClic
 		<div id={clone.id} className="capsule">
 			<div className="button__clone">
 				<CapsuleButton
-					text={ translations[language].GAME.CLONE }
+					text={ translations[language].GAME.ACTIONS.CLONE }
 					unlocked={ clone.unlocked.clone }
 					enabled={ true }
 					onClick={ onClickClone }
@@ -20,7 +20,7 @@ const Capsule = ({ language, clone, currency, onClickClone, onClickSerum, onClic
 
 			<div className="button__sell">
 				<CapsuleButton
-					text={ translations[language].GAME.SELL }
+					text={ translations[language].GAME.ACTIONS.SELL }
 					unlocked={ clone.unlocked.sell }
 					enabled={ clone.amount > 0 }
 					onClick={ onClickSell }
@@ -29,7 +29,7 @@ const Capsule = ({ language, clone, currency, onClickClone, onClickSerum, onClic
 
 			<div className="button__serum">
 				<CapsuleButton
-					text={ translations[language].GAME.SERUM }
+					text={ translations[language].GAME.ACTIONS.SERUM }
 					unlocked={ clone.unlocked.serum }
 					enabled={ clone.amount > 0 }
 					onClick={ onClickSerum }

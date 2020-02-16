@@ -1,6 +1,8 @@
 import store from "../store";
 import { batchActions } from 'redux-batched-actions';
 
+import packageJson from './../../../package.json';
+
 import * as Utils from "../utils/utils";
 import { TIME } from "../units/constants";
 import { translations } from "../units/translations";
@@ -81,7 +83,7 @@ const timeService = {
 
 			const totalClones = clones.fetus.amount; //+ clones.child.amount + clones.teen.amount + clones.adult.amount + clones.senior.amount + clones.ancient.amount;
 			dispatchedActions.push(updateCurrencyClones(totalClones));
-			document.title = `${totalClones} ${translations[config.language].GAME.CLONES}`;
+			document.title = `${totalClones} ${translations[config.language].GAME.CURRENCY.CLONES}`;
 
 			store.dispatch(batchActions(dispatchedActions));
 
@@ -89,6 +91,7 @@ const timeService = {
 	}
 };
 
+console.log(`start DAMN PABLOS: v.${packageJson.version}`);
 timeService.start();
 
 export default timeService;
