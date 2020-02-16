@@ -8,31 +8,56 @@
 	width: 100%;
 
 	&.open {
-		display: block;
+		display: flex;
 	}
 
 	&.close {
 		display: none;
 	}
 
-	&__tab--clones,
-	&__tab--tools,
-	&__tab--upgrades,
-	&__tab--achievements,
-	&__tab--stats,
-	&__tab--config,
-	&__tab--credits {
-		&.open {
+	.tab {
+		align-items: flex-end;
+		display: flex;
+		flex-direction: column;
+		width: 80px;
+
+		$tab-size: 60px;
+
+		&__clones,
+		&__tools,
+		&__upgrades,
+		&__achievements,
+		&__stats,
+		&__config,
+		&__credits {
 			display: block;
-		}
-	
-		&.close {
-			display: none;
+			height: $tab-size;
+			width: $tab-size;
+			&.selected {
+				opacity: 1;
+			}
+			&.unselected {
+				opacity: 0.5;
+			}
 		}
 	}
 
-	button {
-		display: block;
-		margin: 10px auto;
+	.page {
+		width: 100%;
+
+		&__clones,
+		&__tools,
+		&__upgrades,
+		&__achievements,
+		&__stats,
+		&__config,
+		&__credits {
+			&.open {
+				display: block;
+			}
+			&.close {
+				display: none;
+			}
+		}
 	}
 }

@@ -10,7 +10,7 @@
 			display: flex;
 			position: fixed;
 			width: 100%;
-	
+
 			.info-clones {
 				background-color: #FFFFFF55;
 				box-sizing: border-box;
@@ -90,22 +90,11 @@
 			position: fixed;
 			padding: 10px 0;
 			width: 100%;
+			z-index: 1;
 
 			.info-currencies {
 				box-sizing: border-box;
 				padding: 0 10px;
-				&__money {
-
-				}
-				&__aging-serum {
-
-				}
-				&__anger-serum {
-
-				}
-				&__chaos-serum {
-
-				}
 			}
 		}
 	}

@@ -31,7 +31,8 @@ const Info = ({ game, tools, clones, config, ui, onClickMenu }) => {
 				<div className="info-menu">
 					<button
 						className={ `info-menu__button ${ui.open ? 'opened' : 'closed'}` }
-						onClick={ onClickMenu }></button>
+						onClick={ onClickMenu }>
+					</button>
 				</div>
 			</section>
 

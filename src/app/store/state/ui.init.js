@@ -1,34 +1,34 @@
 export const ui = {
 	open: false,
-	notifications: 0,
-	tabs: {
+	notifications: false,
+	pages: {
 		clones: {
-			open: true,
-			notifications: 0
+			open: false,
+			notifications: false
 		},
 		tools: {
-			open: false,
-			notifications: 0
+			open: true,
+			notifications: false
 		},
 		upgrades: {
 			open: false,
-			notifications: 0
+			notifications: false
 		},
 		achievements: {
 			open: false,
-			notifications: 0
+			notifications: false
 		},
 		stats: {
 			open: false,
-			notifications: 0
+			notifications: false
 		},
 		config: {
 			open: false,
-			notifications: 0
+			notifications: false
 		},
 		credits: {
 			open: false,
-			notifications: 0
+			notifications: false
 		},
 	}
 };
