@@ -1,64 +1,64 @@
-import * as initState from "../state/interface.init";
+import * as initState from "../state/ui";
 import * as actionType from "../../units/actions.type";
 
-const interface = (state = initState.interface, action) => {
+const ui = (state = initState.ui, action) => {
 	switch (action.type) {
-		case actionType.INTERFACE.MENU.OPEN:
+		case actionType.UI.MENU.OPEN:
 			return {
 				...state,
 				open: true
 			};
-		case actionType.INTERFACE.MENU.CLOSE:
+		case actionType.UI.MENU.CLOSE:
 			return {
 				...state,
 				open: false
 			};
-		case actionType.INTERFACE.MENU.SET_NOTIFICATIONS:
+		case actionType.UI.MENU.SET_NOTIFICATIONS:
 			return {
 				...state,
 				notifications: action.notifications
 			};
 
-		case actionType.INTERFACE.TABS.CLONES.SELECT:
+		case actionType.UI.TABS.CLONES.SELECT:
 			return getSelectedTabState(state, "clones");
 
-		case actionType.INTERFACE.TABS.CLONES.SET_NOTIFICATIONS:
+		case actionType.UI.TABS.CLONES.SET_NOTIFICATIONS:
 			return getSelectedTabState(state, "clones", action.notifications);
 
-		case actionType.INTERFACE.TABS.TOOLS.SELECT:
+		case actionType.UI.TABS.TOOLS.SELECT:
 			return getSelectedTabState(state, "tools");
 
-		case actionType.INTERFACE.TABS.TOOLS.SET_NOTIFICATIONS:
+		case actionType.UI.TABS.TOOLS.SET_NOTIFICATIONS:
 			return getSelectedTabState(state, "tools", action.notifications);
 
-		case actionType.INTERFACE.TABS.UPGRADES.SELECT:
+		case actionType.UI.TABS.UPGRADES.SELECT:
 			return getSelectedTabState(state, "upgrades");
 
-		case actionType.INTERFACE.TABS.UPGRADES.SET_NOTIFICATIONS:
+		case actionType.UI.TABS.UPGRADES.SET_NOTIFICATIONS:
 			return getSelectedTabState(state, "upgrades", action.notifications);
 
-		case actionType.INTERFACE.TABS.ACHIEVEMENTS.SELECT:
+		case actionType.UI.TABS.ACHIEVEMENTS.SELECT:
 			return getSelectedTabState(state, "achievements");
 
-		case actionType.INTERFACE.TABS.ACHIEVEMENTS.SET_NOTIFICATIONS:
+		case actionType.UI.TABS.ACHIEVEMENTS.SET_NOTIFICATIONS:
 			return getSelectedTabState(state, "achievements", action.notifications);
 
-		case actionType.INTERFACE.TABS.STATS.SELECT:
+		case actionType.UI.TABS.STATS.SELECT:
 			return getSelectedTabState(state, "stats");
 
-		case actionType.INTERFACE.TABS.STATS.SET_NOTIFICATIONS:
+		case actionType.UI.TABS.STATS.SET_NOTIFICATIONS:
 			return getSelectedTabState(state, "stats", action.notifications);
 
-		case actionType.INTERFACE.TABS.CONFIG.SELECT:
+		case actionType.UI.TABS.CONFIG.SELECT:
 			return getSelectedTabState(state, "config");
 
-		case actionType.INTERFACE.TABS.CONFIG.SET_NOTIFICATIONS:
+		case actionType.UI.TABS.CONFIG.SET_NOTIFICATIONS:
 			return getSelectedTabState(state, "config", action.notifications);
 
-		case actionType.INTERFACE.TABS.CREDITS.SELECT:
+		case actionType.UI.TABS.CREDITS.SELECT:
 			return getSelectedTabState(state, "credits");
 
-		case actionType.INTERFACE.TABS.CREDITS.SET_NOTIFICATIONS:
+		case actionType.UI.TABS.CREDITS.SET_NOTIFICATIONS:
 			return getSelectedTabState(state, "credits", action.notifications);
 
 		default:
@@ -90,4 +90,4 @@ const getNotificationTabState = (state, tab, notifications) => {
 	return newState;
 }
 
-export default interface;
+export default ui;

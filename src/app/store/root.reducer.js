@@ -6,6 +6,7 @@ import clones from "./reducers/clones.reducer";
 import time from "./reducers/time.reducer";
 import config from "./reducers/config.reducer";
 import stats from "./reducers/stats.reducer";
+import ui from "./reducers/ui.reducer";
 
 const rootReducer = combineReducers({
 	game,
@@ -13,7 +14,8 @@ const rootReducer = combineReducers({
 	clones,
 	time,
 	config,
-	stats
+	stats,
+	ui
 });
 
 export default rootReducer;

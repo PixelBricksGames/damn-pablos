@@ -1,4 +1,4 @@
-export const interface = {
+export const ui = {
 	open: false,
 	notifications: 0,
 	tabs: {
@@ -6,27 +6,27 @@ export const interface = {
 			open: false,
 			notifications: 0
 		},
-		tools: : {
+		tools: {
 			open: false,
 			notifications: 0
 		},
-		upgrades: : {
+		upgrades: {
 			open: false,
 			notifications: 0
 		},
-		achievements: : {
+		achievements: {
 			open: false,
 			notifications: 0
 		},
-		stats: : {
+		stats: {
 			open: false,
 			notifications: 0
 		},
-		config: : {
+		config: {
 			open: false,
 			notifications: 0
 		},
-		credits: : {
+		credits: {
 			open: false,
 			notifications: 0
 		},

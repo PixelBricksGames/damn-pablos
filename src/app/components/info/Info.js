@@ -27,6 +27,10 @@ const Info = ({ game, tools, clones, config }) => {
 						{ game.risk.rebellion + "%"  }
 					</div>
 				</div>
+				
+				<div className="info-menu">
+					<button className="info-menu__button"></button>
+				</div>
 			</section>
 
 			<section className="wrapper--currencies">
@@ -36,6 +40,10 @@ const Info = ({ game, tools, clones, config }) => {
 					<div className="info-currencies__anger-serum">{translations[config.language].GAME.CURRENCY.ANGER_SERUM}: { game.currency.angerSerum }</div>
 					<div className="info-currencies__chaos-serum">{translations[config.language].GAME.CURRENCY.CHAOS_SERUM}: { game.currency.chaosSerum }</div>
 				</div>
+			</section>
+
+			<section className="wrapper--characters">
+				<div className="info-characters"></div>
 			</section>
 		</div>
 	);

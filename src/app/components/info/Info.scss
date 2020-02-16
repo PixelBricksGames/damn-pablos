@@ -7,17 +7,17 @@
 
 	.wrapper {
 		&--clones {
-			background-color: #FFFFFF55;
-			box-sizing: border-box;
-			top: 10px;
+			display: flex;
 			position: fixed;
-			padding: 2px 0;
 			width: 100%;
-
+	
 			.info-clones {
-				text-align: center;
+				background-color: #FFFFFF55;
 				box-sizing: border-box;
-				padding: 0 10px;
+				margin-top: 10px;
+				padding: 2px 10px;
+				text-align: center;
+				width: 100%;
 
 				&__amount {
 					&--number {
@@ -56,6 +56,22 @@
 					&::first-letter {
 						text-transform: capitalize;
 					}
+				}
+			}
+
+			.info-menu {
+				background-color: #FFFFFF55;
+				box-sizing: border-box;
+				height: 45px;
+				margin-top: 10px;
+
+				&__button {
+					background-color: red;
+					border: 0;
+					cursor: pointer;
+					margin: -6px 6px 0 0;
+					height: 60px;
+					width: 60px;
 				}
 			}
 		}

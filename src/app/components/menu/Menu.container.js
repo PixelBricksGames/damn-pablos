@@ -15,7 +15,8 @@ const mapStateToProps = state => ({
 		fetus: state.get("clones").get("fetus")
 		// TODO
 	},
-	config: state.get("config")
+	config: state.get("config"),
+	ui: state.get("ui"),
 });
 
 const mapDispatchToProps = dispatch => ({

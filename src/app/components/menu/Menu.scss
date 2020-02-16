@@ -1,9 +1,19 @@
 .menu {
 	background-color: green;
-	display: block;
-	padding: 10px 0;
-	text-align: center;
+    box-sizing: border-box;
+    height: 100%;
+    position: absolute;
+    text-align: center;
+    top: 80px;
 	width: 100%;
+
+	&.open {
+		display: block;
+	}
+
+	&.close {
+		display: none;
+	}
 
 	button {
 		display: block;

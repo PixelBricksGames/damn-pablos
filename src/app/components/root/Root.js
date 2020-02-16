@@ -8,7 +8,7 @@ import LaboratoryContainer from "../laboratory/Laboratory.container";
 import MenuContainer from "../menu/Menu.container";
 
 const Root = () => (
-    <main className="app">
+    <main className="root">
 		<InfoContainer></InfoContainer>
 		<LaboratoryContainer></LaboratoryContainer>
 		<MenuContainer></MenuContainer>
