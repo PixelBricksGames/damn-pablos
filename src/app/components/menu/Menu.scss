@@ -15,6 +15,22 @@
 		display: none;
 	}
 
+	&__tab--clones,
+	&__tab--tools,
+	&__tab--upgrades,
+	&__tab--achievements,
+	&__tab--stats,
+	&__tab--config,
+	&__tab--credits {
+		&.open {
+			display: block;
+		}
+	
+		&.close {
+			display: none;
+		}
+	}
+
 	button {
 		display: block;
 		margin: 10px auto;
