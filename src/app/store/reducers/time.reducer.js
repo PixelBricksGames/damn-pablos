@@ -1,5 +1,5 @@
-import * as actionType from "../../units/actions.type";
 import * as initState from "../state/time.init";
+import * as actionType from "../../units/actions.type";
 import * as Utils from "../../utils/utils";
 import { TIME } from "../../units/constants";
 

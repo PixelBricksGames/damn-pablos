@@ -1,7 +1,7 @@
 export const interface = {
 	open: false,
 	notifications: 0,
-	tab: {
+	tabs: {
 		clones: {
 			open: false,
 			notifications: 0

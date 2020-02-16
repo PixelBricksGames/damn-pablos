@@ -1,5 +1,5 @@
-import * as actionType from "../../units/actions.type";
 import * as initState from "../state/stats.init";
+import * as actionType from "../../units/actions.type";
 import * as Utils from "../../utils/utils";
 
 const stats = (state = initState.stats, action) => {
