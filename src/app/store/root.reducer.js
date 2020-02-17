@@ -1,13 +1,13 @@
 import { combineReducers } from "redux-immutable";
 
 import game from "./game/game.reducer";
+import ui from "./ui/ui.reducer";
 
 import tools from "./reducers/tools.reducer";
 import clones from "./reducers/clones.reducer";
 import time from "./reducers/time.reducer";
 import config from "./reducers/config.reducer";
 import stats from "./reducers/stats.reducer";
-import ui from "./reducers/ui.reducer";
 
 const rootReducer = combineReducers({
 	game,

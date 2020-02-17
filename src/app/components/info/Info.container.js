@@ -1,7 +1,7 @@
 import { connect } from "react-redux";
 import Info from "./Info";
 
-import { toggleMenu } from "../../store/actions/ui.action";
+import { toggleMenu } from "../../store/ui/ui.action";
 
 const mapStateToProps = state => ({
 	game: state.get("game"),

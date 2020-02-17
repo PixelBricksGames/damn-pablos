@@ -1,4 +1,4 @@
-import * as actionType from "../../units/actions.type";
+import * as actionType from "./ui.type";
 
 export const openMenu = () => ({
 	type: actionType.UI.MENU.OPEN

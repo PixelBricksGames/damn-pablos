@@ -1,5 +1,5 @@
-import * as initState from "../state/ui.init";
-import * as actionType from "../../units/actions.type";
+import * as initState from "./ui.init";
+import * as actionType from "./ui.type";
 
 const ui = (state = initState.ui, action) => {
 	switch (action.type) {

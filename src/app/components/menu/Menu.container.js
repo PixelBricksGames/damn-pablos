@@ -15,7 +15,7 @@ import {
 	selectStatsTab, clearStatsTabNotifications,
 	selectConfigTab, clearConfigTabNotifications,
 	selectCreditsTab, clearCreditsTabNotifications,
-} from "../../store/actions/ui.action";
+} from "../../store/ui/ui.action";
 
 const mapStateToProps = state => ({
 	game: state.get("game"),
