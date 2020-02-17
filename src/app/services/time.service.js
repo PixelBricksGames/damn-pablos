@@ -8,7 +8,7 @@ import { TIME } from "../units/constants";
 import { translations } from "../units/translations";
 
 import { updateTimeTotal, updateTimeSec, updateTimeDec, clearTimeSec, clearTimeDec } from "../store/actions/time.action";
-import { updateClonesPerSecond, updateCurrencyClones } from "../store/actions/game.action";
+import { updateClonesPerSecond, updateCurrencyClones } from "../store/game/game.action";
 import { addTime } from "../store/actions/stats.action";
 import { unlockAutoClone, unlockAutoSell, unlockAutoSerum } from "../store/actions/tools.action";
 import { unlockCloneFetus, unlockSellFetus, unlockSerumFetus, createFetusClone, killFetusClone } from "../store/actions/clones/fetus.action";

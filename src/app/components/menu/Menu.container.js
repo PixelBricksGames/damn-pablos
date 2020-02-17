@@ -3,7 +3,7 @@ import { batchActions } from 'redux-batched-actions';
 
 import Menu from "./Menu";
 
-import { updateClonesPerSecond, spendMoney, deleteClones } from "../../store/actions/game.action";
+import { updateClonesPerSecond, spendMoney, deleteClones } from "../../store/game/game.action";
 import { addMoneySpend } from "./../../store/actions/stats.action";
 import { createAutoClone, createAutoSerum } from "../../store/actions/tools.action";
 import { killFetusClone } from "../../store/actions/clones/fetus.action";

@@ -1,5 +1,5 @@
-import * as initState from "../state/game.init";
-import * as actionType from "./../../units/actions.type";
+import * as initState from "./game.init";
+import * as actionType from "./game.type";
 
 const game = (state = initState.game, action) => {
 	switch (action.type) {

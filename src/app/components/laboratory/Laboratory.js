@@ -1,8 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-import * as GameState from "./../../store/state/game.init";
-
 import "./Laboratory.scss";
 import Capsule from "./capsule/Capsule";
 

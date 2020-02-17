@@ -1,4 +1,4 @@
-import * as actionType from "../../units/actions.type";
+import * as actionType from "./game.type";
 
 export const updateClonesPerSecond = (perSecond) => ({
 	type: actionType.GAME.CLONES.UPDATE_CPS,

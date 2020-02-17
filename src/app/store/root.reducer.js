@@ -1,6 +1,7 @@
 import { combineReducers } from "redux-immutable";
 
-import game from "./reducers/game.reducer";
+import game from "./game/game.reducer";
+
 import tools from "./reducers/tools.reducer";
 import clones from "./reducers/clones.reducer";
 import time from "./reducers/time.reducer";
