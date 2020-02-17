@@ -1,4 +1,4 @@
-import * as actionType from "../../units/actions.type";
+import * as actionType from "./tools.type";
 
 // AutoClone
 export const unlockAutoClone = () => ({

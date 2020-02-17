@@ -3,9 +3,9 @@ import { batchActions } from 'redux-batched-actions';
 
 import Laboratory from "./Laboratory";
 
-import { createFetusClone, killFetusClone } from "./../../store/actions/clones/fetus.action";
+import { createFetusClone, killFetusClone } from "./../../store/clones/fetus/fetus.action";
 import { earnMoney, earnAgingSerum } from "../../store/game/game.action";
-import { addClonesByClick, addClonesKilled, addClonesSold, addMoneyInTotal, addAgingSerumInTotal } from "./../../store/actions/stats.action";
+import { addClonesByClick, addClonesKilled, addClonesSold, addMoneyInTotal, addAgingSerumInTotal } from "./../../store/stats/stats.action";
 
 const mapStateToProps = state => ({
 	game: state.get("game"),

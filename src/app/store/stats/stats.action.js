@@ -1,4 +1,4 @@
-import * as actionType from "../../units/actions.type";
+import * as actionType from "./stats.type";
 
 export const addTime = (time) => ({
 	type: actionType.STATS.TIME.ADD_IN_TOTAL,

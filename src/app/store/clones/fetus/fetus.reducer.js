@@ -1,7 +1,6 @@
-import * as initState from "./../../state/clones/fetus.init";
-import * as actionType from "./../../../units/actions.type";
+import * as initState from "./fetus.init";
+import * as actionType from "./../clones.type";
 import * as Utils from "./../../../utils/utils";
-
 import { BUTTONS } from "./../../../units/constants";
 
 const fetus = (state = initState.fetus, action) => {
