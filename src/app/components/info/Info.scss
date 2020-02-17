@@ -1,5 +1,8 @@
 @import "./../../../assets/fonts/retro-gaming/stylesheet.css";
 
+$URL_ASSETS: "./../../../assets/";
+$URL_ASSETS_IMAGES: $URL_ASSETS + "images/";
+
 .info {
 	width: 100%;
 	font-family: "retro_gaming";
@@ -73,11 +76,11 @@
 					width: 60px;
 
 					&.opened {
-						background-color: red;
+						background-image: url($URL_ASSETS_IMAGES + "ui/menu-open.png");
 					}
 
 					&.closed {
-						background-color: green;
+						background-image: url($URL_ASSETS_IMAGES + "ui/menu-close.png");
 					}
 				}
 			}
