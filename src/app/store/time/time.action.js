@@ -1,4 +1,4 @@
-import * as actionType from "../../units/actions.type";
+import * as actionType from "./time.type";
 
 export const updateTimeTotal = () => ({
 	type: actionType.TIME.TOTAL.UPDATE

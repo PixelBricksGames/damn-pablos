@@ -1,4 +1,4 @@
-import * as actionType from "./../../../units/actions.type";
+import * as actionType from "./../clones.type";
 
 export const unlockCloneFetus = () => ({
 	type: actionType.CLONES.FETUS.UNLOCK.CLONE

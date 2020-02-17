@@ -1,0 +1,14 @@
+export const TIME = {
+	TOTAL: {
+		UPDATE: "UPDATE_TOTAL",
+		CLEAR: "CLEAR_TOTAL",
+	},
+	SEC: {
+		UPDATE: "UPDATE_SEC",
+		CLEAR: "CLEAR_SEC",
+	},
+	DEC: {
+		UPDATE: "UPDATE_DEC",
+		CLEAR: "CLEAR_DEC",
+	}
+};

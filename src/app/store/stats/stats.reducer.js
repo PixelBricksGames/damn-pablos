@@ -1,6 +1,6 @@
-import * as initState from "../state/stats.init";
-import * as actionType from "../../units/actions.type";
-import * as Utils from "../../utils/utils";
+import * as initState from "./stats.init";
+import * as actionType from "./stats.type";
+import * as Utils from "./../../utils/utils";
 
 const stats = (state = initState.stats, action) => {
 	switch (action.type) {

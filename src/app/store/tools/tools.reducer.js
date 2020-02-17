@@ -1,7 +1,6 @@
-import * as initState from "../state/tools.init";
-import * as actionType from "./../../units/actions.type";
+import * as initState from "./tools.init";
+import * as actionType from "./tools.type";
 import * as Utils from "./../../utils/utils";
-
 import { TOOLS } from "./../../units/constants";
 
 const tools = (state = initState.tools, action) => {
