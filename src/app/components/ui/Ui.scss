@@ -1,0 +1,36 @@
+@import "./../../../assets/fonts/retro-gaming/stylesheet.css";
+
+$URL_ASSETS: "./../../../assets/";
+$URL_ASSETS_IMAGES: $URL_ASSETS + "images/";
+
+.ui {
+	font-family: "retro_gaming";
+	-webkit-font-smoothing: antialiased; // subpixel-antialiased;
+
+	display: flex;
+    flex-direction: column;
+	justify-content: space-between;
+	height: 100%;
+	width: 100%;
+
+	.currencies {
+		background-color: red;
+		box-sizing: border-box;
+		padding: 10px 0;
+		width: 100%;
+		z-index: 1;
+		align-self: flex-end;
+		justify-self: flex-end;
+
+		.info-currencies {
+			box-sizing: border-box;
+			padding: 0 10px;
+		}
+	}
+
+	.characters {
+		position: absolute;
+		bottom: 0;
+		left: 0;
+	}
+}

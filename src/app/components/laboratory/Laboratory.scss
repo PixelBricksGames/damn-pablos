@@ -1,7 +1,12 @@
 .laboratory {
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 100%;
+	width: 100%;
+	box-sizing: border-box;
 	background-color: brown;
 	display: block;
 	padding: 200px 0 10px 0;
 	text-align: center;
-	width: 100%;
 }
