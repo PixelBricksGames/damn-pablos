@@ -1,72 +1,25 @@
-import { connect } from "react-redux";
-import { batchActions } from 'redux-batched-actions';
+import React from "react";
+import "./Ui.scss";
 
-import Ui from "./Ui";
+import InfoConnector from "./info/Info.connector";
+import MenuConnector from "./menu/Menu.connector";
 
-import { updateClonesPerSecond, spendMoney, deleteClones } from "../../store/game/game.action";
-import { addMoneySpend } from "./../../store/stats/stats.action";
-import { createAutoClone, createAutoSerum } from "../../store/tools/tools.action";
-import { killFetusClone } from "../../store/clones/fetus/fetus.action";
-import {
-	toggleMenu,
-	selectClonesTab, clearClonesTabNotifications,
-	selectToolsTab, clearToolsTabNotifications,
-	selectUpgradesTab, clearUpgradesTabNotifications,
-	selectAchievementsTab, clearAchievementsTabNotifications,
-	selectStatsTab, clearStatsTabNotifications,
-	selectConfigTab, clearConfigTabNotifications,
-	selectCreditsTab, clearCreditsTabNotifications,
-} from "../../store/ui/ui.action";
+const Ui = () => (
+    <main className="ui">
+		<InfoConnector />
+		<MenuConnector />
 
-const mapStateToProps = state => ({
-	game: state.get("game"),
-	tools: state.get("tools"),
-	clones: {
-		fetus: state.get("clones").get("fetus")
-		// TODO
-	},
-	config: state.get("config"),
-	ui: state.get("ui")
-});
+		{/* <section className="currencies">
+			<div className="info-currencies__money">{translations[config.language].GAME.CURRENCY.MONEY}: { game.currency.money }</div>
+			<div className="info-currencies__aging-serum">{translations[config.language].GAME.CURRENCY.AGING_SERUM}: { game.currency.agingSerum }</div>
+			<div className="info-currencies__anger-serum">{translations[config.language].GAME.CURRENCY.ANGER_SERUM}: { game.currency.angerSerum }</div>
+			<div className="info-currencies__chaos-serum">{translations[config.language].GAME.CURRENCY.CHAOS_SERUM}: { game.currency.chaosSerum }</div>
+		</section>
 
-const mapDispatchToProps = dispatch => ({
-	onClickMenu: () => dispatch( toggleMenu() ),
-	onClickTabClones: () => dispatch(batchActions([
-		selectClonesTab(),
-		clearClonesTabNotifications()
-	])),
-	onClickTabTools: () => dispatch(batchActions([
-		selectToolsTab(),
-		clearToolsTabNotifications()
-	])),
-	onClickTabUpgrades: () => dispatch(batchActions([
-		selectUpgradesTab(),
-		clearUpgradesTabNotifications()
-	])),
-	onClickTabAchievements: () => dispatch(batchActions([
-		selectAchievementsTab(),
-		clearAchievementsTabNotifications()
-	])),
-	onClickTabStats: () => dispatch(batchActions([
-		selectStatsTab(),
-		clearStatsTabNotifications()
-	])),
-	onClickTabConfig: () => dispatch(batchActions([
-		selectConfigTab(),
-		clearConfigTabNotifications()
-	])),
-	onClickTabCredits: () => dispatch(batchActions([
-		selectCreditsTab(),
-		clearCreditsTabNotifications()
-	])),
-	onClickAutoClone: (money) => dispatch(batchActions([
-		createAutoClone(),
-		spendMoney(money),
-		addMoneySpend(money)
-	]))
-});
+		<section className="characters">
+			
+		</section> */}
+	</main>
+);
 
-export default connect(
-	mapStateToProps,
-	mapDispatchToProps
-)(Ui);
+export default Ui;

@@ -2,13 +2,13 @@ import React from "react";
 import "./Root.scss";
 
 import { timeService } from "../../services/time.service";
-import UiContainer from "../ui/Ui.container";
-import LaboratoryContainer from "../laboratory/Laboratory.container";
+import Ui from "../ui/Ui.container";
+import LaboratoryConnector from "../laboratory/Laboratory.connector";
 
 const Root = () => (
     <main className="root">
-		<UiContainer></UiContainer>
-		<LaboratoryContainer></LaboratoryContainer>
+		<Ui />
+		<LaboratoryConnector />
 	</main>
 );
 
