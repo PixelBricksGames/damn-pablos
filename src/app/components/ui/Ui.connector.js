@@ -1,13 +1,14 @@
 import { connect } from "react-redux";
 import { batchActions } from 'redux-batched-actions';
 
-import Menu from "./Menu";
+import Ui from "./Ui";
 
 import { updateClonesPerSecond, spendMoney, deleteClones } from "../../store/game/game.action";
-import { addMoneySpend } from "./../../store/stats/stats.action";
+import { addMoneySpend } from "../../store/stats/stats.action";
 import { createAutoClone, createAutoSerum } from "../../store/tools/tools.action";
 import { killFetusClone } from "../../store/clones/fetus/fetus.action";
 import {
+	toggleMenu,
 	selectClonesTab, clearClonesTabNotifications,
 	selectToolsTab, clearToolsTabNotifications,
 	selectUpgradesTab, clearUpgradesTabNotifications,
@@ -25,10 +26,11 @@ const mapStateToProps = state => ({
 		// TODO
 	},
 	config: state.get("config"),
-	ui: state.get("ui"),
+	ui: state.get("ui")
 });
 
 const mapDispatchToProps = dispatch => ({
+	onClickMenu: () => dispatch( toggleMenu() ),
 	onClickTabClones: () => dispatch(batchActions([
 		selectClonesTab(),
 		clearClonesTabNotifications()
@@ -67,4 +69,4 @@ const mapDispatchToProps = dispatch => ({
 export default connect(
 	mapStateToProps,
 	mapDispatchToProps
-)(Menu);
+)(Ui);

@@ -1,0 +1,93 @@
+@import "./../../../../assets/fonts/retro-gaming/stylesheet.css";
+
+$URL_ASSETS: "./../../../../assets/";
+$URL_ASSETS_IMAGES: $URL_ASSETS + "images/";
+
+.ui {
+	font-family: "retro_gaming";
+	-webkit-font-smoothing: antialiased; // subpixel-antialiased;
+
+	display: flex;
+    flex-direction: column;
+	justify-content: space-between;
+	height: 100%;
+	width: 100%;
+
+	.info {
+		display: flex;
+		z-index: 2;
+
+		.info-clones {
+			background-color: #FFFFFF55;
+			box-sizing: border-box;
+			margin-top: 10px;
+			padding: 2px 10px;
+			text-align: center;
+			width: 100%;
+
+			&__amount {
+				&--number {
+					display: inline-block;
+					font-size: 30px;
+					height: 25px;
+					line-height: 1;
+					max-width: calc(100% - 100px);
+					overflow: hidden;
+				}
+				&--label {
+					display: inline-block;
+					font-size: 20px;
+					margin-left: 10px;
+					text-align: right;
+				}
+			}
+			&__per-second {
+				font-size: 14px;
+				margin-top: -4px;
+				span {
+					font-size: 12px;
+					position: relative;
+					top: -1px;
+				}
+			}
+			&__mutation,
+			&__rebellion {
+				display: none; // TODO
+				font-size: 14px;
+				span {
+					font-size: 12px;
+					position: relative;
+					top: -1px;
+				}
+				&::first-letter {
+					text-transform: capitalize;
+				}
+			}
+		}
+
+		.info-menu {
+			background-color: #FFFFFF55;
+			box-sizing: border-box;
+			height: 45px;
+			margin-top: 10px;
+
+			&__button {
+				border: 0;
+				cursor: pointer;
+				margin: -6px 6px 0 0;
+				height: 60px;
+				width: 60px;
+
+				&.opened {
+					background-image: url($URL_ASSETS_IMAGES + "ui/menu-open.png");
+				}
+
+				&.closed {
+					background-image: url($URL_ASSETS_IMAGES + "ui/menu-close.png");
+				}
+			}
+		}
+
+	}
+
+}
