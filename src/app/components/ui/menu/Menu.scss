@@ -1,0 +1,63 @@
+.menu {
+	box-sizing: border-box;
+	height: 100%;
+	width: 100%;
+	padding: 85px 0 140px 0;
+	text-align: center;
+	z-index: 1;
+	overflow-y: scroll;
+	position: absolute;
+	pointer-events: none;
+	&.open {
+		pointer-events: all;
+		.menu-folder { display: flex; }
+	}
+	&.close {
+		pointer-events: none;
+		.menu-folder { display: none }
+	}
+
+	.menu-folder {
+		background-color: green;
+
+		.tab {
+			align-items: flex-end;
+			display: flex;
+			flex-direction: column;
+			width: 80px;
+
+			$tab-size: 60px;
+
+			&__clones,
+			&__tools,
+			&__upgrades,
+			&__achievements,
+			&__stats,
+			&__config,
+			&__credits {
+				display: block;
+				height: $tab-size;
+				width: $tab-size;
+
+				&.selected { opacity: 1; }
+				&.unselected { opacity: 0.5; }
+			}
+		}
+
+		.page {
+			width: 100%;
+
+			&__clones,
+			&__tools,
+			&__upgrades,
+			&__achievements,
+			&__stats,
+			&__config,
+			&__credits {
+				&.open { display: block; }
+				&.close { display: none; }
+			}
+		}
+
+	}
+}

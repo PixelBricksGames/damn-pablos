@@ -1,14 +1,13 @@
 import { connect } from "react-redux";
 import { batchActions } from 'redux-batched-actions';
 
-import Ui from "./Ui";
+import Menu from "./Menu";
 
-import { updateClonesPerSecond, spendMoney, deleteClones } from "../../store/game/game.action";
-import { addMoneySpend } from "../../store/stats/stats.action";
-import { createAutoClone, createAutoSerum } from "../../store/tools/tools.action";
-import { killFetusClone } from "../../store/clones/fetus/fetus.action";
+import { updateClonesPerSecond, spendMoney, deleteClones } from "../../../store/game/game.action";
+import { addMoneySpend } from "../../../store/stats/stats.action";
+import { createAutoClone, createAutoSerum } from "../../../store/tools/tools.action";
+import { killFetusClone } from "../../../store/clones/fetus/fetus.action";
 import {
-	toggleMenu,
 	selectClonesTab, clearClonesTabNotifications,
 	selectToolsTab, clearToolsTabNotifications,
 	selectUpgradesTab, clearUpgradesTabNotifications,
@@ -16,7 +15,7 @@ import {
 	selectStatsTab, clearStatsTabNotifications,
 	selectConfigTab, clearConfigTabNotifications,
 	selectCreditsTab, clearCreditsTabNotifications,
-} from "../../store/ui/ui.action";
+} from "../../../store/ui/ui.action";
 
 const mapStateToProps = state => ({
 	game: state.get("game"),
@@ -26,11 +25,10 @@ const mapStateToProps = state => ({
 		// TODO
 	},
 	config: state.get("config"),
-	ui: state.get("ui")
+	ui: state.get("ui"),
 });
 
 const mapDispatchToProps = dispatch => ({
-	onClickMenu: () => dispatch( toggleMenu() ),
 	onClickTabClones: () => dispatch(batchActions([
 		selectClonesTab(),
 		clearClonesTabNotifications()
@@ -69,4 +67,4 @@ const mapDispatchToProps = dispatch => ({
 export default connect(
 	mapStateToProps,
 	mapDispatchToProps
-)(Ui);
+)(Menu);
