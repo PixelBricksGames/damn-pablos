@@ -1,0 +1,14 @@
+.currencies {
+	background-color: red;
+	box-sizing: border-box;
+	padding: 10px 0;
+	width: 100%;
+	z-index: 1;
+	align-self: flex-end;
+	justify-self: flex-end;
+
+	.info-currencies {
+		box-sizing: border-box;
+		padding: 0 10px;
+	}
+}
