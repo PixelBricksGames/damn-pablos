@@ -15,8 +15,8 @@ export const translations = {
 				CHAOS_SERUM: "chaos serum",
 			},
 			RISK: {
-				MUTATION: "risk of mutation",
-				REBELLION: "risk of rebellion",
+				MUTATION: "RoM",
+				REBELLION: "RoR",
 			}
 		},
 		TOOLS: {

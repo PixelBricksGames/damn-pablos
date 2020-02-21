@@ -1,12 +1,4 @@
-@import "./../../../assets/fonts/retro-gaming/stylesheet.css";
-
-$URL_ASSETS: "./../../../assets/";
-$URL_ASSETS_IMAGES: $URL_ASSETS + "images/";
-
 .ui {
-	font-family: "retro_gaming";
-	-webkit-font-smoothing: antialiased; // subpixel-antialiased;
-
 	display: flex;
     flex-direction: column;
 	justify-content: space-between;

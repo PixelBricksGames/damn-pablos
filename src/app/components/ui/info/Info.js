@@ -23,13 +23,15 @@ const Info = ({
 				<span>{translations[config.language].GAME.CLONES_PER_SECOND}: </span>
 				{ game.clones.perSecond }
 			</div>
-			<div className="info-clones__mutation">
-			<span>{translations[config.language].GAME.RISK.MUTATION}: </span>
-			{ game.risk.mutation + "%" }
-			</div>
-			<div className="info-clones__rebellion">
-				<span>{translations[config.language].GAME.RISK.REBELLION}: </span>
-				{ game.risk.rebellion + "%"  }
+			<div className="info-clones__risk">
+				<div className={`risk__mutation ${getRiskLevelClass(game.risk.mutation)}`}>
+				<span>{translations[config.language].GAME.RISK.MUTATION}: </span>
+				{ game.risk.mutation + "%" }
+				</div>
+				<div className={`risk__rebellion ${getRiskLevelClass(game.risk.rebellion)}`}>
+					<span>{translations[config.language].GAME.RISK.REBELLION}: </span>
+					{ game.risk.rebellion + "%"  }
+				</div>
 			</div>
 		</article>
 
@@ -41,5 +43,13 @@ const Info = ({
 		</article>
 	</section>
 );
+
+const getRiskLevelClass = (percentage) => {
+	if(percentage >= 75) {
+		return 'warning';
+	} else {
+		return ''
+	}
+}
 
 export default Info;

@@ -1,72 +1,86 @@
 @import "./../../../../assets/fonts/retro-gaming/stylesheet.css";
+@import "./../../../../assets/fonts/desyrel/stylesheet.css";
+@import "./../../../../assets/fonts/underwood-champion/stylesheet.css";
 
 $URL_ASSETS: "./../../../../assets/";
 $URL_ASSETS_IMAGES: $URL_ASSETS + "images/";
 
 .info {
+	background-color: #FFFFFF;
 	display: flex;
+	margin-top: 10px;
 	z-index: 2;
 
+	font-family: "underwood-champion";
+	// -webkit-font-smoothing: antialiased; // subpixel-antialiased;
+
 	.info-clones {
-		background-color: #FFFFFF55;
 		box-sizing: border-box;
-		margin-top: 10px;
-		padding: 2px 10px;
-		text-align: center;
+		padding-left: 10px;
+		text-align: left;
 		width: 100%;
 
 		&__amount {
 			&--number {
 				display: inline-block;
 				font-size: 30px;
-				height: 25px;
 				line-height: 1;
-				max-width: calc(100% - 100px);
+				max-width: 192px; // 12 characters
 				overflow: hidden;
 			}
 			&--label {
-				display: inline-block;
-				font-size: 20px;
-				margin-left: 10px;
-				text-align: right;
+				font-size: 16px;
+				margin-left: 6px;
+				position: relative;
+				top: -8px;
 			}
 		}
 		&__per-second {
 			font-size: 14px;
-			margin-top: -4px;
+			margin-top: -6px;
 			span {
 				font-size: 12px;
 				position: relative;
 				top: -1px;
 			}
 		}
-		&__mutation,
-		&__rebellion {
-			display: none; // TODO
-			font-size: 14px;
-			span {
-				font-size: 12px;
-				position: relative;
-				top: -1px;
-			}
-			&::first-letter {
-				text-transform: capitalize;
+		&__risk {
+			position: relative;
+			top: -3px;
+
+			.risk__mutation,
+			.risk__rebellion {
+				display: inline-block;
+				font-size: 14px;
+				margin-right: 6px;
+				span {
+					font-size: 12px;
+					margin-right: -6px;
+				}
+
+				&.warning {
+					color: #770808;
+				}
+				// &::first-letter {
+				// 	text-transform: capitalize;
+				// }
 			}
 		}
 	}
 
 	.info-menu {
-		background-color: #FFFFFF55;
 		box-sizing: border-box;
-		height: 45px;
-		margin-top: 10px;
+		display: flex;
+		justify-content: center;
+		align-items: center;
 
 		&__button {
+			background-size: contain;
 			border: 0;
 			cursor: pointer;
-			margin: -6px 6px 0 0;
-			height: 60px;
-			width: 60px;
+			margin-right: 6px;
+			height: 32px;
+			width: 32px;
 
 			&.opened {
 				background-image: url($URL_ASSETS_IMAGES + "ui/menu-open.png");
