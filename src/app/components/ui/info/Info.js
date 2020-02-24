@@ -16,21 +16,21 @@ const Info = ({
 	<section className="info">
 		<article className="info-clones">
 			<div className="info-clones__amount">
-				<span className="info-clones__amount--number">{ game.currency.clones }</span>
+				<span className="info-clones__amount--number">{ getCloneAmountFormated(game.currency.clones) }</span>
 				<span className="info-clones__amount--label">{translations[config.language].GAME.CURRENCY.CLONES}</span>
 			</div>
 			<div className="info-clones__per-second">
-				<span>{translations[config.language].GAME.CLONES_PER_SECOND}: </span>
-				{ game.clones.perSecond }
+				<span className="info-clones__per-second--label">{translations[config.language].GAME.CLONES_PER_SECOND}: </span>
+				<span className="info-clones__per-second--number">{ game.clones.perSecond }</span>
 			</div>
 			<div className="info-clones__risk">
 				<div className={`risk__mutation ${getRiskLevelClass(game.risk.mutation)}`}>
-				<span>{translations[config.language].GAME.RISK.MUTATION}: </span>
-				{ game.risk.mutation + "%" }
+					<span className="risk__mutation--label">{translations[config.language].GAME.RISK.MUTATION}: </span>
+					<span className="risk__mutation--number">{ game.risk.mutation + "%" }</span>
 				</div>
 				<div className={`risk__rebellion ${getRiskLevelClass(game.risk.rebellion)}`}>
-					<span>{translations[config.language].GAME.RISK.REBELLION}: </span>
-					{ game.risk.rebellion + "%"  }
+					<span className="risk__rebellion--label">{translations[config.language].GAME.RISK.REBELLION}: </span>
+					<span className="risk__rebellion--label">{ game.risk.rebellion + "%"  }</span>
 				</div>
 			</div>
 		</article>
@@ -44,11 +44,15 @@ const Info = ({
 	</section>
 );
 
+const getCloneAmountFormated = (number) => {
+	return number;
+}
+
 const getRiskLevelClass = (percentage) => {
 	if(percentage >= 75) {
 		return 'warning';
 	} else {
-		return ''
+		return '';
 	}
 }
 

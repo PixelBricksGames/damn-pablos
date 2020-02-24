@@ -21,41 +21,44 @@ $URL_ASSETS_IMAGES: $URL_ASSETS + "images/";
 		width: 100%;
 
 		&__amount {
-			&--number {
-				display: inline-block;
-				font-size: 30px;
-				line-height: 1;
-				max-width: 192px; // 12 characters
-				overflow: hidden;
-			}
+			line-height: 1;
 			&--label {
 				font-size: 16px;
 				margin-left: 6px;
 				position: relative;
 				top: -8px;
 			}
+			&--number {
+				display: inline-block;
+				font-size: 30px;
+				max-width: 192px; // 12 characters
+				overflow: hidden;
+			}
 		}
 		&__per-second {
-			font-size: 14px;
 			margin-top: -6px;
-			span {
+			line-height: 1;
+			&--label {
 				font-size: 12px;
 				position: relative;
 				top: -1px;
 			}
+			&--number {
+				font-size: 14px;
+			}
 		}
 		&__risk {
-			position: relative;
-			top: -3px;
-
+			margin-bottom: 6px;
 			.risk__mutation,
 			.risk__rebellion {
-				display: inline-block;
-				font-size: 14px;
-				margin-right: 6px;
-				span {
+				display: block;
+				margin-top: -3px;
+				line-height: 1;
+				&--label {
+					font-size: 10px;
+				}
+				&--number {
 					font-size: 12px;
-					margin-right: -6px;
 				}
 
 				&.warning {
@@ -79,8 +82,8 @@ $URL_ASSETS_IMAGES: $URL_ASSETS + "images/";
 			border: 0;
 			cursor: pointer;
 			margin-right: 6px;
-			height: 32px;
-			width: 32px;
+			height: 40px;
+			width: 40px;
 
 			&.opened {
 				background-image: url($URL_ASSETS_IMAGES + "ui/menu-open.png");
