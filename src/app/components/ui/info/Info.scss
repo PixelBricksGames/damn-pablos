@@ -5,6 +5,8 @@
 $URL_ASSETS: "./../../../../assets/";
 $URL_ASSETS_IMAGES: $URL_ASSETS + "images/";
 
+$menu-button-size: 40px;
+
 .info {
 	background-color: #FFFFFF;
 	display: flex;
@@ -82,8 +84,8 @@ $URL_ASSETS_IMAGES: $URL_ASSETS + "images/";
 			border: 0;
 			cursor: pointer;
 			margin-right: 6px;
-			height: 40px;
-			width: 40px;
+			height: $menu-button-size;
+			width: $menu-button-size;
 
 			&.opened {
 				background-image: url($URL_ASSETS_IMAGES + "ui/menu-open.png");

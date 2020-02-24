@@ -1,13 +1,14 @@
+$tab-button-size: 40px;
+
 .menu {
 	box-sizing: border-box;
 	height: 100%;
 	width: 100%;
-	padding: 85px 0 140px 0;
+	padding: 10px 0;
 	text-align: center;
-	z-index: 1;
-	overflow-y: scroll;
-	position: absolute;
 	pointer-events: none;
+	z-index: 1;
+
 	&.open {
 		pointer-events: all;
 		.menu-folder { display: flex; }
@@ -19,14 +20,15 @@
 
 	.menu-folder {
 		background-color: green;
+		box-sizing: border-box;
+		height: 100%;
+		padding-top: 10px;
 
 		.tab {
 			align-items: flex-end;
 			display: flex;
 			flex-direction: column;
-			width: 80px;
-
-			$tab-size: 60px;
+			width: $tab-button-size + $tab-button-size / 2;
 
 			&__clones,
 			&__tools,
@@ -36,8 +38,8 @@
 			&__config,
 			&__credits {
 				display: block;
-				height: $tab-size;
-				width: $tab-size;
+				height: $tab-button-size;
+				width: $tab-button-size;
 
 				&.selected { opacity: 1; }
 				&.unselected { opacity: 0.5; }
