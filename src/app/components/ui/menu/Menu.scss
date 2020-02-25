@@ -1,3 +1,8 @@
+@import "./../../../../styles/mixins/image-sharp-edges.scss";
+
+$URL_ASSETS: "./../../../../assets/";
+$URL_ASSETS_IMAGES: $URL_ASSETS + "images/";
+
 $tab-button-size: 40px;
 
 .menu {
@@ -33,16 +38,54 @@ $tab-button-size: 40px;
 			&__clones,
 			&__tools,
 			&__upgrades,
-			&__achievements,
 			&__stats,
+			&__achievements,
 			&__config,
 			&__credits {
+				background-color: transparent;
+				background-size: contain;
 				display: block;
+				border: 0;
+				margin: 0 0 2px 0;
+				padding: 0;
+				outline: none;
 				height: $tab-button-size;
 				width: $tab-button-size;
 
-				&.selected { opacity: 1; }
-				&.unselected { opacity: 0.5; }
+				// @media screen and (min-width: 768px) {
+				//	@extend %image-sharp-edges;
+				// 	height: 60px;
+				// 	width: 60px;
+				// }
+			}
+
+			&__clones {
+				&.selected { background-image: url($URL_ASSETS_IMAGES + "ui/tab-clones-active.png"); }
+				&.unselected { background-image: url($URL_ASSETS_IMAGES + "ui/tab-clones-inactive.png"); }
+			}
+			&__tools {
+				&.selected { background-image: url($URL_ASSETS_IMAGES + "ui/tab-tools-active.png"); }
+				&.unselected { background-image: url($URL_ASSETS_IMAGES + "ui/tab-tools-inactive.png"); }
+			}
+			&__upgrades {
+				&.selected { background-image: url($URL_ASSETS_IMAGES + "ui/tab-upgrades-active.png"); }
+				&.unselected { background-image: url($URL_ASSETS_IMAGES + "ui/tab-upgrades-inactive.png"); }
+			}
+			&__stats {
+				&.selected { background-image: url($URL_ASSETS_IMAGES + "ui/tab-stats-active.png"); }
+				&.unselected { background-image: url($URL_ASSETS_IMAGES + "ui/tab-stats-inactive.png"); }
+			}
+			&__achievements {
+				&.selected { background-image: url($URL_ASSETS_IMAGES + "ui/tab-achievements-active.png"); }
+				&.unselected { background-image: url($URL_ASSETS_IMAGES + "ui/tab-achievements-inactive.png"); }
+			}
+			&__config {
+				&.selected { background-image: url($URL_ASSETS_IMAGES + "ui/tab-config-active.png"); }
+				&.unselected { background-image: url($URL_ASSETS_IMAGES + "ui/tab-config-inactive.png"); }
+			}
+			&__credits {
+				&.selected { background-image: url($URL_ASSETS_IMAGES + "ui/tab-credits-active.png"); }
+				&.unselected { background-image: url($URL_ASSETS_IMAGES + "ui/tab-credits-inactive.png"); }
 			}
 		}
 

@@ -35,11 +35,11 @@ const Menu = ({
 				<button className={ `tab__upgrades ${ui.pages.upgrades.open ? 'selected' : 'unselected'}` }
 					onClick={ onClickTabUpgrades }>
 				</button>
-				<button className={ `tab__achievements ${ui.pages.achievements.open ? 'selected' : 'unselected'}` }
-					onClick={ onClickTabAchievements }>
-				</button>
 				<button className={ `tab__stats ${ui.pages.stats.open ? 'selected' : 'unselected'}` }
 					onClick={ onClickTabStats }>
+				</button>
+				<button className={ `tab__achievements ${ui.pages.achievements.open ? 'selected' : 'unselected'}` }
+					onClick={ onClickTabAchievements }>
 				</button>
 				<button className={ `tab__config ${ui.pages.config.open ? 'selected' : 'unselected'}` }
 					onClick={ onClickTabConfig }>
