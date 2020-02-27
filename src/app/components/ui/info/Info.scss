@@ -5,7 +5,7 @@
 $URL_ASSETS: "./../../../../assets/";
 $URL_ASSETS_IMAGES: $URL_ASSETS + "images/";
 
-$menu-button-size: 40px;
+$menu-button-size: 60px;
 
 .info {
 	background-color: #FFFFFF;
@@ -74,25 +74,32 @@ $menu-button-size: 40px;
 	}
 
 	.info-menu {
+		position: absolute;
+		right: 0;
 		box-sizing: border-box;
 		display: flex;
 		justify-content: center;
 		align-items: center;
+		background-image: url($URL_ASSETS_IMAGES + "ui/menu-structure.png");
+		width: 66px;
+		height: 112px;
 
 		&__button {
+			background-color: transparent;
 			background-size: contain;
 			border: 0;
 			cursor: pointer;
 			margin-right: 6px;
 			height: $menu-button-size;
 			width: $menu-button-size;
+			outline: none;
 
 			&.opened {
-				background-image: url($URL_ASSETS_IMAGES + "ui/menu-open.png");
+				background-image: url($URL_ASSETS_IMAGES + "ui/menu-active.png");
 			}
 
 			&.closed {
-				background-image: url($URL_ASSETS_IMAGES + "ui/menu-close.png");
+				background-image: url($URL_ASSETS_IMAGES + "ui/menu-inactive.png");
 			}
 		}
 	}
