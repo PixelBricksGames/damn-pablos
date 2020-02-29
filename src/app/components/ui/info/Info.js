@@ -16,14 +16,14 @@ const Info = ({
 	<section className="info">
 		<article className="info-clones">
 			<div className="info-clones__amount">
-				<span className="info-clones__amount--number">{ getCloneAmountFormated(game.currency.clones) }</span>
-				<span className="info-clones__amount--label">{translations[config.language].GAME.CURRENCY.CLONES}</span>
+				<div className="info-clones__amount--label">{translations[config.language].GAME.CURRENCY.CLONES}</div>
+				<div className="info-clones__amount--number">{getCloneAmountFormated(game.currency.clones)}</div>
 			</div>
 			<div className="info-clones__per-second">
-				<span className="info-clones__per-second--label">{translations[config.language].GAME.CLONES_PER_SECOND}: </span>
-				<span className="info-clones__per-second--number">{ game.clones.perSecond }</span>
+				<div className="info-clones__per-second--number">{game.clones.perSecond}</div>
+				<div className="info-clones__per-second--label">{translations[config.language].GAME.CLONES_PER_SECOND}</div>
 			</div>
-			<div className="info-clones__risk">
+			{/* <div className="info-clones__risk">
 				<div className={`risk__mutation ${getRiskLevelClass(game.risk.mutation)}`}>
 					<span className="risk__mutation--label">{translations[config.language].GAME.RISK.MUTATION}: </span>
 					<span className="risk__mutation--number">{ game.risk.mutation + "%" }</span>
@@ -32,7 +32,7 @@ const Info = ({
 					<span className="risk__rebellion--label">{translations[config.language].GAME.RISK.REBELLION}: </span>
 					<span className="risk__rebellion--label">{ game.risk.rebellion + "%"  }</span>
 				</div>
-			</div>
+			</div> */}
 		</article>
 
 		<article className="info-menu">

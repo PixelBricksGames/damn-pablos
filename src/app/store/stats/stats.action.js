@@ -1,8 +1,9 @@
 import * as actionType from "./stats.type";
+import * as Utils from "./../../utils/utils";
 
 export const addTime = (time) => ({
 	type: actionType.STATS.TIME.ADD_IN_TOTAL,
-	time
+	time: Utils.getTwoDecimals(time)
 });
 
 export const addOutbreaks = (outbreaks) => ({

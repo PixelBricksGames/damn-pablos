@@ -16,15 +16,17 @@ $tab-button-size: 40px;
 
 	&.open {
 		pointer-events: all;
-		.menu-folder { display: flex; }
+		.menu-structure { display: flex; }
 	}
 	&.close {
 		pointer-events: none;
-		.menu-folder { display: none }
+		.menu-structure { display: none }
 	}
 
-	.menu-folder {
-		background-color: green;
+	.menu-structure {
+		background-image: url($URL_ASSETS_IMAGES + "ui/menu-bg.png");
+		background-repeat: no-repeat;
+		background-position: left;
 		box-sizing: border-box;
 		height: 100%;
 		padding-top: 10px;

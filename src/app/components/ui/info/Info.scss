@@ -1,52 +1,61 @@
 @import "./../../../../assets/fonts/retro-gaming/stylesheet.css";
 @import "./../../../../assets/fonts/desyrel/stylesheet.css";
-@import "./../../../../assets/fonts/underwood-champion/stylesheet.css";
+@import "./../../../../assets/fonts/upheaval-pro/stylesheet.css";
 
 $URL_ASSETS: "./../../../../assets/";
 $URL_ASSETS_IMAGES: $URL_ASSETS + "images/";
 
-$menu-button-size: 60px;
-
 .info {
-	background-color: #FFFFFF;
+	$colour-text-primary: #69a2b0;
+	$colour-text-secondary: #436c76;
+	$menu-button-size: 60px;
+
 	display: flex;
 	margin-top: 10px;
 	z-index: 2;
 
-	font-family: "underwood-champion";
-	// -webkit-font-smoothing: antialiased; // subpixel-antialiased;
+	font-family: "upheaval-pro";
+	-webkit-font-smoothing: antialiased; // subpixel-antialiased;
 
 	.info-clones {
-		box-sizing: border-box;
-		padding-left: 10px;
-		text-align: left;
-		width: 100%;
+		background-image: url($URL_ASSETS_IMAGES + "ui/info-bg.png");
+		background-position: center;
+		background-repeat: no-repeat;
+		height: 116px;
+		width: 568px;
+		text-align: center;
+		margin: 0 auto;
+		position: relative;
 
 		&__amount {
 			line-height: 1;
+			width: 100%;
+			position: absolute;
+			top: 0;
 			&--label {
-				font-size: 16px;
-				margin-left: 6px;
-				position: relative;
-				top: -8px;
+				font-size: 26px;
+				color: $colour-text-secondary;
 			}
 			&--number {
 				display: inline-block;
-				font-size: 30px;
-				max-width: 192px; // 12 characters
-				overflow: hidden;
+				font-size: 40px;
+				margin-top: 1px;
+				color: $colour-text-primary;
 			}
 		}
 		&__per-second {
-			margin-top: -6px;
 			line-height: 1;
+			width: 100%;
+			position: absolute;
+			bottom: 0;
 			&--label {
-				font-size: 12px;
-				position: relative;
-				top: -1px;
+				font-size: 20px;
+				margin-top: 5px;
+				color: $colour-text-secondary;
 			}
 			&--number {
-				font-size: 14px;
+				font-size: 26px;
+				color: $colour-text-primary;
 			}
 		}
 		&__risk {
@@ -76,11 +85,11 @@ $menu-button-size: 60px;
 	.info-menu {
 		position: absolute;
 		right: 0;
-		box-sizing: border-box;
+		top: 15px;
 		display: flex;
 		justify-content: center;
 		align-items: center;
-		background-image: url($URL_ASSETS_IMAGES + "ui/menu-structure.png");
+		background-image: url($URL_ASSETS_IMAGES + "ui/info-menu-structure.png");
 		width: 66px;
 		height: 112px;
 
@@ -95,11 +104,11 @@ $menu-button-size: 60px;
 			outline: none;
 
 			&.opened {
-				background-image: url($URL_ASSETS_IMAGES + "ui/menu-active.png");
+				background-image: url($URL_ASSETS_IMAGES + "ui/info-menu-active.png");
 			}
 
 			&.closed {
-				background-image: url($URL_ASSETS_IMAGES + "ui/menu-inactive.png");
+				background-image: url($URL_ASSETS_IMAGES + "ui/info-menu-inactive.png");
 			}
 		}
 	}

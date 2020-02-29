@@ -24,7 +24,7 @@ const Menu = ({
 	onClickAutoClone
 }) => (
 	<section className={`menu ${ui.open ? 'open' : 'close'}`}>
-		<div className="menu-folder">
+		<div className="menu-structure">
 			<section className="tab">
 				<button className={ `tab__clones ${ui.pages.clones.open ? 'selected' : 'unselected'}` }
 					onClick={ onClickTabClones }>

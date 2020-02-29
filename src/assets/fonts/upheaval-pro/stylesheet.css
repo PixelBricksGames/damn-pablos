@@ -1,0 +1,8 @@
+@font-face {
+    font-family: 'upheaval-pro';
+    src: url('upheavalpro-webfont.woff2') format('woff2'),
+         url('upheavalpro-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
