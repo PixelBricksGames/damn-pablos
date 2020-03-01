@@ -1,0 +1,36 @@
+@import "./../../../../../styles/mixins/image-sharp-edges.scss";
+@import "./../../../../../assets/fonts/upheaval-pro/stylesheet.css";
+
+$URL_ASSETS: "./../../../../../assets/";
+$URL_ASSETS_IMAGES: $URL_ASSETS + "images/";
+
+.page {
+	$colour-text-primary: #69a2b0;
+	$colour-text-secondary: #436c76;
+
+	box-sizing: border-box;
+	padding-left: 20px;
+	width: 100%;
+
+	font-family: "upheaval-pro";
+	-webkit-font-smoothing: antialiased; // subpixel-antialiased;
+
+	&__title {
+		font-size: 20px;
+		color: $colour-text-primary;
+		margin-top: -2px;
+		margin-bottom: 15px;
+		text-align: left;
+	}
+
+	&__clones,
+	&__tools,
+	&__upgrades,
+	&__achievements,
+	&__stats,
+	&__config,
+	&__credits {
+		&.open { display: block; }
+		&.close { display: none; }
+	}
+}

@@ -1,18 +1,24 @@
 @import "./../../../../styles/mixins/image-sharp-edges.scss";
+@import "./../../../../assets/fonts/upheaval-pro/stylesheet.css";
 
 $URL_ASSETS: "./../../../../assets/";
 $URL_ASSETS_IMAGES: $URL_ASSETS + "images/";
 
-$tab-button-size: 40px;
-
 .menu {
+	$colour-text-primary: #69a2b0;
+	$colour-text-secondary: #436c76;
+	$tab-button-size: 40px;
+
 	box-sizing: border-box;
 	height: 100%;
 	width: 100%;
-	padding: 10px 0;
+	padding: 10px 0 0 10px;
 	text-align: center;
 	pointer-events: none;
 	z-index: 1;
+
+	font-family: "upheaval-pro";
+	-webkit-font-smoothing: antialiased; // subpixel-antialiased;
 
 	&.open {
 		pointer-events: all;
@@ -26,16 +32,11 @@ $tab-button-size: 40px;
 	.menu-structure {
 		background-image: url($URL_ASSETS_IMAGES + "ui/menu-bg.png");
 		background-repeat: no-repeat;
-		background-position: left;
 		box-sizing: border-box;
 		height: 100%;
-		padding-top: 10px;
 
 		.tab {
-			align-items: flex-end;
-			display: flex;
-			flex-direction: column;
-			width: $tab-button-size + $tab-button-size / 2;
+    		margin-top: 29px;
 
 			&__clones,
 			&__tools,
@@ -53,12 +54,6 @@ $tab-button-size: 40px;
 				outline: none;
 				height: $tab-button-size;
 				width: $tab-button-size;
-
-				// @media screen and (min-width: 768px) {
-				//	@extend %image-sharp-edges;
-				// 	height: 60px;
-				// 	width: 60px;
-				// }
 			}
 
 			&__clones {
@@ -90,21 +85,5 @@ $tab-button-size: 40px;
 				&.unselected { background-image: url($URL_ASSETS_IMAGES + "ui/tab-credits-inactive.png"); }
 			}
 		}
-
-		.page {
-			width: 100%;
-
-			&__clones,
-			&__tools,
-			&__upgrades,
-			&__achievements,
-			&__stats,
-			&__config,
-			&__credits {
-				&.open { display: block; }
-				&.close { display: none; }
-			}
-		}
-
 	}
 }

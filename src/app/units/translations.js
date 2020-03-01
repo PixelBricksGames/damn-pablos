@@ -17,6 +17,15 @@ export const translations = {
 			RISK: {
 				MUTATION: "Risk of mutation",
 				REBELLION: "Risk of rebellion",
+			},
+			PAGES: {
+				CLONES: "Clones",
+				TOOLS: "Tools",
+				UPGRADES: "Upgrades",
+				STATS: "Stats",
+				ACHIEVEMENTS: "Achievements",
+				CONFIG: "Config",
+				CREDITS: "Credits"
 			}
 		},
 		TOOLS: {

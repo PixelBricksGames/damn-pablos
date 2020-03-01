@@ -3,10 +3,6 @@ import { batchActions } from 'redux-batched-actions';
 
 import Menu from "./Menu";
 
-import { updateClonesPerSecond, spendMoney, deleteClones } from "../../../store/game/game.action";
-import { addMoneySpend } from "../../../store/stats/stats.action";
-import { createAutoClone, createAutoSerum } from "../../../store/tools/tools.action";
-import { killFetusClone } from "../../../store/clones/fetus/fetus.action";
 import {
 	selectClonesTab, clearClonesTabNotifications,
 	selectToolsTab, clearToolsTabNotifications,
@@ -56,11 +52,6 @@ const mapDispatchToProps = dispatch => ({
 	onClickTabCredits: () => dispatch(batchActions([
 		selectCreditsTab(),
 		clearCreditsTabNotifications()
-	])),
-	onClickAutoClone: (money) => dispatch(batchActions([
-		createAutoClone(),
-		spendMoney(money),
-		addMoneySpend(money)
 	]))
 });
 

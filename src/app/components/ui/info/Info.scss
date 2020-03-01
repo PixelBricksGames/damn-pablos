@@ -34,12 +34,13 @@ $URL_ASSETS_IMAGES: $URL_ASSETS + "images/";
 			top: 0;
 			&--label {
 				font-size: 26px;
+				margin-top: -1px;
 				color: $colour-text-secondary;
 			}
 			&--number {
 				display: inline-block;
 				font-size: 40px;
-				margin-top: 1px;
+				margin-top: 2px;
 				color: $colour-text-primary;
 			}
 		}

@@ -6,7 +6,7 @@ import * as CONSTANST from "../../../units/constants";
 
 import "./Menu.scss";
 
-import MenuButton from "./button/MenuButton";
+import PageToolsConnector from "./pages/tools/PageTools.connector";
 
 const Menu = ({
 	game,
@@ -20,8 +20,7 @@ const Menu = ({
 	onClickTabAchievements,
 	onClickTabStats,
 	onClickTabConfig,
-	onClickTabCredits,
-	onClickAutoClone
+	onClickTabCredits
 }) => (
 	<section className={`menu ${ui.open ? 'open' : 'close'}`}>
 		<div className="menu-structure">
@@ -50,21 +49,27 @@ const Menu = ({
 			</section>
 
 			<section className="page">
-				<div className={`page__clones ${ui.pages.clones.open ? 'open' : 'close'}`}>CLONES</div>
-				<div className={`page__tools ${ui.pages.tools.open ? 'open' : 'close'}`}>
-					<MenuButton
-						title={ translations[config.language].TOOLS.AUTO_CLONE }
-						amount={ tools.autoClone.amount }
-						cost={ tools.autoClone.cost }
-						enabled={ game.currency.money >= tools.autoClone.cost }
-						onClick={() => { onClickAutoClone(tools.autoClone.cost) }}
-					/>
+				<div className={`page__clones ${ui.pages.clones.open ? 'open' : 'close'}`}>
+					<div className="page__title">{translations[config.language].GAME.PAGES.CLONES}</div>
 				</div>
-				<div className={`page__upgrades ${ui.pages.upgrades.open ? 'open' : 'close'}`}>upgrades</div>
-				<div className={`page__achievements ${ui.pages.achievements.open ? 'open' : 'close'}`}>achievements</div>
-				<div className={`page__stats ${ui.pages.stats.open ? 'open' : 'close'}`}>stats</div>
-				<div className={`page__config ${ui.pages.config.open ? 'open' : 'close'}`}>config</div>
-				<div className={`page__credits ${ui.pages.credits.open ? 'open' : 'close'}`}>credits</div>
+				<div className={`page__tools ${ui.pages.tools.open ? 'open' : 'close'}`}>
+					<PageToolsConnector />
+				</div>
+				<div className={`page__upgrades ${ui.pages.upgrades.open ? 'open' : 'close'}`}>
+					<div className="page__title">{translations[config.language].GAME.PAGES.UPGRADES}</div>
+				</div>
+				<div className={`page__achievements ${ui.pages.achievements.open ? 'open' : 'close'}`}>
+					<div className="page__title">{translations[config.language].GAME.PAGES.ACHIEVEMENTS}</div>
+				</div>
+				<div className={`page__stats ${ui.pages.stats.open ? 'open' : 'close'}`}>
+					<div className="page__title">{translations[config.language].GAME.PAGES.STATS}</div>
+				</div>
+				<div className={`page__config ${ui.pages.config.open ? 'open' : 'close'}`}>
+					<div className="page__title">{translations[config.language].GAME.PAGES.CONFIG}</div>
+				</div>
+				<div className={`page__credits ${ui.pages.credits.open ? 'open' : 'close'}`}>
+					<div className="page__title">{translations[config.language].GAME.PAGES.CREDITS}</div>
+				</div>
 			</section>
 		</div>
 	</section>
