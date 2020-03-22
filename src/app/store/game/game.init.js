@@ -1,4 +1,6 @@
-export const game = {
+import * as SavedStore from "../saved-store";
+
+const init = {
 	outbreak: false,
 	clones: {
 		perClick: 1,
@@ -24,3 +26,5 @@ export const game = {
 		mutation: 0
 	},
 };
+
+export const game = SavedStore.getSavedState("game", init);

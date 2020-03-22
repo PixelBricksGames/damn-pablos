@@ -1,4 +1,6 @@
-export const stats = {
+import * as SavedStore from "../saved-store";
+
+const init = {
 	time: {
 		inTotal: 0
 	},
@@ -28,3 +30,5 @@ export const stats = {
 		spend: 0
 	}
 };
+
+export const stats = SavedStore.getSavedState("stats", init);

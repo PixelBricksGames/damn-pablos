@@ -1,4 +1,6 @@
-export const child = {
+import * as SavedStore from "../../saved-store";
+
+const init = {
 	id: "child",
 	amount: 0,
 	unlocked: {
@@ -28,3 +30,5 @@ export const child = {
 		mutation: 0
 	}
 };
+
+export const child = SavedStore.getSavedClonesState(init.id, init);

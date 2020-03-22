@@ -18,4 +18,3 @@ export const getIncrementalCost = (cost, amount, increment) => {
 export const getTwoDecimals = (number) => {
 	return Math.round((number + Number.EPSILON) * 100) / 100;
 }
-

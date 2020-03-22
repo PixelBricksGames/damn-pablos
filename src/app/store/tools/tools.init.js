@@ -1,4 +1,6 @@
-export const tools = {
+import * as SavedStore from "../saved-store";
+
+const init = {
 	autoClone: {
 		id: "autoClone",
 		amount: 0,
@@ -30,3 +32,5 @@ export const tools = {
 		},
 	},
 };
+
+export const tools = SavedStore.getSavedState("tools", init);

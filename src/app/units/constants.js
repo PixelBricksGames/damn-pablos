@@ -1,3 +1,7 @@
+export const GAME = {
+	SAVE_NAME: 'clonenberg2',
+};
+
 export const TIME = {
 	DELTA: 0.1,
 };

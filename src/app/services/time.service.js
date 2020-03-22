@@ -4,7 +4,7 @@ import { batchActions } from 'redux-batched-actions';
 import packageJson from './../../../package.json';
 
 import * as Utils from "../utils/utils";
-import { TIME } from "../units/constants";
+import { GAME, TIME } from "../units/constants";
 import { translations } from "../units/translations";
 
 import { updateTimeTotal, updateTimeSec, updateTimeDec, clearTimeSec, clearTimeDec } from "../store/time/time.action";
@@ -87,6 +87,10 @@ const timeService = {
 
 			store.dispatch(batchActions(dispatchedActions));
 
+			if(+time.sec.toString().split('').pop() === 0) {
+				saveLocalStorage(JSON.stringify(state));
+			}
+
 		}, 100);
 	}
 };
@@ -102,4 +106,9 @@ const checkUnlockSellFetus = (fetus, clones) => {
 
 const checkUnlockAutoClone = (autoClone, money) => {
 	return !autoClone.unlocked && (money >= parseInt((autoClone.cost / 2), 10))
+}
+
+const saveLocalStorage = (state) => {
+	console.log('game saved');
+	localStorage.setItem(GAME.SAVE_NAME, state);
 }
