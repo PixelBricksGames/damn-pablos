@@ -9,7 +9,7 @@ import CapsuleButton from "./button/CapsuleButton";
 const Capsule = ({ language, clone, currency, onClickClone, onClickSerum, onClickSell }) => {
     return (
 		<div id={clone.id} className="capsule">
-			<div className="button__clone">
+			<div className={`button-clone ${clone.unlocked.clone ? 'unlocked' : ''}`}>
 				<CapsuleButton
 					text={ translations[language].GAME.ACTIONS.CLONE }
 					unlocked={ clone.unlocked.clone }
@@ -18,7 +18,7 @@ const Capsule = ({ language, clone, currency, onClickClone, onClickSerum, onClic
 				></CapsuleButton>
 			</div>
 
-			<div className="button__sell">
+			<div className={`button-sell ${clone.unlocked.sell ? 'unlocked' : ''}`}>
 				<CapsuleButton
 					text={ translations[language].GAME.ACTIONS.SELL }
 					unlocked={ clone.unlocked.sell }
@@ -27,7 +27,7 @@ const Capsule = ({ language, clone, currency, onClickClone, onClickSerum, onClic
 				></CapsuleButton>
 			</div>
 
-			<div className="button__serum">
+			<div className={`button-serum ${clone.unlocked.serum ? 'unlocked' : ''}`}>
 				<CapsuleButton
 					text={ translations[language].GAME.ACTIONS.SERUM }
 					unlocked={ clone.unlocked.serum }

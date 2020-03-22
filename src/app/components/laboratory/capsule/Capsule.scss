@@ -1,6 +1,7 @@
 .capsule {
 	background-color: blue;
-	display: block;
+	display: flex;
+	justify-content: center;
 	padding: 10px 0;
 	text-align: center;
 	width: 100%;
@@ -9,19 +10,14 @@
 	box-sizing: border-box;
 
 	.button {
-		&__clone {
-			display: inline-block;
+		&-clone,
+		&-sell,
+		&-serum {
+			display: none;
 			margin: 0 10px;
-		}
-
-		&__sell {
-			display: inline-block;
-			margin: 0 10px;
-		}
-
-		&__serum {
-			display: inline-block;
-			margin: 0 10px;
+			&.unlocked {
+				display: flex;
+			}
 		}
 	}
 }

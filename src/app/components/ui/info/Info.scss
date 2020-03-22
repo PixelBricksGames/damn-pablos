@@ -30,25 +30,23 @@ $URL_ASSETS_IMAGES: $URL_ASSETS + "images/";
 		&__amount {
 			line-height: 1;
 			width: 100%;
-			position: absolute;
-			top: 0;
+
 			&--label {
 				font-size: 26px;
 				margin-top: -1px;
 				color: $colour-text-secondary;
 			}
 			&--number {
-				display: inline-block;
 				font-size: 40px;
+				line-height: 38px;
 				margin-top: 2px;
 				color: $colour-text-primary;
+				width: 100%;
 			}
 		}
 		&__per-second {
 			line-height: 1;
 			width: 100%;
-			position: absolute;
-			bottom: 0;
 			&--label {
 				font-size: 20px;
 				margin-top: 5px;

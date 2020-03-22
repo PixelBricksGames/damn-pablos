@@ -10,8 +10,11 @@ $URL_ASSETS_IMAGES: $URL_ASSETS + "images/";
 	$tab-button-size: 40px;
 
 	box-sizing: border-box;
+	display: flex;
+    align-self: flex-end;
 	height: 100%;
 	width: 100%;
+	max-width: 600px;
 	padding: 10px 0 0 10px;
 	text-align: center;
 	pointer-events: none;
@@ -34,6 +37,7 @@ $URL_ASSETS_IMAGES: $URL_ASSETS + "images/";
 		background-repeat: no-repeat;
 		box-sizing: border-box;
 		height: 100%;
+		width: 100%;
 
 		.tab {
     		margin-top: 29px;
