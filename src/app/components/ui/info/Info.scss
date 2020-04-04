@@ -8,24 +8,24 @@ $URL_ASSETS_IMAGES: $URL_ASSETS + "images/";
 .info {
 	$colour-text-primary: #69a2b0;
 	$colour-text-secondary: #436c76;
-	$menu-button-size: 60px;
+	$menu-button-size: 40px;
 
+	-webkit-font-smoothing: antialiased;
+	align-items: center;
 	display: flex;
+	font-family: "upheaval-pro";
 	margin-top: 10px;
 	z-index: 2;
-
-	font-family: "upheaval-pro";
-	-webkit-font-smoothing: antialiased; // subpixel-antialiased;
 
 	.info-clones {
 		background-image: url($URL_ASSETS_IMAGES + "ui/info-bg.png");
 		background-position: center;
 		background-repeat: no-repeat;
 		height: 116px;
-		width: 568px;
-		text-align: center;
 		margin: 0 auto;
 		position: relative;
+		text-align: center;
+		width: 568px;
 
 		&__amount {
 			line-height: 1;
@@ -62,8 +62,8 @@ $URL_ASSETS_IMAGES: $URL_ASSETS + "images/";
 			.risk__mutation,
 			.risk__rebellion {
 				display: block;
-				margin-top: -3px;
 				line-height: 1;
+				margin-top: -3px;
 				&--label {
 					font-size: 10px;
 				}
@@ -82,25 +82,36 @@ $URL_ASSETS_IMAGES: $URL_ASSETS + "images/";
 	}
 
 	.info-menu {
-		position: absolute;
-		right: 0;
-		top: 15px;
-		display: flex;
-		justify-content: center;
 		align-items: center;
 		background-image: url($URL_ASSETS_IMAGES + "ui/info-menu-structure.png");
-		width: 66px;
-		height: 112px;
+		display: flex;
+		height: 92px;
+		position: absolute;
+		right: 0;
+		width: 46px;
 
 		&__button {
 			background-color: transparent;
 			background-size: contain;
 			border: 0;
 			cursor: pointer;
-			margin-right: 6px;
 			height: $menu-button-size;
-			width: $menu-button-size;
+			margin-right: 6px;
 			outline: none;
+			position: relative;
+			width: $menu-button-size;
+
+			&:hover::before {
+				background-image: url($URL_ASSETS_IMAGES + "ui/info-menu-hover.png");
+				content: '';
+				display: block;
+				height: $menu-button-size;
+				left: 0;
+				position: absolute;
+				top: 0;
+				width: $menu-button-size;
+			}
+
 
 			&.opened {
 				background-image: url($URL_ASSETS_IMAGES + "ui/info-menu-active.png");
