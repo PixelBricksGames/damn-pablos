@@ -13,7 +13,7 @@ const Laboratory = ({ game, clones, config, onClickClone, onClickSell, onClickSe
 			onClickClone= { () => { onClickClone(game.clones.perClick) } }
 			onClickSell= { () => { onClickSell(1, clones.fetus.income.money) } }
 			onClickSerum= { () => { onClickSerum(1, clones.fetus.income.serum) } }
-		></Capsule>
+		/>
 	</div>
 );
 

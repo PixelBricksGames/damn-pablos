@@ -10,8 +10,10 @@ const UiContainer = () => (
     <main className="ui">
 		<InfoConnector />
 		<MenuConnector />
-		<CurrenciesConnector />
-		<AssistantConnector />
+		<div className="ui__bottom">
+			<AssistantConnector />
+			<CurrenciesConnector />
+		</div>
 	</main>
 );
 

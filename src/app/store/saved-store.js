@@ -7,7 +7,5 @@ export const getSavedState = (key, init) => {
 }
 
 export const getSavedClonesState = (key, init) => {
-	console.log('savedStore', savedStore);
-	console.log(key, savedStore.clones[key]);
 	return savedStore && savedStore.clones ? savedStore.clones[key] : init;
 }

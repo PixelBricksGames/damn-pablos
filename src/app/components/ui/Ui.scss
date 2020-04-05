@@ -5,9 +5,8 @@
 	height: 100%;
 	width: 100%;
 
-	.characters {
-		position: absolute;
-		bottom: 0;
-		left: 0;
+	&__bottom {
+		display: flex;
+		flex-direction: row;
 	}
 }

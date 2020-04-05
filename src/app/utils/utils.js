@@ -1,14 +1,14 @@
 export const fixAddition = (number1, number2) => {
 	// return Math.round((number1 + number2) * 1e12) / 1e12;
-	return Math.round((number1 + number2) * 100) / 100;
+	return getTwoDecimals(number1 + number2);
 };
 
 export const fixSubstraction = (number1, number2) => {
-	return Math.round((number1 - number2) * 1e12) / 1e12;
+	return getTwoDecimals(number1 - number2);
 };
 
 export const fixMultiplier = (number1, number2) => {
-	return Math.round((number1 * number2) * 1e12) / 1e12;
+	return getTwoDecimals(number1 * number2);
 };
 
 export const getIncrementalCost = (cost, amount, increment) => {

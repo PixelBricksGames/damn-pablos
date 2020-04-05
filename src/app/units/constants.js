@@ -12,6 +12,16 @@ export const BUTTONS = {
 	SERUM: "serum",
 };
 
+export const MENU_PAGES = {
+	CLONES: "clones",
+	TOOLS: "tools",
+	UPGRADES: "upgrades",
+	STATS: "stats",
+	ACHIEVEMENTS: "achievements",
+	CONFIG: "config",
+	CREDITS: "credits"
+};
+
 export const CURRENCIES = {
 	CLONES: "clones",
 	MONEY: "money",

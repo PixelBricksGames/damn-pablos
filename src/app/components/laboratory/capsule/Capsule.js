@@ -15,7 +15,7 @@ const Capsule = ({ language, clone, currency, onClickClone, onClickSerum, onClic
 					unlocked={ clone.unlocked.clone }
 					enabled={ true }
 					onClick={ onClickClone }
-				></CapsuleButton>
+				/>
 			</div>
 
 			<div className={`button-sell ${clone.unlocked.sell ? 'unlocked' : ''}`}>
@@ -24,7 +24,7 @@ const Capsule = ({ language, clone, currency, onClickClone, onClickSerum, onClic
 					unlocked={ clone.unlocked.sell }
 					enabled={ clone.amount > 0 }
 					onClick={ onClickSell }
-				></CapsuleButton>
+				/>
 			</div>
 
 			<div className={`button-serum ${clone.unlocked.serum ? 'unlocked' : ''}`}>
@@ -33,7 +33,7 @@ const Capsule = ({ language, clone, currency, onClickClone, onClickSerum, onClic
 					unlocked={ clone.unlocked.serum }
 					enabled={ clone.amount > 0 }
 					onClick={ onClickSerum }
-				></CapsuleButton>
+				/>
 			</div>
 		</div>
     );

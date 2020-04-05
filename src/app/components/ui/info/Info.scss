@@ -1,13 +1,10 @@
-@import "./../../../../assets/fonts/retro-gaming/stylesheet.css";
-@import "./../../../../assets/fonts/desyrel/stylesheet.css";
+@import "./../../../../styles/theme.scss";
 @import "./../../../../assets/fonts/upheaval-pro/stylesheet.css";
 
 $URL_ASSETS: "./../../../../assets/";
 $URL_ASSETS_IMAGES: $URL_ASSETS + "images/";
 
 .info {
-	$colour-text-primary: #69a2b0;
-	$colour-text-secondary: #436c76;
 	$menu-button-size: 40px;
 
 	-webkit-font-smoothing: antialiased;
@@ -34,13 +31,13 @@ $URL_ASSETS_IMAGES: $URL_ASSETS + "images/";
 			&--label {
 				font-size: 26px;
 				margin-top: -1px;
-				color: $colour-text-secondary;
+				color: $colour-secondary;
 			}
 			&--number {
 				font-size: 40px;
 				line-height: 38px;
 				margin-top: 2px;
-				color: $colour-text-primary;
+				color: $colour-primary;
 				width: 100%;
 			}
 		}
@@ -50,11 +47,11 @@ $URL_ASSETS_IMAGES: $URL_ASSETS + "images/";
 			&--label {
 				font-size: 20px;
 				margin-top: 5px;
-				color: $colour-text-secondary;
+				color: $colour-secondary;
 			}
 			&--number {
 				font-size: 26px;
-				color: $colour-text-primary;
+				color: $colour-primary;
 			}
 		}
 		&__risk {
@@ -72,7 +69,7 @@ $URL_ASSETS_IMAGES: $URL_ASSETS + "images/";
 				}
 
 				&.warning {
-					color: #770808;
+					color: $colour-error;
 				}
 				// &::first-letter {
 				// 	text-transform: capitalize;

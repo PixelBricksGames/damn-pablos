@@ -1,14 +1,45 @@
-.currencies {
-	background-color: red;
-	box-sizing: border-box;
-	padding: 10px 0;
-	width: 100%;
-	z-index: 1;
-	align-self: flex-end;
-	justify-self: flex-end;
+@import "./../../../../styles/theme.scss";
+@import "./../../../../assets/fonts/upheaval-pro/stylesheet.css";
 
-	.info-currencies {
-		box-sizing: border-box;
-		padding: 0 10px;
+$URL_ASSETS: "./../../../../assets/";
+$URL_ASSETS_IMAGES: $URL_ASSETS + "images/";
+
+.currencies {
+	box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-self: flex-end;
+	min-width: 200px;
+    padding: 0;
+    width: 100%;
+	z-index: 1;
+
+	&__money,
+	&__aging-serum,
+	&__anger-serum,
+	&__chaos-serum {
+		background-image: url($URL_ASSETS_IMAGES + "ui/currency-bar.png");
+		background-repeat: no-repeat;
+		color: $colour-terciary;
+		display: flex;
+		font-family: "upheaval-pro";
+		font-size: 13px;
+		letter-spacing: 1px;
+		line-height: 25px;
+		max-width: 1000px;
+		padding-left: 4px;
+
+		&:before {
+			content: '';
+			display: inline-block;
+			height: 25px;
+			margin-right: 4px;
+			width: 25px;
+		}
 	}
+
+	&__money:before { background-image: url($URL_ASSETS_IMAGES + "ui/currency-icon-money.png"); }
+	&__aging-serum:before { background-image: url($URL_ASSETS_IMAGES + "ui/currency-icon-serum-yellow.png"); }
+	&__anger-serum:before { background-image: url($URL_ASSETS_IMAGES + "ui/currency-icon-serum-red.png"); }
+	&__chaos-serum:before { background-image: url($URL_ASSETS_IMAGES + "ui/currency-icon-serum-black.png"); }
 }
