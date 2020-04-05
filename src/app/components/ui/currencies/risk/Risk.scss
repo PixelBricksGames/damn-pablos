@@ -1,0 +1,64 @@
+@import "./../../../../../styles/theme.scss";
+@import "./../../../../../assets/fonts/upheaval-pro/stylesheet.css";
+
+$URL_ASSETS: "./../../../../../assets/";
+$URL_ASSETS_IMAGES: $URL_ASSETS + "images/";
+
+.risk {
+	display: flex;
+
+	&__label {
+		display: flex;
+		height: 22px;
+
+		.label--left,
+		.label--right {
+			height: 100%;
+			width: 6px;
+		}
+
+		.label--center {
+			background-image: url($URL_ASSETS_IMAGES + "ui/risk-label-center.png");
+			color: $colour-primary;
+			display: flex;
+			font-family: "upheaval-pro";
+			font-size: 12px;
+			letter-spacing: 1px;
+			line-height: 22px;
+			min-width: 150px;
+			padding: 0 10px;
+		}
+
+		.label--left {
+			background-image: url($URL_ASSETS_IMAGES + "ui/risk-label-left.png");
+		}
+
+		.label--right {
+			background-color: $colour-primary;
+			background-image: url($URL_ASSETS_IMAGES + "ui/risk-label-right.png");
+		}
+	}
+
+	&__percentage {
+		background-image: url($URL_ASSETS_IMAGES + "ui/risk-bar-base.png");
+		color: white;
+		flex: 1;
+		position: relative;
+		width: 100%;
+
+		&:before {
+			background-image: url($URL_ASSETS_IMAGES + "ui/risk-bar-overlay.png");
+			content: '';
+			position: absolute;
+			height: 100%;
+			width: 100%;
+		}
+
+		.percentage {
+			background-image: url($URL_ASSETS_IMAGES + "ui/risk-bar-yellow.png");
+			background-position: right;
+			height: 100%;
+			transition: width 0.2s cubic-bezier(0.42, 0, 1.0, 1.0);
+		}
+	}
+}
