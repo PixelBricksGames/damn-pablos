@@ -1,8 +1,97 @@
+@import "./../../../../../../styles/theme.scss";
+@import "./../../../../../../assets/fonts/upheaval-pro/stylesheet.css";
+
+$URL_ASSETS: "./../../../../../../assets/";
+$URL_ASSETS_IMAGES: $URL_ASSETS + "images/";
+
 .menu-btn {
-	.title { color: black; }
-	.cost { color: grey; }
+	background-color: transparent;
+	border: 1px solid $colour-primary;
+	box-sizing: border-box;
+	display: flex;
+	flex-direction: row;
+	padding: 4px;
+	outline: none;
+	width: 100%;
+
+	.icon-default {
+		background-size: 100%;
+		display: block;
+		height: 40px;
+		width: 40px;
+	}
+	.icon {
+		&-autoclone {
+			@extend .icon-default;
+			background-image: url($URL_ASSETS_IMAGES + "ui/icon-autoclone.png");
+		}
+	}
+
+	.content {
+		box-sizing: border-box;
+		display: flex;
+		flex-direction: column;
+		flex: 1;
+		justify-content: space-between;
+		height: 40px;
+		padding-left: 6px;
+		width: 100%;
+
+		&__top,
+		&__bottom {
+			display: flex;
+			flex-direction: row;
+			justify-content: space-between;
+		}
+
+		&__top {
+			height: 24px;
+			.title,
+			.amount {
+				display: flex;
+				height: 50%;
+				font-family: "upheaval-pro";
+			}
+
+			.title {
+				color: $colour-primary;
+				font-size: 30px;
+				line-height: 18px;
+			}
+
+			.amount {
+				color: $colour-secondary;
+				font-size: 60px;
+				line-height: 26px;
+			}
+		}
+
+		&__bottom {
+			height: 16px;
+			.cost {
+				color: $colour-primary;
+				display: flex;
+				font-family: "upheaval-pro";
+				font-size: 28px;
+				line-height: 10px;
+
+				&.money::before {
+					background-image: url($URL_ASSETS_IMAGES + "ui/currency-icon-money.png");
+					background-size: 25px 25px;
+					background-position: -4px -4px;
+					content: '';
+					display: inline-block;
+					margin-right: 4px;
+					height: 16px;
+					width: 16px;
+				}
+			}
+		}
+
+	}
+
 	&.unlocked { border: 2px solid black; }
 	&.locked { border: 2px solid red; }
 	&.enabled { opacity: 1; }
-	&.disabled { opacity: .75; }
+	&.disabled { opacity: .5; }
 }
