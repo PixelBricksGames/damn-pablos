@@ -19,7 +19,7 @@ $URL_ASSETS_IMAGES: $URL_ASSETS + "images/";
 
 		.label--center {
 			background-image: url($URL_ASSETS_IMAGES + "ui/risk-label-center.png");
-			color: $colour-primary;
+			color: $colour-base;
 			display: flex;
 			font-family: "upheaval-pro";
 			font-size: 12px;
@@ -34,7 +34,7 @@ $URL_ASSETS_IMAGES: $URL_ASSETS + "images/";
 		}
 
 		.label--right {
-			background-color: $colour-primary;
+			background-color: $colour-base;
 			background-image: url($URL_ASSETS_IMAGES + "ui/risk-label-right.png");
 		}
 	}

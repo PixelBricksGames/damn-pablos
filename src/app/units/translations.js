@@ -34,12 +34,12 @@ export const translations = {
 			AUTO_SERUM: "Auto-Serum",
 		},
 		CLONES: {
-			FETUS: "Fetus Clones",
-			CHILD: "Child Clones",
-			TEEN: "Teen Clones",
-			ADULT: "Adult Clones",
-			SENIOR: "Senior Clones",
-			ANCIENT: "Ancient Clones",
+			FETUS: "Fetus Clone",
+			CHILD: "Child Clone",
+			TEEN: "Teen Clone",
+			ADULT: "Adult Clone",
+			SENIOR: "Senior Clone",
+			ANCIENT: "Ancient Clone",
 		}
 	}
 };

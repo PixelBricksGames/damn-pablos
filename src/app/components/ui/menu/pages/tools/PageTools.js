@@ -3,7 +3,6 @@ import React from "react";
 import { translations } from "../../../../../units/translations";
 
 import "../Page.scss";
-
 import MenuButton from "../button/MenuButton";
 
 const PageTools = ({ game, tools, config, onClickAutoClone }) => (
@@ -14,6 +13,7 @@ const PageTools = ({ game, tools, config, onClickAutoClone }) => (
 			title={ translations[config.language].TOOLS.AUTO_CLONE }
 			amount={ tools.autoClone.amount }
 			cost={ tools.autoClone.cost }
+			unlocked={ tools.autoClone.unlocked }
 			enabled={ game.currency.money >= tools.autoClone.cost }
 			onClick={() => { onClickAutoClone(tools.autoClone.cost) }}
 		/>

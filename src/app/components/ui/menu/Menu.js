@@ -7,6 +7,7 @@ import * as CONSTANST from "../../../units/constants";
 import "./Menu.scss";
 
 import MenuTab from "./tab/MenuTab";
+import PageClonesConnector from "./pages/clones/PageClones.connector";
 import PageToolsConnector from "./pages/tools/PageTools.connector";
 
 const buildTabs = (ui, tabList) => (
@@ -45,7 +46,7 @@ const Menu = ({
 
 				<section className="page">
 					<div className={`page__clones ${ui.pages.clones.open ? 'open' : 'close'}`}>
-						<div className="page__title">{translations[config.language].GAME.PAGES.CLONES}</div>
+						<PageClonesConnector />
 					</div>
 					<div className={`page__tools ${ui.pages.tools.open ? 'open' : 'close'}`}>
 						<PageToolsConnector />

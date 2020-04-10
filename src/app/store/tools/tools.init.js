@@ -5,7 +5,13 @@ const init = {
 		id: "autoClone",
 		amount: 0,
 		unlocked: false,
-		cost: 100,
+		cost: {
+			clones: 0,
+			money: 100,
+			agingSerum: 0,
+			angerSerum: 0,
+			chaosSerum: 0,
+		},
 		increment: {
 			cost: 1.01,
 			perSecond: 0.1
@@ -15,7 +21,13 @@ const init = {
 		id: "autoSell",
 		amount: 0,
 		unlocked: false,
-		cost: 500,
+		cost: {
+			clones: 0,
+			money: 500,
+			agingSerum: 0,
+			angerSerum: 0,
+			chaosSerum: 0,
+		},
 		increment: {
 			cost: 1.01,
 			perSecond: 0.1
@@ -25,7 +37,13 @@ const init = {
 		id: "autoSerum",
 		amount: 0,
 		unlocked: false,
-		cost: 1000,
+		cost: {
+			clones: 0,
+			money: 1000,
+			agingSerum: 0,
+			angerSerum: 0,
+			chaosSerum: 0,
+		},
 		increment: {
 			cost: 1.01,
 			perSecond: 0.1

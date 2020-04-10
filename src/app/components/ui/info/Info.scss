@@ -31,13 +31,13 @@ $URL_ASSETS_IMAGES: $URL_ASSETS + "images/";
 			&--label {
 				font-size: 26px;
 				margin-top: -1px;
-				color: $colour-secondary;
+				color: $colour-base-dark;
 			}
 			&--number {
 				font-size: 40px;
 				line-height: 38px;
 				margin-top: 2px;
-				color: $colour-primary;
+				color: $colour-base;
 				width: 100%;
 			}
 		}
@@ -47,11 +47,11 @@ $URL_ASSETS_IMAGES: $URL_ASSETS + "images/";
 			&--label {
 				font-size: 20px;
 				margin-top: 5px;
-				color: $colour-secondary;
+				color: $colour-base-dark;
 			}
 			&--number {
 				font-size: 26px;
-				color: $colour-primary;
+				color: $colour-base;
 			}
 		}
 		&__risk {

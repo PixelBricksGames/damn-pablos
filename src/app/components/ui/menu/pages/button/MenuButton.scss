@@ -6,7 +6,7 @@ $URL_ASSETS_IMAGES: $URL_ASSETS + "images/";
 
 .menu-btn {
 	background-color: transparent;
-	border: 1px solid $colour-primary;
+	border: 2px solid $colour-base;
 	box-sizing: border-box;
 	display: flex;
 	flex-direction: row;
@@ -20,7 +20,12 @@ $URL_ASSETS_IMAGES: $URL_ASSETS + "images/";
 		height: 40px;
 		width: 40px;
 	}
+
 	.icon {
+		&-fetus {
+			@extend .icon-default;
+			background-image: url($URL_ASSETS_IMAGES + "ui/icon-fetus.png");
+		}
 		&-autoclone {
 			@extend .icon-default;
 			background-image: url($URL_ASSETS_IMAGES + "ui/icon-autoclone.png");
@@ -54,13 +59,13 @@ $URL_ASSETS_IMAGES: $URL_ASSETS + "images/";
 			}
 
 			.title {
-				color: $colour-primary;
+				color: $colour-base;
 				font-size: 30px;
 				line-height: 18px;
 			}
 
 			.amount {
-				color: $colour-secondary;
+				color: $colour-base-dark;
 				font-size: 60px;
 				line-height: 26px;
 			}
@@ -69,7 +74,7 @@ $URL_ASSETS_IMAGES: $URL_ASSETS + "images/";
 		&__bottom {
 			height: 16px;
 			.cost {
-				color: $colour-primary;
+				color: $colour-base;
 				display: flex;
 				font-family: "upheaval-pro";
 				font-size: 28px;
@@ -90,8 +95,43 @@ $URL_ASSETS_IMAGES: $URL_ASSETS + "images/";
 
 	}
 
-	&.unlocked { border: 2px solid black; }
-	&.locked { border: 2px solid red; }
-	&.enabled { opacity: 1; }
+	// &.unlocked { border: 2px solid black; }
+
+	&.locked {
+		border: 2px solid #555;
+		.icon {
+			&-fetus {
+				background-image: url($URL_ASSETS_IMAGES + "ui/icon-fetus-locked.png");
+			}
+			&-autoclone {
+				background-image: url($URL_ASSETS_IMAGES + "ui/icon-autoclone-locked.png");
+			}
+		}
+		.content {
+			&__top {
+				.title,
+				.amount {
+					color: #555;
+				}
+			}
+			&__bottom {
+				.cost {
+					color: #555;
+					&.money::before {
+						background-image: none;
+						background-color: #111;
+						border-radius: 50%;
+					}
+				}
+			}
+		}
+	}
+	&.enabled {
+		opacity: 1;
+		cursor: pointer;
+		&:hover {
+			border: 2px solid $colour-base-light;
+		}
+	}
 	&.disabled { opacity: .5; }
 }
