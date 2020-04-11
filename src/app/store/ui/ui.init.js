@@ -5,11 +5,11 @@ const init = {
 	notifications: false,
 	pages: {
 		clones: {
-			open: false,
+			open: true,
 			notifications: false
 		},
 		tools: {
-			open: true,
+			open: false,
 			notifications: false
 		},
 		upgrades: {

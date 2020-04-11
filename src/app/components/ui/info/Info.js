@@ -23,22 +23,13 @@ const Info = ({
 				<div className="info-clones__per-second--number">{game.clones.perSecond}</div>
 				<div className="info-clones__per-second--label">{translations[config.language].GAME.CLONES_PER_SECOND}</div>
 			</div>
-			{/* <div className="info-clones__risk">
-				<div className={`risk__mutation ${getRiskLevelClass(game.risk.mutation)}`}>
-					<span className="risk__mutation--label">{translations[config.language].GAME.RISK.MUTATION}: </span>
-					<span className="risk__mutation--number">{ game.risk.mutation + "%" }</span>
-				</div>
-				<div className={`risk__rebellion ${getRiskLevelClass(game.risk.rebellion)}`}>
-					<span className="risk__rebellion--label">{translations[config.language].GAME.RISK.REBELLION}: </span>
-					<span className="risk__rebellion--label">{ game.risk.rebellion + "%"  }</span>
-				</div>
-			</div> */}
 		</article>
 
 		<article className="info-menu">
 			<button
 				className={`info-menu__button ${ui.open ? 'opened' : 'closed'}`}
 				onClick={ onClickMenu }>
+					<div className={`notifications ${ui.notifications ? 'on' : 'off'}`}></div>
 			</button>
 		</article>
 	</section>

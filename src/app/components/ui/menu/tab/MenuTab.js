@@ -5,10 +5,11 @@ import "./MenuTab.scss";
 
 const assetsPath = './../../../../assets/images/';
 
-const MenuTab = ({ name, isSelected, onClick }) => (
+const MenuTab = ({ name, selected, notification, onClick }) => (
 	<button className="menu-tab"
-			style={{ backgroundImage: isSelected ? `url(${assetsPath}ui/tab-${name}-active.png)` : `url(${assetsPath}ui/tab-${name}-inactive.png)` }}
+			style={{ backgroundImage: selected ? `url(${assetsPath}ui/tab-${name}-active.png)` : `url(${assetsPath}ui/tab-${name}-inactive.png)` }}
 			onClick={ onClick }>
+			<div className={`notifications ${notification ? 'on' : 'off'}`}></div>
 	</button>
 );
 

@@ -11,7 +11,15 @@ import PageClonesConnector from "./pages/clones/PageClones.connector";
 import PageToolsConnector from "./pages/tools/PageTools.connector";
 
 const buildTabs = (ui, tabList) => (
-	tabList.map((tab) => (<MenuTab key={ tab[0] } name={ tab[0] } isSelected={ ui.pages[tab[0]].open } onClick={ tab[1] }/>))
+	tabList.map((tab) => (
+		<MenuTab
+			key={ tab[0] }
+			name={ tab[0] }
+			selected={ ui.pages[tab[0]].open }
+			notification={ ui.pages[tab[0]].notifications }
+			onClick={ tab[1] }
+		/>
+	))
 );
 
 const Menu = ({

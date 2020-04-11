@@ -14,10 +14,10 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-	onClickAutoClone: (money) => dispatch(batchActions([
+	onClickAutoClone: (cost) => dispatch(batchActions([
 		createAutoClone(),
-		spendMoney(money),
-		addMoneySpend(money)
+		spendMoney(cost.money),
+		addMoneySpend(cost.money)
 	]))
 });
 

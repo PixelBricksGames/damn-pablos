@@ -53,7 +53,10 @@ const getCreatedToolState = (state, tool) => {
 		[tool]: {
 			...state[tool],
 			amount: state[tool].amount + 1,
-			cost: Utils.getIncrementalCost(state[tool].cost, state[tool].amount + 1, state[tool].increment.cost)
+			cost: {
+				...state[tool].cost,
+				money: Utils.getIncrementalCost(state[tool].cost.money, state[tool].amount + 1, state[tool].increment.cost)
+			}
 		}
 	}
 };

@@ -14,7 +14,7 @@ const PageTools = ({ game, tools, config, onClickAutoClone }) => (
 			amount={ tools.autoClone.amount }
 			cost={ tools.autoClone.cost }
 			unlocked={ tools.autoClone.unlocked }
-			enabled={ game.currency.money >= tools.autoClone.cost }
+			enabled={ game.currency.money >= tools.autoClone.cost.money }
 			onClick={() => { onClickAutoClone(tools.autoClone.cost) }}
 		/>
 	</div>

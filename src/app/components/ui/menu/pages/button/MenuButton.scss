@@ -6,7 +6,7 @@ $URL_ASSETS_IMAGES: $URL_ASSETS + "images/";
 
 .menu-btn {
 	background-color: transparent;
-	border: 2px solid $colour-base;
+	border: 2px solid $colour-blue;
 	box-sizing: border-box;
 	display: flex;
 	flex-direction: row;
@@ -59,36 +59,55 @@ $URL_ASSETS_IMAGES: $URL_ASSETS + "images/";
 			}
 
 			.title {
-				color: $colour-base;
+				color: $colour-blue;
 				font-size: 30px;
 				line-height: 18px;
 			}
 
 			.amount {
-				color: $colour-base-dark;
-				font-size: 60px;
-				line-height: 26px;
+				color: $colour-blue-dark;
+				font-size: 70px; // 60px
+				line-height: 30px; // 26px
 			}
 		}
 
 		&__bottom {
 			height: 16px;
 			.cost {
-				color: $colour-base;
+				color: $colour-blue;
 				display: flex;
 				font-family: "upheaval-pro";
 				font-size: 28px;
 				line-height: 10px;
 
-				&.money::before {
-					background-image: url($URL_ASSETS_IMAGES + "ui/currency-icon-money.png");
+				.currency-icon {
 					background-size: 25px 25px;
 					background-position: -4px -4px;
 					content: '';
 					display: inline-block;
-					margin-right: 4px;
+					margin-right: 6px;
 					height: 16px;
 					width: 16px;
+				}
+
+				.money::before {
+					@extend .currency-icon;
+					background-image: url($URL_ASSETS_IMAGES + "ui/currency-icon-money.png");
+				}
+
+				.agingSerum::before {
+					@extend .currency-icon;
+					background-image: url($URL_ASSETS_IMAGES + "ui/currency-icon-serum-yellow.png");
+				}
+
+				.angerSerum::before {
+					@extend .currency-icon;
+					background-image: url($URL_ASSETS_IMAGES + "ui/currency-icon-serum-red.png");
+				}
+
+				.chaosSerum::before {
+					@extend .currency-icon;
+					background-image: url($URL_ASSETS_IMAGES + "ui/currency-icon-serum-black.png");
 				}
 			}
 		}
@@ -117,7 +136,11 @@ $URL_ASSETS_IMAGES: $URL_ASSETS + "images/";
 			&__bottom {
 				.cost {
 					color: #555;
-					&.money::before {
+					.clones::before,
+					.money::before,
+					.agingSerum::before,
+					.angerSerum::before,
+					.chaosSerum::before {
 						background-image: none;
 						background-color: #111;
 						border-radius: 50%;
@@ -130,7 +153,7 @@ $URL_ASSETS_IMAGES: $URL_ASSETS + "images/";
 		opacity: 1;
 		cursor: pointer;
 		&:hover {
-			border: 2px solid $colour-base-light;
+			border: 2px solid $colour-blue-light;
 		}
 	}
 	&.disabled { opacity: .5; }

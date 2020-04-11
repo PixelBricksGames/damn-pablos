@@ -1,13 +1,14 @@
 import React from "react";
 import PropTypes from "prop-types";
 
+import { CURRENCIES } from "./../../../../../units/constants";
 import "./MenuButton.scss";
 
-const getCosts = (cost, unlocked) => {
-	return (
-		<div className="money">{unlocked ? cost : '???'}</div>
-	);
-}
+const getCostCurrency = (cost, unlocked, name) => {
+	if(cost[name]) {
+		return (<div className={ name }>{unlocked ? cost[name] : '???'}</div>);
+	}
+};
 
 const MenuButton = ({ id, title, amount, cost, unlocked, enabled, onClick }) => {
     return (
@@ -23,7 +24,11 @@ const MenuButton = ({ id, title, amount, cost, unlocked, enabled, onClick }) => 
 				</div>
 				<div className="content__bottom">
 					<div className="cost">
-						{ getCosts(cost, unlocked) }
+						{ getCostCurrency(cost, unlocked, CURRENCIES.CLONES) }
+						{ getCostCurrency(cost, unlocked, CURRENCIES.MONEY) }
+						{ getCostCurrency(cost, unlocked, CURRENCIES.AGING_SERUM) }
+						{ getCostCurrency(cost, unlocked, CURRENCIES.ANGER_SERUM) }
+						{ getCostCurrency(cost, unlocked, CURRENCIES.CHAOS_SERUM) }
 					</div>
 					{/* <div className="info"></div> */}
 				</div>
