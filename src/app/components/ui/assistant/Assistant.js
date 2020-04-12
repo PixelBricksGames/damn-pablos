@@ -10,7 +10,8 @@ const Assistant = ({
 	config
 }) => (
 	<section className="assistant">
-		</section>
+		<div className="pablo"></div>
+	</section>
 );
 
 export default Assistant;

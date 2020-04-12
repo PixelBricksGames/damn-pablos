@@ -29,6 +29,7 @@ $URL_ASSETS_IMAGES: $URL_ASSETS + "images/";
 		&__aging-serum,
 		&__anger-serum,
 		&__chaos-serum {
+			background-color: $colour-blue-darker;
 			background-image: url($URL_ASSETS_IMAGES + "ui/currency-bar.png");
 			background-repeat: no-repeat;
 			color: $colour-shadow;
