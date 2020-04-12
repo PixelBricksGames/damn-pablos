@@ -10,6 +10,16 @@ const getCostCurrency = (cost, unlocked, name) => {
 	}
 };
 
+const getShortAmount = (amount) => {
+	if(amount > 1000000) {
+		return `${Math.floor(amount / 1000000)}M`;
+	} else if(amount > 1000) {
+		return `${Math.floor(amount / 1000)}K`;
+	} else {
+		return `${amount}`;
+	}
+};
+
 const MenuButton = ({ id, title, amount, cost, unlocked, enabled, onClick }) => {
     return (
         <button
@@ -20,7 +30,7 @@ const MenuButton = ({ id, title, amount, cost, unlocked, enabled, onClick }) => 
 			<div className="content">
 				<div className="content__top">
 					<div className="title">{ unlocked ? title : '???' }</div>
-					<div className="amount">{ unlocked ? amount : ''  }</div>
+					<div className="amount">{ unlocked ? getShortAmount(amount) : ''  }</div>
 				</div>
 				<div className="content__bottom">
 					<div className="cost">
@@ -30,7 +40,6 @@ const MenuButton = ({ id, title, amount, cost, unlocked, enabled, onClick }) => 
 						{ getCostCurrency(cost, unlocked, CURRENCIES.ANGER_SERUM) }
 						{ getCostCurrency(cost, unlocked, CURRENCIES.CHAOS_SERUM) }
 					</div>
-					{/* <div className="info"></div> */}
 				</div>
 			</div>
         </button>

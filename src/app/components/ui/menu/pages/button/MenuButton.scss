@@ -51,6 +51,8 @@ $URL_ASSETS_IMAGES: $URL_ASSETS + "images/";
 
 		&__top {
 			height: 24px;
+			position: relative;
+
 			.title,
 			.amount {
 				display: flex;
@@ -62,12 +64,16 @@ $URL_ASSETS_IMAGES: $URL_ASSETS + "images/";
 				color: $colour-blue;
 				font-size: 30px;
 				line-height: 18px;
+				position: relative;
+				z-index: 1;
 			}
 
 			.amount {
 				color: $colour-blue-dark;
-				font-size: 70px; // 60px
-				line-height: 30px; // 26px
+				font-size: 70px;
+				line-height: 30px;
+				position: absolute;
+				right: 0;
 			}
 		}
 
