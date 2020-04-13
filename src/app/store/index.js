@@ -9,6 +9,7 @@ import clones from "./clones/clones.reducer";
 import tools from "./tools/tools.reducer";
 import stats from "./stats/stats.reducer";
 import config from "./config/config.reducer";
+import animations from "./animations/animations.reducer";
 
 const rootReducer = combineReducers({
 	game,
@@ -17,7 +18,8 @@ const rootReducer = combineReducers({
 	time,
 	config,
 	stats,
-	ui
+	ui,
+	animations
 });
 
 const store = createStore(

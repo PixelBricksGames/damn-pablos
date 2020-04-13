@@ -5,6 +5,8 @@ import packageJson from './../../../package.json';
 
 import * as Utils from "../utils/utils";
 import { GAME, TIME } from "../units/constants";
+import * as ANIMATIONS from "../units/animations";
+
 import { translations } from "../units/translations";
 
 import { updateTimeTotal, updateTimeSec, updateTimeDec, clearTimeSec, clearTimeDec } from "../store/time/time.action";
@@ -13,27 +15,7 @@ import { setMenuNotifications, clearMenuNotifications, setToolsTabNotifications 
 import { addTime } from "../store/stats/stats.action";
 import { unlockCloneFetus, unlockSellFetus, unlockSerumFetus, createFetusClone, killFetusClone } from "../store/clones/fetus/fetus.action";
 import { unlockAutoClone, unlockAutoSell, unlockAutoSerum } from "../store/tools/tools.action";
-
-// import Roger from "@pabrick/roger";
-// console.log("pablo", document.getElementById("pablo"));
-// const ssPablosHeads = new Roger.RegularSheet("./../../assets/images/common/spritesheet.png", {w:512,h:512}, {w:54,h:90});
-// const pabloIdleSprite = new Roger.Sprite("./../../assets/images/common/spritesheet.png", {w:54,h:90}, {x:0,y:0});
-// const animPablos_blink1 = new Roger.Animation("blink1",
-//                                                 ssPablosHeads,
-//                                                 [0,1,2,1,0],
-//                                                 { delay: 0, loops: -1, callBack: ()=> {
-//                                                         console.log("blink complete!");
-//                                                     }
-// 												});
-
-// const pabloToon = new Roger.Toon("pablo", pabloIdleSprite);
-// pabloToon.addAnimation(animPablos_blink1);
-// pabloToon.playAnimation("blink1");
-
-// const rClock = new Roger.Clock(0.1);
-// rClock.addToonToUpdate(pabloToon);
-// rClock.setDebugMode(true);
-// rClock.start();
+import { animAssistantMouth } from "../store/animations/animations.action";
 
 const timeService = {
 	clearTimeInterval: null,
@@ -92,7 +74,6 @@ const timeService = {
 			} else {
 				dispatchedActions.push(clearMenuNotifications());
 			}
-			// console.log("time.service - pabloToon", window.pabloToon);
 
 			const totalClones = clones.fetus.amount; //+ clones.child.amount + clones.teen.amount + clones.adult.amount + clones.senior.amount + clones.ancient.amount;
 			dispatchedActions.push(updateCurrencyClones(totalClones));

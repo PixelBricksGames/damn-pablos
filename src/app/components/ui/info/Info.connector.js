@@ -1,7 +1,9 @@
 import { connect } from "react-redux";
-import Info from "./Info";
+import { batchActions } from 'redux-batched-actions';
 
+import Info from "./Info";
 import { toggleMenu } from "../../../store/ui/ui.action";
+import { animAssistantMouth } from "../../../store/animations/animations.action";
 
 const mapStateToProps = state => ({
 	game: state.get("game"),
@@ -15,7 +17,11 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-	onClickMenu: () => dispatch( toggleMenu() )
+	// onClickMenu: () => dispatch( toggleMenu() )
+	onClickMenu: () => dispatch(batchActions([
+		toggleMenu(),
+		animAssistantMouth("talk")
+	]))
 });
 
 export default connect(
