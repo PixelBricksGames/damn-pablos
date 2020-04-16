@@ -58,10 +58,11 @@ $URL_ASSETS_IMAGES: $URL_ASSETS + "images/";
 				display: flex;
 				height: 50%;
 				font-family: "upheaval-pro";
+				color: $colour-blue;
+				text-shadow: 0px 1px 0px $colour-blue-dark;
 			}
 
 			.title {
-				color: $colour-blue;
 				font-size: 30px;
 				line-height: 18px;
 				position: relative;
@@ -69,7 +70,6 @@ $URL_ASSETS_IMAGES: $URL_ASSETS + "images/";
 			}
 
 			.amount {
-				color: $colour-blue-dark;
 				font-size: 70px;
 				line-height: 30px;
 				position: absolute;
