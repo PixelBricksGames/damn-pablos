@@ -40,6 +40,7 @@ $URL_ASSETS_IMAGES: $URL_ASSETS + "images/";
 			line-height: 24px;
 			max-width: 1000px;
 			padding-left: 4px;
+			text-shadow: 1px 1px 0px $colour-blue;
 
 			&:before {
 				content: '';

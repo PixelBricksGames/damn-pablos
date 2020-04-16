@@ -3,9 +3,10 @@ import * as ANIMATIONS from "../../units/animations";
 
 const init = {
 	assistant: {
-		face: ANIMATIONS.ASSISTANT.FACE.NORMAL,
-		mouth: ANIMATIONS.ASSISTANT.MOUTH.NORMAL,
-		body: ANIMATIONS.ASSISTANT.BODY.NORMAL
+		faceExpression: ANIMATIONS.ASSISTANT.FACE_EXPRESSION.NORMAL,
+		bodyExpression: ANIMATIONS.ASSISTANT.BODY_EXPRESSION.NORMAL,
+		eyeDirection: ANIMATIONS.ASSISTANT.EYE_DIRECTION.CAMERA,
+		isTalking: false
 	}
 };
 

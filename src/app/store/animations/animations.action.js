@@ -1,17 +1,21 @@
 import * as actionType from "./animations.type";
 
-export const animAssistantFace = (face) => ({
-	type: actionType.ANIMATIONS.ASSISTANT.SET_FACE,
-	face
+export const setAssistantFaceExpression = (faceExpression) => ({
+	type: actionType.ANIMATIONS.ASSISTANT.SET_FACE_EXPRESSION,
+	faceExpression
 });
 
-export const animAssistantMouth = (mouth) => ({
-	type: actionType.ANIMATIONS.ASSISTANT.SET_MOUTH,
-	mouth
+export const setAssistantBodyExpression = (bodyExpression) => ({
+	type: actionType.ANIMATIONS.ASSISTANT.SET_BODY_EXPRESSION,
+	bodyExpression
 });
 
-export const animAssistantBody = (body) => ({
-	type: actionType.ANIMATIONS.ASSISTANT.SET_BODY,
-	body
+export const setAssistantEyeDirection = (eyeDirection) => ({
+	type: actionType.ANIMATIONS.ASSISTANT.SET_EYE_DIRECTION,
+	eyeDirection
 });
 
+export const setAssistantTalking = (isTalking) => ({
+	type: actionType.ANIMATIONS.ASSISTANT.SET_TALKING,
+	isTalking
+});

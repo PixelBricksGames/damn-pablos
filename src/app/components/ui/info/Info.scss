@@ -32,6 +32,7 @@ $URL_ASSETS_IMAGES: $URL_ASSETS + "images/";
 				font-size: 26px;
 				margin-top: -1px;
 				color: $colour-blue-dark;
+				text-shadow: 0px 1px 0px $colour-blue;
 			}
 			&--number {
 				font-size: 40px;
@@ -39,6 +40,7 @@ $URL_ASSETS_IMAGES: $URL_ASSETS + "images/";
 				margin-top: 2px;
 				color: $colour-blue;
 				width: 100%;
+				text-shadow: 0px 2px 0px $colour-blue-lighter;
 			}
 		}
 		&__per-second {
@@ -48,10 +50,12 @@ $URL_ASSETS_IMAGES: $URL_ASSETS + "images/";
 				font-size: 20px;
 				margin-top: 5px;
 				color: $colour-blue-dark;
+				text-shadow: 0px -1px 0px $colour-blue;
 			}
 			&--number {
 				font-size: 26px;
 				color: $colour-blue;
+				text-shadow: 0px -2px 0px $colour-blue-lighter;
 			}
 		}
 		&__risk {

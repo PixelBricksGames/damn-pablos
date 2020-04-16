@@ -13,6 +13,9 @@ import {
 	selectCreditsTab, clearCreditsTabNotifications,
 } from "../../../store/ui/ui.action";
 
+import { ASSISTANT } from "../../../units/animations";
+import { setAssistantFaceExpression, setAssistantTalking } from "../../../store/animations/animations.action";
+
 const mapStateToProps = state => ({
 	game: state.get("game"),
 	tools: state.get("tools"),
@@ -27,31 +30,38 @@ const mapStateToProps = state => ({
 const mapDispatchToProps = dispatch => ({
 	onClickTabClones: () => dispatch(batchActions([
 		selectClonesTab(),
-		clearClonesTabNotifications()
+		clearClonesTabNotifications(),
+		setAssistantTalking(false)
 	])),
 	onClickTabTools: () => dispatch(batchActions([
 		selectToolsTab(),
-		clearToolsTabNotifications()
+		clearToolsTabNotifications(),
+		setAssistantTalking(true)
 	])),
 	onClickTabUpgrades: () => dispatch(batchActions([
 		selectUpgradesTab(),
-		clearUpgradesTabNotifications()
+		clearUpgradesTabNotifications(),
+		setAssistantFaceExpression(ASSISTANT.FACE_EXPRESSION.NORMAL)
 	])),
 	onClickTabAchievements: () => dispatch(batchActions([
 		selectAchievementsTab(),
-		clearAchievementsTabNotifications()
+		clearAchievementsTabNotifications(),
+		setAssistantFaceExpression(ASSISTANT.FACE_EXPRESSION.SERIOUS)
 	])),
 	onClickTabStats: () => dispatch(batchActions([
 		selectStatsTab(),
-		clearStatsTabNotifications()
+		clearStatsTabNotifications(),
+		setAssistantFaceExpression(ASSISTANT.FACE_EXPRESSION.ANGRY)
 	])),
 	onClickTabConfig: () => dispatch(batchActions([
 		selectConfigTab(),
-		clearConfigTabNotifications()
+		clearConfigTabNotifications(),
+		setAssistantFaceExpression(ASSISTANT.FACE_EXPRESSION.SURPRISE)
 	])),
 	onClickTabCredits: () => dispatch(batchActions([
 		selectCreditsTab(),
-		clearCreditsTabNotifications()
+		clearCreditsTabNotifications(),
+		setAssistantFaceExpression(ASSISTANT.FACE_EXPRESSION.DOUBT)
 	]))
 });
 
