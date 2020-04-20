@@ -22,7 +22,7 @@
 		"@babel/plugin-proposal-class-properties": "^7.5.0",
 		"@babel/preset-env": "^7.4.5",
 		"@babel/preset-react": "^7.0.0",
-		"@pabrick/roger": "^1.0.16",
+		"@pabrick/roger": "^1.1.0",
 		"@types/immutable": "^3.8.7",
 		"babel-loader": "^8.0.6",
 		"copy-webpack-plugin": "^5.0.3",
