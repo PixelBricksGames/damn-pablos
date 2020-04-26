@@ -3,8 +3,9 @@ import * as ANIMATIONS from "../../units/animations";
 
 const init = {
 	assistant: {
-		faceExpression: ANIMATIONS.ASSISTANT.FACE_EXPRESSION.NORMAL,
-		bodyExpression: ANIMATIONS.ASSISTANT.BODY_EXPRESSION.NORMAL,
+		name: ANIMATIONS.ASSISTANT.CHARACTER.PABLO,
+		face: ANIMATIONS.ASSISTANT.FACE.NORMAL,
+		body: ANIMATIONS.ASSISTANT.BODY.IDLE,
 		eyeDirection: ANIMATIONS.ASSISTANT.EYE_DIRECTION.CAMERA,
 		isTalking: false
 	}

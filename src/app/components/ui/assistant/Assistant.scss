@@ -1,3 +1,4 @@
+@import "./../../../../styles/variables.scss";
 @import "./../../../../styles/theme.scss";
 @import "./../../../../assets/fonts/upheaval-pro/stylesheet.css";
 
@@ -13,7 +14,7 @@ $URL_ASSETS_IMAGES: $URL_ASSETS + "images/";
 	position: relative;
     height: 104px;
     width: 100%;
-	z-index: 1;
+	z-index: 2;
 
 	&::before {
 		background-color: $colour-blue-dark;
@@ -28,7 +29,13 @@ $URL_ASSETS_IMAGES: $URL_ASSETS + "images/";
 		width: 264px;
 		display: block;
 		position: absolute;
-		bottom: 0;
+		bottom: -200px;
+		left: -65px;
+
+		@media screen and (min-width: $breakpoint-tablet) {
+			bottom: 10px;
+			left: 10px;
+		}
 
 		&__head {
 			display: block;

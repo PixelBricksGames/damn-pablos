@@ -14,7 +14,7 @@ import {
 } from "../../../store/ui/ui.action";
 
 import { ASSISTANT } from "../../../units/animations";
-import { setAssistantFaceExpression, setAssistantTalking } from "../../../store/animations/animations.action";
+import { setAssistantFace, setAssistantBody, setAssistantTalking } from "../../../store/animations/animations.action";
 
 const mapStateToProps = state => ({
 	game: state.get("game"),
@@ -41,27 +41,28 @@ const mapDispatchToProps = dispatch => ({
 	onClickTabUpgrades: () => dispatch(batchActions([
 		selectUpgradesTab(),
 		clearUpgradesTabNotifications(),
-		setAssistantFaceExpression(ASSISTANT.FACE_EXPRESSION.NORMAL)
-	])),
-	onClickTabAchievements: () => dispatch(batchActions([
-		selectAchievementsTab(),
-		clearAchievementsTabNotifications(),
-		setAssistantFaceExpression(ASSISTANT.FACE_EXPRESSION.SERIOUS)
+		setAssistantFace(ASSISTANT.FACE.NORMAL)
 	])),
 	onClickTabStats: () => dispatch(batchActions([
 		selectStatsTab(),
 		clearStatsTabNotifications(),
-		setAssistantFaceExpression(ASSISTANT.FACE_EXPRESSION.ANGRY)
+		setAssistantBody(ASSISTANT.BODY.IDLE)
+	])),
+	onClickTabAchievements: () => dispatch(batchActions([
+		selectAchievementsTab(),
+		clearAchievementsTabNotifications(),
+		setAssistantBody(ASSISTANT.BODY.POINTING)
 	])),
 	onClickTabConfig: () => dispatch(batchActions([
 		selectConfigTab(),
 		clearConfigTabNotifications(),
-		setAssistantFaceExpression(ASSISTANT.FACE_EXPRESSION.SURPRISE)
+		setAssistantBody(ASSISTANT.BODY.EXPLAINING)
 	])),
 	onClickTabCredits: () => dispatch(batchActions([
 		selectCreditsTab(),
 		clearCreditsTabNotifications(),
-		setAssistantFaceExpression(ASSISTANT.FACE_EXPRESSION.DOUBT)
+		setAssistantFace(ASSISTANT.FACE.DOUBT),
+		setAssistantBody(ASSISTANT.BODY.DUNNO)
 	]))
 });
 

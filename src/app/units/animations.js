@@ -1,5 +1,9 @@
 export const ASSISTANT = {
-	FACE_EXPRESSION: {
+	CHARACTER: {
+		PABLO: "pablo",
+		TAIS: "tais"
+	},
+	FACE: {
 		NORMAL: "normal",
 		HAPPY: "happy",
 		SERIOUS: "serious",
@@ -8,8 +12,11 @@ export const ASSISTANT = {
 		TIRED: "tired",
 		DOUBT: "doubt"
 	},
-	BODY_EXPRESSION: {
-		NORMAL: "normal"
+	BODY: {
+		IDLE: "idle",
+		POINTING: "pointing",
+		EXPLAINING: "explaining",
+		DUNNO: "dunno"
 	},
 	EYE_DIRECTION: {
 		CAMERA: "camera",
@@ -19,15 +26,19 @@ export const ASSISTANT = {
 		DOWN: "down"
 	},
 	EYELIDS: {
-		BLINK: "blink",
-		CLOSED: "closed",
+		NORMAL: {
+			BLINK: "normal-blink",
+			CLOSED: "normal-closed"
+		},
+		TIRED: {
+			BLINK: "tired-blink",
+			CLOSED: "tired-closed"
+		}
 	},
 	MOUTH: {
-		IDLE: {
-			NORMAL: "idle-normal",
-		},
-		TALK: {
-			NORMAL: "talk-normal",
+		NORMAL: {
+			IDLE: "normal-idle",
+			TALK: "normal-talk"
 		}
 	}
 };

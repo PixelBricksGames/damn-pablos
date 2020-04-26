@@ -3,21 +3,21 @@ import * as actionType from "./animations.type";
 
 const animations = (state = initState.animations, action) => {
 	switch (action.type) {
-		case actionType.ANIMATIONS.ASSISTANT.SET_FACE_EXPRESSION:
+		case actionType.ANIMATIONS.ASSISTANT.SET_FACE:
 			return {
 				...state,
 				assistant: {
 					...state.assistant,
-					faceExpression: action.faceExpression
+					face: action.face
 				}
 			};
 
-		case actionType.ANIMATIONS.ASSISTANT.SET_BODY_EXPRESSION:
+		case actionType.ANIMATIONS.ASSISTANT.SET_BODY:
 			return {
 				...state,
 				assistant: {
 					...state.assistant,
-					bodyExpression: action.bodyExpression
+					body: action.body
 				}
 			};
 

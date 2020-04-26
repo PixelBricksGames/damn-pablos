@@ -13,20 +13,11 @@ import {
 	animPabloHead,
 	animPabloEyebrows,
 	animPabloEyes,
-	animPabloMouth
+	animPabloMouth,
+	animPabloArms
 } from "./pablo";
 
-// const loadHeadAnimations = (rogerToon) => {
-// 	rogerToon.add(pabloHead_camera);
-// 	rogerToon.add(pabloHead_right);
-// 	rogerToon.add(pabloHead_left);
-// 	rogerToon.add(pabloHead_up);
-// 	rogerToon.add(pabloHead_down);
-// 	return rogerToon;
-// }
-
 class Assistant extends React.Component {
-	pabloToon;
 	currentAnimations;
 
 	constructor(props) {
@@ -44,20 +35,11 @@ class Assistant extends React.Component {
 			eyebrows: new Roger.Toon("pablo-eyebrows"),
 			eyes: new Roger.Toon("pablo-eyelids"),
 			mouth: new Roger.Toon("pablo-mouth", spritePabloMouth.idle),
-			armLeft: new Roger.Toon("pablo__arm--left", spritePabloArms.left),
+			armLeft: new Roger.Toon("pablo__arm--left"),
 			armRight: new Roger.Toon("pablo__arm--right", spritePabloArms.right),
 		}
 
-		this.pablo.eyebrows.add(animPabloEyebrows.normal);
-		this.pablo.eyebrows.add(animPabloEyebrows.serious);
-		this.pablo.eyebrows.add(animPabloEyebrows.angry);
-		this.pablo.eyebrows.add(animPabloEyebrows.surprise);
-		this.pablo.eyebrows.add(animPabloEyebrows.doubt);
-
-		this.pablo.eyes.add(animPabloEyes.blink);
-
-		this.pablo.mouth.add(animPabloMouth.idle_normal);
-		this.pablo.mouth.add(animPabloMouth.talk_normal);
+		this.pablo = addAnimations(this.pablo);
 
 		rClock.addToList(this.pablo.head);
 		rClock.addToList(this.pablo.eyebrows);
@@ -90,21 +72,58 @@ class Assistant extends React.Component {
 	}
 
 	setAnimation(animations) {
-
 		if(animations !== this.currentAnimations) {
 			console.log('animations', animations);
 			this.currentAnimations = animations;
-			this.pablo.eyes.play(ASSISTANT.EYELIDS.BLINK);
-			this.pablo.eyebrows.play(animations.faceExpression);
+			this.pablo.eyes.play(ASSISTANT.EYELIDS.TIRED.BLINK);
+			this.pablo.eyebrows.play(animations.face);
+
+			// if(animations.body !== this.currentAnimations.body) {
+				this.pablo.armRight.play(animations.body);
+				this.pablo.armLeft.play(animations.body);
+			// }
 
 			if(animations.isTalking) {
-				this.pablo.mouth.play(ASSISTANT.MOUTH.TALK.NORMAL);
+				this.pablo.mouth.play(ASSISTANT.MOUTH.NORMAL.TALK);
 			} else {
-				this.pablo.mouth.play(ASSISTANT.MOUTH.IDLE.NORMAL);
+				this.pablo.mouth.play(ASSISTANT.MOUTH.NORMAL.IDLE);
 			}
-
 		}
 	}
+}
+
+const addAnimations = (rogerToon) => {
+	rogerToon.head.add(animPabloHead.camera);
+	rogerToon.head.add(animPabloHead.up);
+	rogerToon.head.add(animPabloHead.down);
+	rogerToon.head.add(animPabloHead.left);
+	rogerToon.head.add(animPabloHead.right);
+
+	rogerToon.eyebrows.add(animPabloEyebrows.normal);
+	rogerToon.eyebrows.add(animPabloEyebrows.serious);
+	rogerToon.eyebrows.add(animPabloEyebrows.angry);
+	rogerToon.eyebrows.add(animPabloEyebrows.surprise);
+	rogerToon.eyebrows.add(animPabloEyebrows.doubt);
+
+	rogerToon.eyes.add(animPabloEyes.normal.blink);
+	rogerToon.eyes.add(animPabloEyes.normal.closed);
+	rogerToon.eyes.add(animPabloEyes.tired.blink);
+	rogerToon.eyes.add(animPabloEyes.tired.closed);
+
+	rogerToon.mouth.add(animPabloMouth.normal.idle);
+	rogerToon.mouth.add(animPabloMouth.normal.talk);
+
+	rogerToon.armLeft.add(animPabloArms.left.idle);
+	rogerToon.armLeft.add(animPabloArms.left.pointing);
+	rogerToon.armLeft.add(animPabloArms.left.explaining);
+	rogerToon.armLeft.add(animPabloArms.left.dunno);
+
+	rogerToon.armRight.add(animPabloArms.right.idle);
+	rogerToon.armRight.add(animPabloArms.right.pointing);
+	rogerToon.armRight.add(animPabloArms.right.explaining);
+	rogerToon.armRight.add(animPabloArms.right.dunno);
+
+	return rogerToon;
 }
 
 export default Assistant;
