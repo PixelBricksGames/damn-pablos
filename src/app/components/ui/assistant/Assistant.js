@@ -6,31 +6,15 @@ import { translations } from "../../../units/translations";
 import { ASSISTANT } from "../../../units/animations";
 import "./Assistant.scss";
 
-const spriteSheetUrl = "./../../../assets/images/assistant/assistant-head-sheet.png";
-const spriteSize = { w:96, h:105 };
-const spriteSheetSize = { w:480, h:525 };
-
-const ssPablosHeads = new Roger.RegularSheet(spriteSheetUrl, spriteSheetSize, spriteSize);
-
-const spritePabloHead_camera = new Roger.Sprite(spriteSheetUrl, spriteSheetSize, { x:0, y:0 });
-const spritePabloMouth_idle = new Roger.Sprite(spriteSheetUrl, spriteSheetSize, {x:(spriteSize.w * 4),y:(spriteSize.h * 2)});
-
-// const pabloHead_camera = new Roger.Animation("camera", ssPablosHeads, [0]);
-// const pabloHead_right = new Roger.Animation("right", ssPablosHeads, [1]);
-// const pabloHead_left = new Roger.Animation("left", ssPablosHeads, [2]);
-// const pabloHead_up = new Roger.Animation("up", ssPablosHeads, [3]);
-// const pabloHead_down = new Roger.Animation("down", ssPablosHeads, [4]);
-
-const animPablo_eyebrows_normal = new Roger.Animation(ASSISTANT.FACE_EXPRESSION.NORMAL, ssPablosHeads, [5]);
-const animPablo_eyebrows_serious = new Roger.Animation(ASSISTANT.FACE_EXPRESSION.SERIOUS, ssPablosHeads, [6]);
-const animPablo_eyebrows_angry = new Roger.Animation(ASSISTANT.FACE_EXPRESSION.ANGRY, ssPablosHeads, [7]);
-const animPablo_eyebrows_surprise = new Roger.Animation(ASSISTANT.FACE_EXPRESSION.SURPRISE, ssPablosHeads, [8]);
-const animPablo_eyebrows_doubt = new Roger.Animation(ASSISTANT.FACE_EXPRESSION.DOUBT, ssPablosHeads, [9]);
-
-const animPablo_blink = new Roger.Animation(ASSISTANT.EYELIDS.BLINK, ssPablosHeads, [10,11,12, 13, 13, 11,10], { delay: 20 });
-
-const animPablo_mouth_idle_normal = new Roger.Animation(ASSISTANT.MOUTH.IDLE.NORMAL, ssPablosHeads, [14]);
-const animPablo_mouth_talk_normal = new Roger.Animation(ASSISTANT.MOUTH.TALK.NORMAL, ssPablosHeads, [15, 16, 17, 18, 19], { direction: "random" });
+import {
+	spritePabloHead,
+	spritePabloMouth,
+	spritePabloArms,
+	animPabloHead,
+	animPabloEyebrows,
+	animPabloEyes,
+	animPabloMouth
+} from "./pablo";
 
 // const loadHeadAnimations = (rogerToon) => {
 // 	rogerToon.add(pabloHead_camera);
@@ -55,26 +39,32 @@ class Assistant extends React.Component {
 	}
 
 	componentDidMount() {
-		this.pabloHead = new Roger.Toon("pablo-base", spritePabloHead_camera);
-		// this.pabloHead = loadHeadAnimations(this.pabloHead);
-		rClock.addToList(this.pabloHead);
+		this.pablo = {
+			head: new Roger.Toon("pablo-base", spritePabloHead.camera),
+			eyebrows: new Roger.Toon("pablo-eyebrows"),
+			eyes: new Roger.Toon("pablo-eyelids"),
+			mouth: new Roger.Toon("pablo-mouth", spritePabloMouth.idle),
+			armLeft: new Roger.Toon("pablo__arm--left", spritePabloArms.left),
+			armRight: new Roger.Toon("pablo__arm--right", spritePabloArms.right),
+		}
 
-		this.pabloEyebrows = new Roger.Toon("pablo-eyebrows");
-		this.pabloEyebrows.add(animPablo_eyebrows_normal);
-		this.pabloEyebrows.add(animPablo_eyebrows_serious);
-		this.pabloEyebrows.add(animPablo_eyebrows_angry);
-		this.pabloEyebrows.add(animPablo_eyebrows_surprise);
-		this.pabloEyebrows.add(animPablo_eyebrows_doubt);
-		rClock.addToList(this.pabloEyebrows);
+		this.pablo.eyebrows.add(animPabloEyebrows.normal);
+		this.pablo.eyebrows.add(animPabloEyebrows.serious);
+		this.pablo.eyebrows.add(animPabloEyebrows.angry);
+		this.pablo.eyebrows.add(animPabloEyebrows.surprise);
+		this.pablo.eyebrows.add(animPabloEyebrows.doubt);
 
-		this.pabloEyelids = new Roger.Toon("pablo-eyelids");
-		this.pabloEyelids.add(animPablo_blink);
-		rClock.addToList(this.pabloEyelids);
+		this.pablo.eyes.add(animPabloEyes.blink);
 
-		this.pabloMouth = new Roger.Toon("pablo-mouth", spritePabloMouth_idle);
-		this.pabloMouth.add(animPablo_mouth_idle_normal);
-		this.pabloMouth.add(animPablo_mouth_talk_normal);
-		rClock.addToList(this.pabloMouth);
+		this.pablo.mouth.add(animPabloMouth.idle_normal);
+		this.pablo.mouth.add(animPabloMouth.talk_normal);
+
+		rClock.addToList(this.pablo.head);
+		rClock.addToList(this.pablo.eyebrows);
+		rClock.addToList(this.pablo.eyes);
+		rClock.addToList(this.pablo.mouth);
+		rClock.addToList(this.pablo.armLeft);
+		rClock.addToList(this.pablo.armRight);
 
 		// rClock.setDebugMode(true);
 	}
@@ -89,6 +79,11 @@ class Assistant extends React.Component {
 						<div id="pablo-eyelids"></div>
 						<div id="pablo-eyebrows"></div>
 					</div>
+					<div className="pablo__body"></div>
+					<div className="pablo__arms">
+						<div id="pablo__arm--right"></div>
+						<div id="pablo__arm--left"></div>
+					</div>
 				</div>
 			</section>
 		);
@@ -99,13 +94,13 @@ class Assistant extends React.Component {
 		if(animations !== this.currentAnimations) {
 			console.log('animations', animations);
 			this.currentAnimations = animations;
-			this.pabloEyelids.play(ASSISTANT.EYELIDS.BLINK);
-			this.pabloEyebrows.play(animations.faceExpression);
+			this.pablo.eyes.play(ASSISTANT.EYELIDS.BLINK);
+			this.pablo.eyebrows.play(animations.faceExpression);
 
 			if(animations.isTalking) {
-				this.pabloMouth.play(ASSISTANT.MOUTH.TALK.NORMAL);
+				this.pablo.mouth.play(ASSISTANT.MOUTH.TALK.NORMAL);
 			} else {
-				this.pabloMouth.play(ASSISTANT.MOUTH.IDLE.NORMAL);
+				this.pablo.mouth.play(ASSISTANT.MOUTH.IDLE.NORMAL);
 			}
 
 		}
