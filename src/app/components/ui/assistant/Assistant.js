@@ -31,12 +31,12 @@ class Assistant extends React.Component {
 
 	componentDidMount() {
 		this.pablo = {
-			head: new Roger.Toon("pablo-base", spritePabloHead.camera),
+			head: new Roger.Toon("pablo-base"),
 			eyebrows: new Roger.Toon("pablo-eyebrows"),
 			eyes: new Roger.Toon("pablo-eyelids"),
-			mouth: new Roger.Toon("pablo-mouth", spritePabloMouth.idle),
+			mouth: new Roger.Toon("pablo-mouth"),
 			armLeft: new Roger.Toon("pablo__arm--left"),
-			armRight: new Roger.Toon("pablo__arm--right", spritePabloArms.right),
+			armRight: new Roger.Toon("pablo__arm--right"),
 		}
 
 		this.pablo = addAnimations(this.pablo);
@@ -75,6 +75,7 @@ class Assistant extends React.Component {
 		if(animations !== this.currentAnimations) {
 			console.log('animations', animations);
 			this.currentAnimations = animations;
+			this.pablo.head.play(ASSISTANT.EYE_DIRECTION.CAMERA);
 			this.pablo.eyes.play(ASSISTANT.EYELIDS.TIRED.BLINK);
 			this.pablo.eyebrows.play(animations.face);
 

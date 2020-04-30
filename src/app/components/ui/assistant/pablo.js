@@ -30,11 +30,11 @@ export const spritePabloArms = {
 };
 
 export const animPabloHead = {
-	camera: new Roger.Animation("camera", sheetPabloHead, [0]),
-	right: new Roger.Animation("right", sheetPabloHead, [1]),
-	left: new Roger.Animation("left", sheetPabloHead, [2]),
-	up: new Roger.Animation("up", sheetPabloHead, [3]),
-	down: new Roger.Animation("down", sheetPabloHead, [4])
+	camera: new Roger.Animation(ASSISTANT.EYE_DIRECTION.CAMERA, sheetPabloHead, [0]),
+	right: new Roger.Animation(ASSISTANT.EYE_DIRECTION.RIGHT, sheetPabloHead, [1]),
+	left: new Roger.Animation(ASSISTANT.EYE_DIRECTION.LEFT, sheetPabloHead, [2]),
+	up: new Roger.Animation(ASSISTANT.EYE_DIRECTION.UP, sheetPabloHead, [3]),
+	down: new Roger.Animation(ASSISTANT.EYE_DIRECTION.DOWN, sheetPabloHead, [4])
 };
 
 export const animPabloEyebrows = {
@@ -66,16 +66,16 @@ export const animPabloMouth = {
 export const animPabloArms = {
 	left: {
 		idle: new Roger.Animation(ASSISTANT.BODY.IDLE, sheetPabloArms, [3]),
-		pointing: new Roger.Animation(ASSISTANT.BODY.POINTING, sheetPabloArms, [3, 4, 6, 6, 7], { loops: 1, callBack: () => {} }),
-		explaining: new Roger.Animation(ASSISTANT.BODY.EXPLAINING, sheetPabloArms, [3, 4, 6, 6, 8], { loops: 1, callBack: () => {}}),
-		dunno: new Roger.Animation(ASSISTANT.BODY.DUNNO, sheetPabloArms, [3, 4, 5], { loops: 1, callBack: () => {} })
+		pointing: new Roger.Animation(ASSISTANT.BODY.POINTING, sheetPabloArms, [3, 4, 6, 6, 7], { loops: 0 }),
+		explaining: new Roger.Animation(ASSISTANT.BODY.EXPLAINING, sheetPabloArms, [3, 4, 6, 6, 8], { loops: 0 }),
+		dunno: new Roger.Animation(ASSISTANT.BODY.DUNNO, sheetPabloArms, [3, 4, 5], { loops: 0 })
 		// random: new Roger.Animation(ASSISTANT.BODY.DUNNO, sheetPabloArms, [3, 4, 5, 6, 7, 8], { direction: "random" }),
 	},
 	right: {
 		idle: new Roger.Animation(ASSISTANT.BODY.IDLE, sheetPabloArms, [0]),
-		pointing: new Roger.Animation(ASSISTANT.BODY.POINTING, sheetPabloArms, [0], { loops: 1 }),
-		explaining: new Roger.Animation(ASSISTANT.BODY.EXPLAINING, sheetPabloArms, [0], { loops: 1 }),
-		dunno: new Roger.Animation(ASSISTANT.BODY.DUNNO, sheetPabloArms, [0, 1, 2], { loops: 1, callBack: () => {} })
+		pointing: new Roger.Animation(ASSISTANT.BODY.POINTING, sheetPabloArms, [0], { loops: 0 }),
+		explaining: new Roger.Animation(ASSISTANT.BODY.EXPLAINING, sheetPabloArms, [0], { loops: 0 }),
+		dunno: new Roger.Animation(ASSISTANT.BODY.DUNNO, sheetPabloArms, [0, 1, 2], { loops: 0 })
 		// random: new Roger.Animation(ASSISTANT.BODY.DUNNO, sheetPabloArms, [0, 1, 2], { direction: "random" }),
 	}
 };
