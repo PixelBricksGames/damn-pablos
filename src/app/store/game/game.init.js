@@ -6,20 +6,11 @@ const init = {
 		perClick: 1,
 		perSecond: 0
 	},
-	money: {
-		perClick: 1,
-		perSecond: 0
-	},
-	serum: {
-		perClick: 1,
-		perSecond: 0
-	},
 	currency: {
+		energy: 0,
 		clones: 0,
 		money: 0,
 		agingSerum: 0,
-		angerSerum: 0,
-		chaosSerum: 0,
 	},
 	risk: {
 		rebellion: 0,

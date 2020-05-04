@@ -1,5 +1,3 @@
-import * as SavedStore from "../saved-store";
-
 const init = {
 	open: false,
 	notifications: false,
@@ -35,4 +33,4 @@ const init = {
 	}
 };
 
-export const ui = SavedStore.getSavedState("ui", init);
+export const ui = init;

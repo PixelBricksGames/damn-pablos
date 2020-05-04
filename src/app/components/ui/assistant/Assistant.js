@@ -73,7 +73,7 @@ class Assistant extends React.Component {
 
 	setAnimation(animations) {
 		if(animations !== this.currentAnimations) {
-			console.log('animations', animations);
+			// console.log('animations', animations);
 			this.currentAnimations = animations;
 			this.pablo.head.play(ASSISTANT.EYE_DIRECTION.CAMERA);
 			this.pablo.eyes.play(ASSISTANT.EYELIDS.TIRED.BLINK);

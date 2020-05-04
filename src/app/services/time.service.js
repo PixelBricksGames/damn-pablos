@@ -111,6 +111,6 @@ const checkUnlockAutoClone = (autoClone, money) => {
 }
 
 const saveLocalStorage = (state) => {
-	console.log('game saved');
-	localStorage.setItem(GAME.SAVE_NAME, state);
+	// console.log('game saved');
+	// localStorage.setItem(GAME.SAVE_NAME, state);
 }

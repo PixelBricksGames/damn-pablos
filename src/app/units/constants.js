@@ -23,6 +23,7 @@ export const MENU_PAGES = {
 };
 
 export const CURRENCIES = {
+	ENERGY: "energy",
 	CLONES: "clones",
 	MONEY: "money",
 	AGING_SERUM: "agingSerum",
