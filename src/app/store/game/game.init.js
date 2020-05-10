@@ -6,11 +6,15 @@ const init = {
 		perClick: 1,
 		perSecond: 0
 	},
-	currency: {
-		energy: 0,
-		clones: 0,
-		money: 0,
-		agingSerum: 0,
+	resources: {
+		room: {
+			used: 0,
+			total: 10
+		},
+		energy: {
+			used: 0,
+			total: 10
+		},
 	},
 	risk: {
 		rebellion: 0,

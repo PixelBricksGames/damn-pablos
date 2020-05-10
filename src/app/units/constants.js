@@ -22,7 +22,8 @@ export const MENU_PAGES = {
 	CREDITS: "credits"
 };
 
-export const CURRENCIES = {
+export const RESOURCES = {
+	ROOM: "room",
 	ENERGY: "energy",
 	CLONES: "clones",
 	MONEY: "money",

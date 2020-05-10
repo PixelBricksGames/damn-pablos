@@ -1,10 +1,13 @@
 @import "./../../../../../../styles/theme.scss";
+@import "./../../../../../../styles/mixins/no-selection.scss";
 @import "./../../../../../../assets/fonts/upheaval-pro/stylesheet.css";
 
 $URL_ASSETS: "./../../../../../../assets/";
 $URL_ASSETS_IMAGES: $URL_ASSETS + "images/";
 
 .menu-btn {
+	@extend %no-selection;
+	cursor: pointer;
 	background-color: transparent;
 	border: 2px solid $colour-blue;
 	box-sizing: border-box;
@@ -13,6 +16,9 @@ $URL_ASSETS_IMAGES: $URL_ASSETS + "images/";
 	padding: 4px;
 	outline: none;
 	width: 100%;
+	&::selection { background: transparent; }
+	&::-moz-selection { background: transparent; }
+
 
 	.icon-default {
 		background-size: 100%;
@@ -83,37 +89,43 @@ $URL_ASSETS_IMAGES: $URL_ASSETS + "images/";
 				color: $colour-blue;
 				display: flex;
 				font-family: "upheaval-pro";
-				font-size: 28px;
-				line-height: 10px;
+				font-size: 20px;
+				margin-top: -4px;
 
-				.currency-icon {
+				.resource-icon {
 					background-size: 25px 25px;
 					background-position: -4px -4px;
 					content: '';
-					display: inline-block;
-					margin-right: 6px;
+					display: block;
+					float: left;
+					margin: 4px 6px 0 0;
 					height: 16px;
 					width: 16px;
 				}
 
+				.room::before {
+					@extend .resource-icon;
+					background-image: url($URL_ASSETS_IMAGES + "ui/resource-icon-room.png");
+				}
+
 				.money::before {
-					@extend .currency-icon;
-					background-image: url($URL_ASSETS_IMAGES + "ui/currency-icon-money.png");
+					@extend .resource-icon;
+					background-image: url($URL_ASSETS_IMAGES + "ui/resource-icon-money.png");
 				}
 
 				.agingSerum::before {
-					@extend .currency-icon;
-					background-image: url($URL_ASSETS_IMAGES + "ui/currency-icon-serum-yellow.png");
+					@extend .resource-icon;
+					background-image: url($URL_ASSETS_IMAGES + "ui/resource-icon-serum-yellow.png");
 				}
 
 				.angerSerum::before {
-					@extend .currency-icon;
-					background-image: url($URL_ASSETS_IMAGES + "ui/currency-icon-serum-red.png");
+					@extend .resource-icon;
+					background-image: url($URL_ASSETS_IMAGES + "ui/resource-icon-serum-red.png");
 				}
 
 				.chaosSerum::before {
-					@extend .currency-icon;
-					background-image: url($URL_ASSETS_IMAGES + "ui/currency-icon-serum-black.png");
+					@extend .resource-icon;
+					background-image: url($URL_ASSETS_IMAGES + "ui/resource-icon-serum-black.png");
 				}
 			}
 		}

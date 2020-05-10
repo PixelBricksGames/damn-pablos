@@ -23,15 +23,15 @@ const mapDispatchToProps = dispatch => ({
 	])),
 	onClickSell: (clones, money) => dispatch(batchActions([
 		killFetusClone(clones),
-		earnMoney(money),
-		addClonesSold(clones),
-		addMoneyInTotal(money)
+		// earnMoney(money),
+		// addClonesSold(clones),
+		// addMoneyInTotal(money)
 	])),
 	onClickSerum: (clones, serum) => dispatch(batchActions([
 		killFetusClone(clones),
-		earnAgingSerum(serum),
+		// earnAgingSerum(serum),
 		addClonesKilled(clones),
-		addAgingSerumInTotal(money)
+		// addAgingSerumInTotal(money)
 	])),
 });
 

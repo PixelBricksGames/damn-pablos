@@ -51,10 +51,10 @@ $URL_ASSETS_IMAGES: $URL_ASSETS + "images/";
 			}
 		}
 
-		&__money:before { background-image: url($URL_ASSETS_IMAGES + "ui/currency-icon-money.png"); }
-		&__aging-serum:before { background-image: url($URL_ASSETS_IMAGES + "ui/currency-icon-serum-yellow.png"); }
-		&__anger-serum:before { background-image: url($URL_ASSETS_IMAGES + "ui/currency-icon-serum-red.png"); }
-		&__chaos-serum:before { background-image: url($URL_ASSETS_IMAGES + "ui/currency-icon-serum-black.png"); }
+		&__money:before { background-image: url($URL_ASSETS_IMAGES + "ui/resource-icon-money.png"); }
+		&__aging-serum:before { background-image: url($URL_ASSETS_IMAGES + "ui/resource-icon-serum-yellow.png"); }
+		&__anger-serum:before { background-image: url($URL_ASSETS_IMAGES + "ui/resource-icon-serum-red.png"); }
+		&__chaos-serum:before { background-image: url($URL_ASSETS_IMAGES + "ui/resource-icon-serum-black.png"); }
 	}
 
 	.risks {

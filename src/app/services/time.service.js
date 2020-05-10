@@ -37,9 +37,9 @@ const timeService = {
 
 			// TODO const childClonesIncrement = 0;
 
-			const totalClonesPerSecond = autoClonesIncrement; // TODO + childClonesIncrement;
-			const clonesToAddPerSecond = parseInt(totalClonesPerSecond, 10);
-			const restClonesToAdd = Utils.fixSubstraction(totalClonesPerSecond, clonesToAddPerSecond);
+			// const totalClonesPerSecond = autoClonesIncrement; // TODO + childClonesIncrement;
+			// const clonesToAddPerSecond = parseInt(totalClonesPerSecond, 10);
+			// const restClonesToAdd = Utils.fixSubstraction(totalClonesPerSecond, clonesToAddPerSecond);
 
 			const dispatchedActions = [];
 
@@ -56,18 +56,7 @@ const timeService = {
 			dispatchedActions.push(updateTimeTotal());
 			dispatchedActions.push(updateTimeSec());
 			dispatchedActions.push(updateTimeDec());
-			dispatchedActions.push(updateClonesPerSecond(totalClonesPerSecond));
-
 			dispatchedActions.push(addTime(TIME.DELTA));
-
-			if(checkUnlockSellFetus(clones.fetus, game.currency.clones)) {
-				dispatchedActions.push(unlockSellFetus());
-			}
-
-			if(checkUnlockAutoClone(tools.autoClone, game.currency.money)) {
-				dispatchedActions.push(unlockAutoClone());
-				dispatchedActions.push(setToolsTabNotifications());
-			}
 
 			if(checkMenuNotifications(ui)) {
 				dispatchedActions.push(setMenuNotifications());
@@ -76,8 +65,8 @@ const timeService = {
 			}
 
 			const totalClones = clones.fetus.amount; //+ clones.child.amount + clones.teen.amount + clones.adult.amount + clones.senior.amount + clones.ancient.amount;
-			dispatchedActions.push(updateCurrencyClones(totalClones));
-			document.title = `${totalClones} ${translations[config.language].GAME.CURRENCY.CLONES}`;
+			// dispatchedActions.push(updateCurrencyClones(totalClones));
+			document.title = `${totalClones} ${translations[config.language].GAME.RESOURCES.CLONES}`;
 
 			store.dispatch(batchActions(dispatchedActions));
 

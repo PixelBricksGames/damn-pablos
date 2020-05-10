@@ -1,40 +1,60 @@
 import * as initState from "./game.init";
 import * as actionType from "./game.type";
+import { getTwoDecimals } from "../../utils/utils";
 
 const game = (state = initState.game, action) => {
 	switch (action.type) {
-		case actionType.GAME.CLONES.UPDATE_CPS:
+		case actionType.GAME.ROOM.USE:
 			return {
 				...state,
-				clones: {
-					...state.clones,
-					perSecond: action.perSecond
+				resources: {
+					...state.resources,
+					room: getTwoDecimals(state.resources.room.used - action.room)
 				}
 			};
 
-		case actionType.GAME.CLONES.UPDATE:
+		case actionType.GAME.ROOM.FREE:
 			return {
 				...state,
-				currency: {
-					...state.currency,
-					clones: action.clones
+				resources: {
+					...state.resources,
+					room: getTwoDecimals(state.resources.room.used + action.room)
 				}
 			};
 
-		case actionType.GAME.MONEY.EARN:
+		case actionType.GAME.ROOM.BUY:
 			return {
 				...state,
-				currency: {
-					...state.currency,
-					money: state.currency.money + action.money
+				resources: {
+					...state.resources,
+					room: getTwoDecimals(state.resources.room.total + action.room)
 				}
 			};
-		case actionType.GAME.MONEY.SPEND:
+
+		case actionType.GAME.ENERGY.USE:
 			return {
 				...state,
-				currency: {
-					...state.currency,
-					money: state.currency.money - action.money
+				resources: {
+					...state.resources,
+					energy: getTwoDecimals(state.resources.energy.used - action.energy)
+				}
+			};
+
+		case actionType.GAME.ENERGY.FREE:
+			return {
+				...state,
+				resources: {
+					...state.resources,
+					energy: getTwoDecimals(state.resources.energy.used + action.energy)
+				}
+			};
+
+		case actionType.GAME.ENERGY.GENERATE:
+			return {
+				...state,
+				resources: {
+					...state.resources,
+					energy: action.energy
 				}
 			};
 
