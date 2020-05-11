@@ -23,13 +23,22 @@ export const MENU_PAGES = {
 };
 
 export const RESOURCES = {
-	ROOM: "room",
 	ENERGY: "energy",
+	ROOM: "room",
 	CLONES: "clones",
 	MONEY: "money",
 	AGING_SERUM: "agingSerum",
 	ANGER_SERUM: "angerSerum",
 	CHAOS_SERUM: "chaosSerum",
+};
+
+export const CLONES = {
+	FETUS: "fetus",
+	CHILD: "child",
+	TEEN: "teen",
+	ADULT: "adult",
+	SENIOR: "senior",
+	ANCIENT: "ancient"
 };
 
 export const TOOLS = {

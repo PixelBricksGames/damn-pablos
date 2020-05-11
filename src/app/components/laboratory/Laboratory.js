@@ -3,16 +3,17 @@ import PropTypes from "prop-types";
 
 import "./Laboratory.scss";
 import Capsule from "./capsule/Capsule";
+import { CLONES } from "../../units/constants";
 
-const Laboratory = ({ game, clones, config, onClickClone, onClickSell, onClickSerum }) => (
+const cloneSelected = CLONES.FETUS;
+const Laboratory = ({ game, clones, config, onClickClone }) => (
 	<div className="laboratory">
 		<Capsule
 			language={ config.language }
-			clone={ clones.fetus }
-			currency={ game.currency }
-			onClickClone= { () => { onClickClone(game.clones.perClick) } }
-			onClickSell= { () => { onClickSell(1, clones.fetus.income.money) } }
-			onClickSerum= { () => { onClickSerum(1, clones.fetus.income.serum) } }
+			clone={ clones[cloneSelected] }
+			onClickClone= { () => {
+				onClickClone(clones[cloneSelected].income)
+			} }
 		/>
 	</div>
 );

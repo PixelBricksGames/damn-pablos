@@ -1,10 +1,9 @@
 import * as SavedStore from "../../saved-store";
+import { CLONES } from "../../../units/constants";
 
 const init = {
-	id: "fetus",
+	id: CLONES.FETUS,
 	amount: 0,
-	perClick: 1,
-	perSecond: 0,
 	unlocked: {
 		clone: true,
 		sell: false,
@@ -22,14 +21,11 @@ const init = {
 	income: {
 		room: 0,
 		energy: 1,
+		clones: 1,
 		money: 10,
 		agingSerum: 0.1,
 		angerSerum: 0,
 		chaosSerum: 0,
-	},
-	increment: {
-		cost: 0,
-		clonesPerSecond: 0
 	},
 	risk: {
 		rebellion: 0,

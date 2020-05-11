@@ -6,7 +6,7 @@ import { translations } from "./../../../units/translations";
 import "./Capsule.scss";
 import CapsuleButton from "./button/CapsuleButton";
 
-const Capsule = ({ language, clone, currency, onClickClone, onClickSerum, onClickSell }) => {
+const Capsule = ({ language, clone, onClickClone, onClickSerum, onClickSell }) => {
     return (
 		<div id={clone.id} className="capsule">
 			<div className={`button-clone ${clone.unlocked.clone ? 'unlocked' : ''}`}>
