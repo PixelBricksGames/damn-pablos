@@ -20,10 +20,10 @@ const Resource = ({ name, value, total }) => (
 const getBars = (name, value, total) => {
 	let barNumber;
 	const array = [];
-	if(total < 10) {
+	if(total < 20) {
 		barNumber = total;
 	} else if(total >= value) {
-		barNumber = parseInt(getTwoDecimals((total - value) * 10 / total), 10);
+		barNumber = parseInt(getTwoDecimals((total - value) * 20 / total), 10);
 	} else {
 		barNumber = 0;
 	}
