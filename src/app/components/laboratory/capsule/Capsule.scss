@@ -1,23 +1,64 @@
+@import "./../../../../styles/variables.scss";
+@import "./../../../../styles/theme.scss";
+@import "./../../../../assets/fonts/upheaval-pro/stylesheet.css";
+
+$URL_ASSETS: "./../../../../assets/";
+$URL_ASSETS_IMAGES: $URL_ASSETS + "images/";
+
 .capsule {
-	background-color: blue;
+	box-sizing: border-box;
 	display: flex;
 	justify-content: center;
-	padding: 10px 0;
+	margin: 0;
+	padding: 0;
+	position: relative;
 	text-align: center;
 	width: 100%;
-	border-top: 2px solid black;
-	border-bottom: 2px solid black;
-	box-sizing: border-box;
 
-	.button {
-		&-clone,
-		&-sell,
-		&-serum {
-			display: none;
-			margin: 0 10px;
-			&.unlocked {
-				display: flex;
+	.buttons {
+		position: absolute;
+		z-index: 10;
+
+		.button {
+			&-clone,
+			&-sell,
+			&-serum {
+				display: none;
+				margin: 0 10px;
+				&.unlocked {
+					display: flex;
+				}
 			}
+		}
+	}
+
+	.vat {
+		position: relative;
+		margin: 0 auto;
+		height: 562px;
+		width: 200px;
+
+		&__underlay,
+		&__overlay,
+		&__bubbles {
+			background-position: center;
+			background-repeat: no-repeat;
+			width: 100%;
+			height: 100%;
+			position: absolute;
+		}
+
+		&__underlay {
+			background-image: url($URL_ASSETS_IMAGES + "capsule/capsule_underlay.png");
+			z-index: 1;
+		}
+		&__overlay {
+			background-image: url($URL_ASSETS_IMAGES + "capsule/capsule_overlay.png");
+			z-index: 3;
+		}
+		&__bubbles {
+			background-image: url($URL_ASSETS_IMAGES + "capsule/capsule_bubbles.gif");
+			z-index: 2;
 		}
 	}
 }
