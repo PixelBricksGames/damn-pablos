@@ -1,5 +1,6 @@
 import * as initState from "./animations.init";
 import * as actionType from "./animations.type";
+import { CLONES } from "./../../units/animations";
 
 const animations = (state = initState.animations, action) => {
 	switch (action.type) {
@@ -37,6 +38,18 @@ const animations = (state = initState.animations, action) => {
 					...state.assistant,
 					isTalking: action.isTalking
 				}
+			};
+
+		case actionType.ANIMATIONS.CLONES.FETUS.CREATION:
+			return {
+				...state,
+				clones: CLONES.FETUS.CREATION
+			};
+
+		case actionType.ANIMATIONS.CLONES.FETUS.LOOP:
+			return {
+				...state,
+				clones: CLONES.FETUS.LOOP
 			};
 
 		default:

@@ -12,5 +12,4 @@ const init = {
 	clones: ANIMATIONS.CLONES.NONE
 };
 
-// export const animations = SavedStore.getSavedState("animations", init);
 export const animations = init;

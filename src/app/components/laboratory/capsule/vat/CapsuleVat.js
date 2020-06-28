@@ -10,7 +10,7 @@ import {
 } from "./clones/fetus";
 
 class CapsuleVat extends React.Component {
-	currentAnimations;
+	currentAnimation;
 
 	constructor(props) {
 		super(props);
@@ -18,16 +18,14 @@ class CapsuleVat extends React.Component {
 
 	componentDidUpdate() {
 		rClock.updateWith(this.props.time.total);
-		this.setAnimation(CLONES.FETUS.CREATION);
+		this.setAnimation(this.props.animations.clones);
 	}
 
 	componentDidMount() {
-		this.clones1 = new Roger.Toon("clones_1");
-		this.clones1 = addAnimations(this.clones1);
-		this.setAnimation(this.props.animations.clones);
+		this.clones = new Roger.Toon("clones");
+		this.clones = addAnimations(this.clones);
 
-		rClock.addToList(this.clones1);
-		// rClock.setDebugMode(true);
+		rClock.addToList(this.clones);
 	}
 
 	render() {
@@ -35,7 +33,7 @@ class CapsuleVat extends React.Component {
 			<div className="vat">
 				<div className="vat__overlay"></div>
 				<div className="vat__clones">
-					<div id="clones_1"></div>
+					<div id="clones"></div>
 				</div>
 				<div className="vat__bubbles"></div>
 				<div className="vat__underlay"></div>
@@ -43,15 +41,17 @@ class CapsuleVat extends React.Component {
 		);
 	}
 
-	setAnimation(animations) {
-		// console.log("animations", animations);
-		if(animations !== this.currentAnimations) {
-			this.currentAnimations = animations;
-			this.currentAnimations = CLONES.FETUS.CREATION;
-			this.clones1.play(CLONES.FETUS.CREATION);
-		} else if(this.clones1.animList.get(CLONES.FETUS.CREATION).hasFinished) {
-			this.currentAnimations = CLONES.FETUS.LOOP;
-			this.clones1.play(CLONES.FETUS.LOOP);
+	setAnimation(animation) {
+		console.log("animations", animation);
+		if(animation !== this.currentAnimation) {
+			this.currentAnimation = animation;
+			console.log("currentAnimation", animation);
+			if(animation !== CLONES.NONE) {
+				this.clones.play(animation);
+			}
+		} else if(this.clones.animList.get(CLONES.FETUS.CREATION).hasFinished) {
+			this.currentAnimation = 'loop';
+			this.clones.play(CLONES.FETUS.LOOP);
 		}
 	}
 }

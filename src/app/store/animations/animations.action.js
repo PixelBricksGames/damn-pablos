@@ -19,3 +19,11 @@ export const setAssistantTalking = (isTalking) => ({
 	type: actionType.ANIMATIONS.ASSISTANT.SET_TALKING,
 	isTalking
 });
+
+export const setCapsuleVatFetusCreation = () => ({
+	type: actionType.ANIMATIONS.CLONES.FETUS.CREATION
+});
+
+export const setCapsuleVatFetusLoop = () => ({
+	type: actionType.ANIMATIONS.CLONES.FETUS.LOOP
+});
