@@ -42,3 +42,11 @@ export const ASSISTANT = {
 		}
 	}
 };
+
+export const CLONES = {
+	NONE: "none",
+	FETUS: {
+		CREATION: "fetus-creation",
+		LOOP: "fetus-loop",
+	}
+};

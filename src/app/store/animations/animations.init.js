@@ -8,7 +8,8 @@ const init = {
 		body: ANIMATIONS.ASSISTANT.BODY.IDLE,
 		eyeDirection: ANIMATIONS.ASSISTANT.EYE_DIRECTION.CAMERA,
 		isTalking: false
-	}
+	},
+	clones: ANIMATIONS.CLONES.NONE
 };
 
 // export const animations = SavedStore.getSavedState("animations", init);

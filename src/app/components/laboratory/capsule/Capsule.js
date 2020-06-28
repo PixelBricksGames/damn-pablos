@@ -1,16 +1,16 @@
 import React from "react";
 import PropTypes from "prop-types";
-
 import { translations } from "./../../../units/translations";
 
 import "./Capsule.scss";
 import CapsuleButton from "./button/CapsuleButton";
+import CapsuleVat from "./vat/CapsuleVat";
 
-const Capsule = ({ language, clone, onClickClone, onClickSerum, onClickSell }) => {
+const Capsule = ({ time, animations, language, clone, onClickClone, onClickSerum, onClickSell }) => {
     return (
 		<div id={clone.id} className="capsule">
 
-			<div className="buttons">
+			<section className="buttons">
 				<div className={`button-clone ${clone.unlocked.clone ? 'unlocked' : ''}`}>
 					<CapsuleButton
 						text={ translations[language].GAME.ACTIONS.CLONE }
@@ -37,12 +37,13 @@ const Capsule = ({ language, clone, onClickClone, onClickSerum, onClickSell }) =
 						onClick={ onClickSerum }
 					/>
 				</div>
-			</div>
-			<div className="vat">
-				<div className="vat__overlay"></div>
-				<div className="vat__bubbles"></div>
-				<div className="vat__underlay"></div>
-			</div>
+			</section>
+			<section className="vat">
+				<CapsuleVat
+					time={ time }
+					animations={ animations }
+				/>
+			</section>
 		</div>
     );
 }

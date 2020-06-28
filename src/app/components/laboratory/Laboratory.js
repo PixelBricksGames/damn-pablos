@@ -6,9 +6,11 @@ import Capsule from "./capsule/Capsule";
 import { CLONES } from "../../units/constants";
 
 const cloneSelected = CLONES.FETUS;
-const Laboratory = ({ game, clones, config, onClickClone }) => (
+const Laboratory = ({ time, animations, game, clones, config, onClickClone }) => (
 	<div className="laboratory">
 		<Capsule
+			time={ time }
+			animations={ animations }
 			language={ config.language }
 			clone={ clones[cloneSelected] }
 			onClickClone= { () => {

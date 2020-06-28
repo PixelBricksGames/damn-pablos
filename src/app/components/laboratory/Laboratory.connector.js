@@ -8,11 +8,13 @@ import { generateEnergy } from "../../store/game/game.action";
 import { addClonesByClick } from "../../store/stats/stats.action";
 
 const mapStateToProps = state => ({
+	time: state.get("time"),
 	game: state.get("game"),
 	clones: {
 		fetus: state.get("clones").get("fetus")
 	},
-	config: state.get("config")
+	config: state.get("config"),
+	animations: state.get("animations"),
 });
 
 const mapDispatchToProps = dispatch => ({
