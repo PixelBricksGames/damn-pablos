@@ -1,24 +1,17 @@
 import * as SavedStore from "../../saved-store";
+import { CLONES } from "../../../units/constants";
 
 const init = {
-	id: "fetus",
+	id: CLONES.FETUS,
 	amount: 0,
 	unlocked: {
 		clone: true,
 		sell: false,
 		serum: false,
 	},
-	perClick: {
-		clones: 1,
-		money: 1,
-		serum: 1,
-	},
-	perSecond: {
-		clones: 0,
-		money: 0,
-		serum: 0,
-	},
 	cost: {
+		room: 1,
+		energy: 0,
 		clones: 0,
 		money: 0,
 		agingSerum: 0,
@@ -26,14 +19,13 @@ const init = {
 		chaosSerum: 0,
 	},
 	income: {
+		room: 0,
+		energy: 1,
+		clones: 1,
 		money: 10,
 		agingSerum: 0.1,
 		angerSerum: 0,
 		chaosSerum: 0,
-	},
-	increment: {
-		cost: 0,
-		clonesPerSecond: 0
 	},
 	risk: {
 		rebellion: 0,
@@ -41,4 +33,4 @@ const init = {
 	}
 };
 
-export const fetus = SavedStore.getSavedClonesState(init.id, init);
+export const fetus = SavedStore.getSavedState(init.id, init);

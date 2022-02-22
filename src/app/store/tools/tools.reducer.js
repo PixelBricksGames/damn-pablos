@@ -14,24 +14,6 @@ const tools = (state = initState.tools, action) => {
 		case actionType.TOOLS.AUTO_CLONE.DELETE:
 			return getDeletedToolState(state, TOOLS.AUTO_CLONE);
 
-		case actionType.TOOLS.AUTO_SELL.UNLOCK:
-			return getUnlockedToolState(state, TOOLS.AUTO_SELL);
-
-		case actionType.TOOLS.AUTO_SELL.CREATE:
-			return getCreatedToolState(state, TOOLS.AUTO_SELL);
-
-		case actionType.TOOLS.AUTO_SELL.DELETE:
-			return getDeletedToolState(state, TOOLS.AUTO_SELL);
-
-		case actionType.TOOLS.AUTO_SERUM.UNLOCK:
-			return getUnlockedToolState(state, TOOLS.AUTO_SERUM);
-
-		case actionType.TOOLS.AUTO_SERUM.CREATE:
-			return getCreatedToolState(state, TOOLS.AUTO_SERUM);
-
-		case actionType.TOOLS.AUTO_SERUM.DELETE:
-			return getDeletedToolState(state, TOOLS.AUTO_SERUM);
-
 		default:
 			return state;
 	}

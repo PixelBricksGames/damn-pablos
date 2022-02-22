@@ -7,6 +7,13 @@ const init = {
 	outbreaks: {
 		inTotal: 0
 	},
+	energy: {
+		inTotal: 0,
+		spend: 0
+	},
+	room: {
+		inTotal: 0
+	},
 	clones: {
 		byClick: 0,
 		inTotal: 0,
@@ -18,14 +25,6 @@ const init = {
 		spend: 0
 	},
 	agingSerum: {
-		inTotal: 0,
-		spend: 0
-	},
-	angerSerum: {
-		inTotal: 0,
-		spend: 0
-	},
-	chaosSerum: {
 		inTotal: 0,
 		spend: 0
 	}

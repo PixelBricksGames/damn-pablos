@@ -14,7 +14,7 @@ $URL_ASSETS_IMAGES: $URL_ASSETS + "images/";
 	position: relative;
     height: 104px;
     width: 100%;
-	z-index: 2;
+	z-index: 200;
 
 	&::before {
 		background-color: $colour-blue-dark;

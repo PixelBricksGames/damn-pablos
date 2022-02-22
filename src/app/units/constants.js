@@ -22,12 +22,23 @@ export const MENU_PAGES = {
 	CREDITS: "credits"
 };
 
-export const CURRENCIES = {
+export const RESOURCES = {
+	ENERGY: "energy",
+	ROOM: "room",
 	CLONES: "clones",
 	MONEY: "money",
 	AGING_SERUM: "agingSerum",
 	ANGER_SERUM: "angerSerum",
 	CHAOS_SERUM: "chaosSerum",
+};
+
+export const CLONES = {
+	FETUS: "fetus",
+	CHILD: "child",
+	TEEN: "teen",
+	ADULT: "adult",
+	SENIOR: "senior",
+	ANCIENT: "ancient"
 };
 
 export const TOOLS = {

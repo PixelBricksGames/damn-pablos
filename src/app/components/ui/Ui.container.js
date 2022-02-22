@@ -12,7 +12,7 @@ const UiContainer = () => (
 		<MenuConnector />
 		<div className="ui__bottom">
 			<AssistantConnector />
-			<CurrenciesConnector />
+			{/* <CurrenciesConnector /> */}
 		</div>
 	</main>
 );

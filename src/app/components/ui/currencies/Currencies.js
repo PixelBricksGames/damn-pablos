@@ -16,10 +16,10 @@ const Currencies = ({
 			<Risk name={ "Risk of Rebellion "} percentage={ game.risk.rebellion } />
 		</section>
 		<section className="currencies">
-			<div className="currencies__money">{translations[config.language].GAME.CURRENCY.MONEY}: { game.currency.money }</div>
-			<div className="currencies__aging-serum">{translations[config.language].GAME.CURRENCY.AGING_SERUM}: { game.currency.agingSerum }</div>
-			<div className="currencies__anger-serum">{translations[config.language].GAME.CURRENCY.ANGER_SERUM}: { game.currency.angerSerum }</div>
-			<div className="currencies__chaos-serum">{translations[config.language].GAME.CURRENCY.CHAOS_SERUM}: { game.currency.chaosSerum }</div>
+			<div className="currencies__money">{translations[config.language].GAME.RESOURCES.MONEY}: { game.resources.money }</div>
+			<div className="currencies__aging-serum">{translations[config.language].GAME.RESOURCES.AGING_SERUM}: { game.resources.agingSerum }</div>
+			<div className="currencies__anger-serum">{translations[config.language].GAME.RESOURCES.ANGER_SERUM}: { game.resources.angerSerum }</div>
+			<div className="currencies__chaos-serum">{translations[config.language].GAME.RESOURCES.CHAOS_SERUM}: { game.resources.chaosSerum }</div>
 		</section>
 	</div>
 );

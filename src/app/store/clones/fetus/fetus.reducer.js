@@ -36,10 +36,10 @@ const getUnlockedCloneState = (state, action) => ({
 const getCreatedCloneState = (state, clonesToAdd = 1) => ({
 	...state,
 	amount: state.amount + clonesToAdd,
-	cost: {
-		...state.cost,
-		clones: Utils.getIncrementalCost(state.cost.clones, (state.amount + clonesToAdd), state.increment.cost)
-	}
+	// cost: {
+	// 	...state.cost,
+	// 	clones: Utils.getIncrementalCost(state.cost.clones, (state.amount + clonesToAdd), state.increment.cost)
+	// }
 });
 
 const getKilledCloneState = (state, clonesToSub = 1) => ({

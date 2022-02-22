@@ -7,7 +7,8 @@ export const translations = {
 				SELL: "sell",
 				SERUM: "serum",
 			},
-			CURRENCY: {
+			RESOURCES: {
+				ROOM: "room",
 				CLONES: "clones",
 				MONEY: "money",
 				AGING_SERUM: "aging serum",
@@ -34,12 +35,12 @@ export const translations = {
 			AUTO_SERUM: "Auto-Serum",
 		},
 		CLONES: {
-			FETUS: "Fetus Clone",
-			CHILD: "Child Clone",
-			TEEN: "Teen Clone",
-			ADULT: "Adult Clone",
-			SENIOR: "Senior Clone",
-			ANCIENT: "Ancient Clone",
+			FETUS: "Fetus",
+			CHILD: "Child",
+			TEEN: "Teen",
+			ADULT: "Adult",
+			SENIOR: "Senior",
+			ANCIENT: "Ancient",
 		}
 	}
 };

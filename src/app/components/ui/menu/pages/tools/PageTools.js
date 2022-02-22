@@ -8,15 +8,15 @@ import MenuButton from "../button/MenuButton";
 const PageTools = ({ game, tools, config, onClickAutoClone }) => (
 	<div className="page-tools">
 		<div className="page__title">{translations[config.language].GAME.PAGES.TOOLS}</div>
-		<MenuButton
+		{/* <MenuButton
 			id={ tools.autoClone.id }
 			title={ translations[config.language].TOOLS.AUTO_CLONE }
 			amount={ tools.autoClone.amount }
 			cost={ tools.autoClone.cost }
 			unlocked={ tools.autoClone.unlocked }
-			enabled={ game.currency.money >= tools.autoClone.cost.money }
+			enabled={ game.resources.money >= tools.autoClone.cost.money }
 			onClick={() => { onClickAutoClone(tools.autoClone.cost) }}
-		/>
+		/> */}
 	</div>
 );
 

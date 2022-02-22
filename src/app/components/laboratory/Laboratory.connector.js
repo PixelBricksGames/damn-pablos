@@ -4,34 +4,26 @@ import { batchActions } from 'redux-batched-actions';
 import Laboratory from "./Laboratory";
 
 import { createFetusClone, killFetusClone } from "../../store/clones/fetus/fetus.action";
-import { earnMoney, earnAgingSerum } from "../../store/game/game.action";
-import { addClonesByClick, addClonesKilled, addClonesSold, addMoneyInTotal, addAgingSerumInTotal } from "../../store/stats/stats.action";
+import { generateEnergy } from "../../store/game/game.action";
+import { addClonesByClick } from "../../store/stats/stats.action";
+import { setCapsuleVatFetusCreation } from "../../store/animations/animations.action";
 
 const mapStateToProps = state => ({
+	time: state.get("time"),
+	animations: state.get("animations"),
 	game: state.get("game"),
+	config: state.get("config"),
 	clones: {
 		fetus: state.get("clones").get("fetus")
-		// TODO
 	},
-	config: state.get("config")
 });
 
 const mapDispatchToProps = dispatch => ({
-	onClickClone: (clones) => dispatch(batchActions([
-		createFetusClone(clones),
-		addClonesByClick(clones)
-	])),
-	onClickSell: (clones, money) => dispatch(batchActions([
-		killFetusClone(clones),
-		earnMoney(money),
-		addClonesSold(clones),
-		addMoneyInTotal(money)
-	])),
-	onClickSerum: (clones, serum) => dispatch(batchActions([
-		killFetusClone(clones),
-		earnAgingSerum(serum),
-		addClonesKilled(clones),
-		addAgingSerumInTotal(money)
+	onClickClone: (income) => dispatch(batchActions([
+		createFetusClone(income.clones),
+		addClonesByClick(income.clones),
+		generateEnergy(income.energy),
+		setCapsuleVatFetusCreation(),
 	])),
 });
 
