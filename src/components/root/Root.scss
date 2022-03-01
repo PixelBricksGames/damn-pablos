@@ -1,0 +1,39 @@
+.Root {
+	text-align: center;
+}
+
+.Root-logo {
+	height: 40vmin;
+	pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+	.Root-logo {
+		animation: Root-logo-float infinite 3s ease-in-out;
+	}
+}
+
+.Root-header {
+	min-height: 100vh;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	font-size: calc(10px + 2vmin);
+}
+
+.Root-link {
+	color: rgb(112, 76, 182);
+}
+
+@keyframes Root-logo-float {
+	0% {
+		transform: translateY(0);
+	}
+	50% {
+		transform: translateY(10px);
+	}
+	100% {
+		transform: translateY(0px);
+	}
+}
